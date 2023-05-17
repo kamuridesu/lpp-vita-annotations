@@ -1,0 +1,4725 @@
+{
+    "classes": {
+        "Sound": {
+            "init": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.init()\n",
+                "group": "Sound",
+                "description": "Initialize audio subsystem."
+            },
+            "term": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.term()\n",
+                "group": "Sound",
+                "description": "Terminate audio subsystem."
+            },
+            "open": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Name of the file to open"
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "snd = Sound.open(\"ux0:/data/audio.opus\")\n",
+                "group": "Sound",
+                "description": "Open an audio file."
+            },
+            "play": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    },
+                    {
+                        "param": "loop",
+                        "desc": "If true, playback will loop <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.play(snd, NO_LOOP)\n",
+                "group": "Sound",
+                "description": "Play a sound."
+            },
+            "pause": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.pause(snd)\n",
+                "group": "Sound",
+                "description": "Pause a sound."
+            },
+            "resume": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.resume(snd)\n",
+                "group": "Sound",
+                "description": "Resume a sound."
+            },
+            "close": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.close(snd)\n",
+                "group": "Sound",
+                "description": "Close an opened sound."
+            },
+            "isPlaying": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Sound.isPlaying(snd) then\nSound.pause(snd)\nend\n",
+                "group": "Sound",
+                "description": "Check if a given sound is in playing state."
+            },
+            "setVolume": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    },
+                    {
+                        "param": "volume",
+                        "desc": "Volume value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.setVolume(snd, 100)\n",
+                "group": "Sound",
+                "description": "Set internal volume for a given sound."
+            },
+            "getVolume": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "vol = Sound.getVolume(snd)\n",
+                "group": "Sound",
+                "description": "Get internal volume for a given sound."
+            },
+            "getTitle": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "string",
+                "example": "title = Sound.getTitle(snd)\n",
+                "group": "Sound",
+                "description": "Get song title of a given sound."
+            },
+            "getAuthor": {
+                "params": [
+                    {
+                        "param": "music",
+                        "desc": "A valid sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "string",
+                "example": "author = Sound.getAuthor(snd)\n",
+                "group": "Sound",
+                "description": "Get song author of a given sound."
+            },
+            "playShutter": {
+                "params": [
+                    {
+                        "param": "id",
+                        "desc": "A valid shutter sound ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Sound.playShutter(IMAGE_CAPTURE)\n",
+                "group": "Sound",
+                "description": "Play a shutter sound."
+            }
+        },
+        "Color": {
+            "new": {
+                "params": [
+                    {
+                        "param": "r",
+                        "desc": "R channel value."
+                    },
+                    {
+                        "param": "g",
+                        "desc": "G channel value."
+                    },
+                    {
+                        "param": "b",
+                        "desc": "B channel value."
+                    },
+                    {
+                        "param": "a",
+                        "desc": "A channel value <B>(optional)</B>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "my_color = Color.new(255, 200, 100, 255)\n",
+                "group": "Color",
+                "description": "Create a new color."
+            },
+            "getR": {
+                "params": [
+                    {
+                        "param": "clr",
+                        "desc": "A color created with ::Color.new."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "r = Color.getR(my_color)\n",
+                "group": "Color",
+                "description": "Return the R channel value of a color."
+            },
+            "getG": {
+                "params": [
+                    {
+                        "param": "clr",
+                        "desc": "A color created with ::Color.new."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "g = Color.getG(my_color)\n",
+                "group": "Color",
+                "description": "Return the G channel value of a color."
+            },
+            "getB": {
+                "params": [
+                    {
+                        "param": "clr",
+                        "desc": "A color created with ::Color.new."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "b = Color.getB(my_color)\n",
+                "group": "Color",
+                "description": "Return the B channel value of a color."
+            },
+            "getA": {
+                "params": [
+                    {
+                        "param": "clr",
+                        "desc": "A color created with ::Color.new."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "a = Color.getA(my_color)\n",
+                "group": "Color",
+                "description": "Return the A channel value of a color."
+            }
+        },
+        "Render": {
+            "createVertex": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the vertex."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the vertex."
+                    },
+                    {
+                        "param": "z",
+                        "desc": "Z coordinate of the vertex."
+                    },
+                    {
+                        "param": "u",
+                        "desc": "U coordinate for texture mapping."
+                    },
+                    {
+                        "param": "v",
+                        "desc": "v coordinate for texture mapping."
+                    },
+                    {
+                        "param": "n1",
+                        "desc": "Normal X coordinate of the vertex."
+                    },
+                    {
+                        "param": "n2",
+                        "desc": "Normal Y coordinate of the vertex."
+                    },
+                    {
+                        "param": "n3",
+                        "desc": "Normal Z coordinate of the vertex."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "v = Render.createVertex(1.0, 1.0, 0.0, 0.0, 0.5, 1.0, 1.0, 1.0)\n",
+                "group": "Render",
+                "description": "Create a vertex."
+            },
+            "destroyVertex": {
+                "params": [
+                    {
+                        "param": "v",
+                        "desc": "Vertex ID created with Render.createVertex to destroy."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Render.destroyVertex(v)\n",
+                "group": "Render",
+                "description": "Destroy a vertex."
+            },
+            "loadModel": {
+                "params": [
+                    {
+                        "param": "v",
+                        "desc": "A table with the model vertices."
+                    },
+                    {
+                        "param": "texture",
+                        "desc": "A valid image ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "texture = Graphics.loadImage(\"app0:/texture.png\")\nmdl = Render.loadModel(vertices_table, texture)\n",
+                "group": "Render",
+                "description": "Load a set of vertices as 3D model."
+            },
+            "loadObject": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Name of the file to load."
+                    },
+                    {
+                        "param": "texture",
+                        "desc": "Texture ID to use."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "texture = Graphics.loadImage(\"app0:/texture.png\")\nmdl = Render.loadObject(\"app0:/model.obj\", texture)\n",
+                "group": "Render",
+                "description": "Load an .obj model."
+            },
+            "unloadModel": {
+                "params": [
+                    {
+                        "param": "model",
+                        "desc": "A valid model ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Render.unloadModel(mdl)\n",
+                "group": "Render",
+                "description": "Free a model."
+            },
+            "drawModel": {
+                "params": [
+                    {
+                        "param": "model",
+                        "desc": "A valid model ID."
+                    },
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the model."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the model."
+                    },
+                    {
+                        "param": "z",
+                        "desc": "Z coordinate of the model."
+                    },
+                    {
+                        "param": "angleX",
+                        "desc": "X rotation value of the model."
+                    },
+                    {
+                        "param": "angleY",
+                        "desc": "Y rotation value of the model."
+                    },
+                    {
+                        "param": "angleZ",
+                        "desc": "Z rotation value of the model."
+                    },
+                    {
+                        "param": "unbind",
+                        "desc": "Draw the model unbinded from camera instance <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Render.drawModel(mdl, 1.0, 1.0, -5.0, 1.0, 1.0, 0.0)\n",
+                "group": "Render",
+                "description": "Print a model on screen."
+            },
+            "useTexture": {
+                "params": [
+                    {
+                        "param": "model",
+                        "desc": "A valid model ID."
+                    },
+                    {
+                        "param": "texture",
+                        "desc": "Texture ID to use."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "texture = Graphics.loadImage(\"app0:/texture.png\")\nRender.useTexture(mdl, texture)\n",
+                "group": "Render",
+                "description": "Set a given texture for a model."
+            },
+            "setCamera": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the camera."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the camera."
+                    },
+                    {
+                        "param": "z",
+                        "desc": "Z coordinate of the camera."
+                    },
+                    {
+                        "param": "rot_x",
+                        "desc": "X related rotation value of the camera."
+                    },
+                    {
+                        "param": "rot_y",
+                        "desc": "Y related rotation value of the camera."
+                    },
+                    {
+                        "param": "rot_z",
+                        "desc": "Z related rotation value of the camera."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Render.setCamera(0.0, 1.0, 1.0, 0.0, 0.0, 0.0)\n",
+                "group": "Render",
+                "description": "Set view camera instance settings."
+            }
+        },
+        "Gui": {
+            "init": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.init()\n",
+                "group": "Gui",
+                "description": "Init Gui sub-system."
+            },
+            "term": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.term()\n",
+                "group": "Gui",
+                "description": "Terminate Gui sub-system."
+            },
+            "initBlend": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.initBlend()\n",
+                "group": "Gui",
+                "description": "Init Gui drawing phase."
+            },
+            "termBlend": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.termBlend()\n",
+                "group": "Gui",
+                "description": "Terminate Gui drawing phase."
+            },
+            "setTheme": {
+                "params": [
+                    {
+                        "param": "theme",
+                        "desc": "The theme to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.setTheme(DARK_THEME)\n",
+                "group": "Gui",
+                "description": "Change theme for the running Gui."
+            },
+            "setInputMode": {
+                "params": [
+                    {
+                        "param": "use_touch",
+                        "desc": "Enable front touch usage for cursor movement."
+                    },
+                    {
+                        "param": "use_rear",
+                        "desc": "Enable rearpad touch usage for cursor movement."
+                    },
+                    {
+                        "param": "use_buttons",
+                        "desc": "Enable buttons usage for cursor movement."
+                    },
+                    {
+                        "param": "indirect_touch",
+                        "desc": "If enabled, cursor is moved by dragging it. If disabled, cursor jumps to the touched location."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.setInputMode(true, false, true, true)\n",
+                "group": "Gui",
+                "description": "Change input mode for the running Gui."
+            },
+            "initMainMenubar": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Gui.initMainMenubar() then\nGui.termMainMenubar()\nend\n",
+                "group": "Gui",
+                "description": "Init screen menubar."
+            },
+            "termMainMenubar": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "if Gui.initMainMenubar() then\nGui.termMainMenubar()\nend\n",
+                "group": "Gui",
+                "description": "Terminate screen menubar."
+            },
+            "initMenu": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "enabled",
+                        "desc": "The menu status to set <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Gui.initMenu(\"My Menu\") then\nGui.termMenu()\nend\n",
+                "group": "Gui",
+                "description": "Init a menu."
+            },
+            "termMenu": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "if Gui.initMenu() then\nGui.termMenu()\nend\n",
+                "group": "Gui",
+                "description": "Terminate a menu."
+            },
+            "drawMenuItem": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "selected",
+                        "desc": "The item checked status <b>(optional)</b>."
+                    },
+                    {
+                        "param": "enabled",
+                        "desc": "The item status to set <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Gui.drawMenuItem(\"Feature\", is_enabled) then\nis_enabled = true\nend\n",
+                "group": "Gui",
+                "description": "Draw a menu item."
+            },
+            "drawText": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.drawText(\"Hello World\", Color.new(255, 255, 0))\n",
+                "group": "Gui",
+                "description": "Draw a text."
+            },
+            "getTextSize": {
+                "params": [
+                    {
+                        "param": "text",
+                        "desc": "The text to calculate the size about."
+                    }
+                ],
+                "returns": null,
+                "return_type": "number[]",
+                "example": "w, h = Gui.getTextSize(\"Hello World\")\nend\n",
+                "group": "Gui",
+                "description": "Calculate a text size."
+            },
+            "drawDisabledText": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.drawDisabledText(\"Hello World\")\n",
+                "group": "Gui",
+                "description": "Draw a greyed out text."
+            },
+            "drawWrappedText": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.drawWrappedText(\"Hello World\")\n",
+                "group": "Gui",
+                "description": "Draw a text with automatic newlines to fit the window."
+            },
+            "drawButton": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "width",
+                        "desc": "The width of the button <b>(optional)</b>."
+                    },
+                    {
+                        "param": "height",
+                        "desc": "The height of the button <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Gui.drawButton(\"Exit\") then\nSystem.exit()\nend\n",
+                "group": "Gui",
+                "description": "Draw a button."
+            },
+            "drawSmallButton": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Gui.drawSmallButton(\"Exit\") then\nSystem.exit()\nend\n",
+                "group": "Gui",
+                "description": "Draw a small button."
+            },
+            "drawCheckbox": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "status",
+                        "desc": "The initial checked status of the checkbox."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "is_checked = Gui.drawCheckbox(\"Check\", is_checked)\n",
+                "group": "Gui",
+                "description": "Draw a checkbox."
+            },
+            "drawRadioButton": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "status",
+                        "desc": "The initial checked status of the radiobutton."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "is_checked = Gui.drawRadiobutton(\"Check\", is_checked)\n",
+                "group": "Gui",
+                "description": "Draw a radiobutton."
+            },
+            "resetLine": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.resetLine()\n",
+                "group": "Gui",
+                "description": "Make next element be drawn on current line."
+            },
+            "initWindow": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "flags",
+                        "desc": "The flags to use with the window."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.initWindow(\"Window\", FLAG_NO_MOVE + FLAG_NO_RESIZE + FLAG_NO_TITLEBAR + FLAG_NO_COLLAPSE)\n",
+                "group": "Gui",
+                "description": "Init a window."
+            },
+            "termWindow": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.termWindow()\n",
+                "group": "Gui",
+                "description": "Terminate a window."
+            },
+            "setWindowPos": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the window position in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the window position in pixels."
+                    },
+                    {
+                        "param": "mode",
+                        "desc": "A mode to use for the function."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.setWindowPos(100, 100, SET_ALWAYS)\n",
+                "group": "Gui",
+                "description": "Set next window position."
+            },
+            "setWindowSize": {
+                "params": [
+                    {
+                        "param": "w",
+                        "desc": "of the window in pixels."
+                    },
+                    {
+                        "param": "h",
+                        "desc": "Height of the window in pixels."
+                    },
+                    {
+                        "param": "mode",
+                        "desc": "A mode to use for the function."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.setWindowSize(100, 100, SET_ALWAYS)\n",
+                "group": "Gui",
+                "description": "Set next window size."
+            },
+            "drawSeparator": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.drawSeparator()\n",
+                "group": "Gui",
+                "description": "Draw a separator."
+            },
+            "drawTooltip": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.drawText(\"Text\")\nGui.drawTooltip(\"This is a textbox\")\n",
+                "group": "Gui",
+                "description": "Draw a tooltip when cursor hover on the previous item."
+            },
+            "drawSlider": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "val_min",
+                        "desc": "The minimum value settable through the slider."
+                    },
+                    {
+                        "param": "val_max",
+                        "desc": "The maximum value settable through the slider."
+                    },
+                    {
+                        "param": "val1",
+                        "desc": "The first value to handle with the slider."
+                    },
+                    {
+                        "param": "val2",
+                        "desc": "The second value to handle with the slider <b>(optional)</b>."
+                    },
+                    {
+                        "param": "val3",
+                        "desc": "The third value to handle with the slider <b>(optional)</b>."
+                    },
+                    {
+                        "param": "val4",
+                        "desc": "The forth value to handle with the slider <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "number[]",
+                "example": "slider_val = Gui.drawSlider(\"A slider\", 0, 100, slider_val)\n",
+                "group": "Gui",
+                "description": "Draw a slider with variable amount of values."
+            },
+            "drawIntSlider": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "val_min",
+                        "desc": "The minimum value settable through the slider."
+                    },
+                    {
+                        "param": "val_max",
+                        "desc": "The maximum value settable through the slider."
+                    },
+                    {
+                        "param": "val1",
+                        "desc": "The first value to handle with the slider."
+                    },
+                    {
+                        "param": "val2",
+                        "desc": "The second value to handle with the slider <b>(optional)</b>."
+                    },
+                    {
+                        "param": "val3",
+                        "desc": "The third value to handle with the slider <b>(optional)</b>."
+                    },
+                    {
+                        "param": "val4",
+                        "desc": "The forth value to handle with the slider <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "slider_val = Gui.drawIntSlider(\"A int slider\", 0, 100, slider_val)\n",
+                "group": "Gui",
+                "description": "Draw a slider with variable amount of integer values."
+            },
+            "drawComboBox": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "index",
+                        "desc": "The currently selected element."
+                    },
+                    {
+                        "param": "elements",
+                        "desc": "The elements to use for the combobox."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "elems = {\"Element 1\", \"Element 2\", \"Element 3\", \"Element 4\"}\ncombo_idx = Gui.drawComboBox(\"##combo\", combo_idx, elems)\nend\n",
+                "group": "Gui",
+                "description": "Draw a combobox."
+            },
+            "drawListBox": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "index",
+                        "desc": "The currently selected element."
+                    },
+                    {
+                        "param": "elements",
+                        "desc": "The elements to use for the combobox."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "elems = {\"Element 1\", \"Element 2\", \"Element 3\", \"Element 4\"}\nlist_idx = Gui.drawListBox(\"##list\", list_idx, elems)\nend\n",
+                "group": "Gui",
+                "description": "Draw a listbox."
+            },
+            "drawColorPicker": {
+                "params": [
+                    {
+                        "param": "label",
+                        "desc": "The label to show."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "The currently picked color (See ::Color)"
+                    },
+                    {
+                        "param": "alpha",
+                        "desc": "If true, alpha value will be pickable, not otherwise. <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "color = Color.new(255, 127, 65)\ncolor = Gui.drawColorPicker(\"##color_picker\", color)\nend\n",
+                "group": "Gui",
+                "description": "Draw a color picker."
+            },
+            "drawProgressbar": {
+                "params": [
+                    {
+                        "param": "fraction",
+                        "desc": "Progress value to show in 0.0 - 1.0 range."
+                    },
+                    {
+                        "param": "w",
+                        "desc": "Width of the element in pixels <b>(optional)</b>."
+                    },
+                    {
+                        "param": "h",
+                        "desc": "Height of the element in pixels <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.drawProgressbar(0.25, 200, 0)\nend\n",
+                "group": "Gui",
+                "description": "Draw a progressbar."
+            },
+            "drawImage": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "width",
+                        "desc": "Width in pixels of the widget <b>(optional)</b>."
+                    },
+                    {
+                        "param": "height",
+                        "desc": "Height in pixels of the widget <b>(optional)</b>."
+                    },
+                    {
+                        "param": "img_x",
+                        "desc": "Source image X coordinate <b>(optional)</b>."
+                    },
+                    {
+                        "param": "img_y",
+                        "desc": "Source image Y coordinate <b>(optional)</b>."
+                    },
+                    {
+                        "param": "img_w",
+                        "desc": "Source image width <b>(optional)</b>."
+                    },
+                    {
+                        "param": "img_h",
+                        "desc": "Source image height <b>(optional)</b>."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "icon = Graphics.loadImage(\"app0:/icon.png\")\nGui.drawImage(icon, 32, 32, 0, 0, 20, 20)\n",
+                "group": "Gui",
+                "description": "Draw an image in the Gui subsystem."
+            },
+            "setWidgetPos": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate in pixels."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.setWidgetPos(300, 200)\nGui.drawText(\"Hello World\")\nend\n",
+                "group": "Gui",
+                "description": "Set next widget position."
+            },
+            "setWidgetWidth": {
+                "params": [
+                    {
+                        "param": "w",
+                        "desc": "Width of the element in pixels."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.setWidgetWidth(400)\ncolor = Color.new(255, 255, 255)\ncolor = Gui.drawColorPicker(\"##color_picker\", color)\nend\n",
+                "group": "Gui",
+                "description": "Set next widgets width."
+            },
+            "resetWidgetWidth": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Gui.resetWidgetWidth()\ncolor = Color.new(255, 255, 255)\ncolor = Gui.drawColorPicker(\"##color_picker\", color)\nend\n",
+                "group": "Gui",
+                "description": "Reset next widgets width to original values."
+            }
+        },
+        "Socket": {
+            "createServerSocket": {
+                "params": [
+                    {
+                        "param": "port",
+                        "desc": "Port to use."
+                    },
+                    {
+                        "param": "protocol",
+                        "desc": "Protocol to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "sock = Socket.createServerSocket(5000, TCP_SOCKET)\n",
+                "group": "Socket",
+                "description": "Create a server socket."
+            },
+            "connect": {
+                "params": [
+                    {
+                        "param": "host",
+                        "desc": "Host to connect to."
+                    },
+                    {
+                        "param": "port",
+                        "desc": "Port to use."
+                    },
+                    {
+                        "param": "protocol",
+                        "desc": "Protocol to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "sock = Socket.connect(\"192.168.1.8\", 5000)\n",
+                "group": "Socket",
+                "description": "Connect to a server."
+            },
+            "send": {
+                "params": [
+                    {
+                        "param": "sock",
+                        "desc": "A valid socket id."
+                    },
+                    {
+                        "param": "data",
+                        "desc": "Data to send."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "Socket.send(sock, \"Hello World!\")\n",
+                "group": "Socket",
+                "description": "Send data via socket."
+            },
+            "receive": {
+                "params": [
+                    {
+                        "param": "sock",
+                        "desc": "A valid socket id."
+                    },
+                    {
+                        "param": "size",
+                        "desc": "Maximum size of the received data."
+                    }
+                ],
+                "returns": null,
+                "return_type": "string",
+                "example": "data = Socket.receive(sock, 32767)\n",
+                "group": "Socket",
+                "description": "Send data via socket."
+            },
+            "accept": {
+                "params": [
+                    {
+                        "param": "sock",
+                        "desc": "A valid server socket id."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "client = Socket.accept(server)\n",
+                "group": "Socket",
+                "description": "Accept new connections for a server socket."
+            },
+            "close": {
+                "params": [
+                    {
+                        "param": "sock",
+                        "desc": "A valid socket id."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Socket.close(sock)\n",
+                "group": "Socket",
+                "description": "Close a socket."
+            }
+        },
+        "Screen": {
+            "clear": {
+                "params": [
+                    {
+                        "param": "clr",
+                        "desc": "Color of the screen after the clear <B>(optional)</B>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Screen.clear()\n",
+                "group": "Screen",
+                "description": "Clear the screen framebuffer."
+            },
+            "flip": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Screen.flip()\n",
+                "group": "Screen",
+                "description": "Flip the screen."
+            },
+            "getPixel": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the pixel."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the pixel."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "pixel_color = Screen.getPixel(5, 25)\n",
+                "group": "Screen",
+                "description": "Get a pixel color from the screen framebuffer."
+            },
+            "waitVblankStart": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Screen.waitVblankStart()\n",
+                "group": "Screen",
+                "description": "Wait screen vertical synchronization (VSync)."
+            }
+        },
+        "Keyboard": {
+            "start": {
+                "params": [
+                    {
+                        "param": "title",
+                        "desc": "The keyboard title."
+                    },
+                    {
+                        "param": "text",
+                        "desc": "The keyboard initial text."
+                    },
+                    {
+                        "param": "length",
+                        "desc": "The text maximum length <b>(optional)</b>."
+                    },
+                    {
+                        "param": "type",
+                        "desc": "The keyboard type <b>(optional)</b>."
+                    },
+                    {
+                        "param": "mode",
+                        "desc": "The keyboard mode <b>(optional)</b>."
+                    },
+                    {
+                        "param": "opt",
+                        "desc": "Optional keyboard features to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Keyboard.start(\"Insert a text\", \"Text\", 512, TYPE_DEFAULT, MODE_TEXT, OPT_MULTILINE + OPT_NO_AUTOCAP)\n",
+                "group": "Keyboard",
+                "description": "Start a keyboard instance."
+            },
+            "getState": {
+                "params": [],
+                "returns": null,
+                "return_type": "DlgState",
+                "example": "state = Keyboard.getState()\n",
+                "group": "Keyboard",
+                "description": "Get keyboard state."
+            },
+            "getInput": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "if Keyboard.getState() == FINISHED then\nresult_text = Keyboard.getInput()\nend\n",
+                "group": "Keyboard",
+                "description": "Get keyboard user input."
+            },
+            "clear": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Keyboard.clear()\n",
+                "group": "Keyboard",
+                "description": "Close current system keyboard instance."
+            }
+        },
+        "Font": {
+            "load": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The name of the font file"
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "fnt = Font.load(\"app0:/font.ttf\")\n",
+                "group": "Font",
+                "description": "Load a .ttf/.pgf/.pvf/.woff/.pfa/.pfb/.fnt/.bdf font file."
+            },
+            "unload": {
+                "params": [
+                    {
+                        "param": "font",
+                        "desc": "A valid font loaded with Font.load."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Font.unload(fnt)\n",
+                "group": "Font",
+                "description": "Unload a loaded font."
+            },
+            "setPixelSizes": {
+                "params": [
+                    {
+                        "param": "font",
+                        "desc": "A valid font loaded with Font.load."
+                    },
+                    {
+                        "param": "size",
+                        "desc": "Size to set for Font.print calls in pixels."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Font.setPixelSizes(fnt, 20)\n",
+                "group": "Font",
+                "description": "Set font size for drawing."
+            },
+            "getTextWidth": {
+                "params": [
+                    {
+                        "param": "font",
+                        "desc": "A valid font loaded with Font.load."
+                    },
+                    {
+                        "param": "text",
+                        "desc": "Text to calculate width of."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "width = Font.getTextWidth(fnt, \"Hello World\")\n",
+                "group": "Font",
+                "description": "Calculate width for a given text and a given font."
+            },
+            "getTextHeight": {
+                "params": [
+                    {
+                        "param": "font",
+                        "desc": "A valid font loaded with Font.load."
+                    },
+                    {
+                        "param": "text",
+                        "desc": "Text to calculate width of."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "width = Font.getTextHeight(fnt, \"Hello World\")\n",
+                "group": "Font",
+                "description": "Calculate height for a given text and a given font."
+            },
+            "print": {
+                "params": [
+                    {
+                        "param": "font",
+                        "desc": "A valid font loaded with Font.load."
+                    },
+                    {
+                        "param": "x",
+                        "desc": "X starting coordinate for the print."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y starting coordinate for the print."
+                    },
+                    {
+                        "param": "text",
+                        "desc": "Text to print."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Color of the text (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Font.print(fnt, 5, 10, \"Hello World\", Color.new(255, 255, 255))\n",
+                "group": "Font",
+                "description": "Print a text on screen using a font."
+            }
+        },
+        "Controls": {
+            "read": {
+                "params": [
+                    {
+                        "param": "port",
+                        "desc": "Device port to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "pad = Controls.read()\n",
+                "group": "Controls",
+                "description": "Read pressed buttons."
+            },
+            "readLeftAnalog": {
+                "params": [
+                    {
+                        "param": "port",
+                        "desc": "Device port to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "x, y = Controls.readLeftAnalog()\n",
+                "group": "Controls",
+                "description": "Read left analog state."
+            },
+            "readRightAnalog": {
+                "params": [
+                    {
+                        "param": "port",
+                        "desc": "Device port to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "x, y = Controls.readRightAnalog()\n",
+                "group": "Controls",
+                "description": "Read right analog state."
+            },
+            "readTouch": {
+                "params": [],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "x1, y1, x2, y2 = Controls.readTouch()\n",
+                "group": "Controls",
+                "description": "Read touchscreen state."
+            },
+            "readRetroTouch": {
+                "params": [],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "x1, y1, x2, y2 = Controls.readRetroTouch()\n",
+                "group": "Controls",
+                "description": "Read rearpad state."
+            },
+            "check": {
+                "params": [
+                    {
+                        "param": "bitmask",
+                        "desc": "A controls bitmask returned by Controls.read."
+                    },
+                    {
+                        "param": "value",
+                        "desc": "A control value to check."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "pad = Controls.read()\nif Controls.check(pad, SCE_CTRL_CROSS) then\npressed = true\nend\n",
+                "group": "Controls",
+                "description": "Check if a button is pressed."
+            },
+            "rumble": {
+                "params": [
+                    {
+                        "param": "port",
+                        "desc": "Device port to use."
+                    },
+                    {
+                        "param": "small",
+                        "desc": "Intensity for small sensor."
+                    },
+                    {
+                        "param": "large",
+                        "desc": "Intensity for large sensor."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.rumble(0, 100, 100)\n",
+                "group": "Controls",
+                "description": "Changes vibration intensity for Dualshock devices."
+            },
+            "setLightbar": {
+                "params": [
+                    {
+                        "param": "port",
+                        "desc": "Device port to use."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "An RGBA color value (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.setLightbar(0, Color.new(255, 255, 255))\n",
+                "group": "Controls",
+                "description": "Set lightbar color for Dualshock 4 devices."
+            },
+            "lockHomeButton": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.lockHomeButton()\n",
+                "group": "Controls",
+                "description": "Locks default PS button functionality."
+            },
+            "unlockHomeButton": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.lockHomeButton()\n",
+                "group": "Controls",
+                "description": "Unlocks default PS button functionality."
+            },
+            "getDeviceInfo": {
+                "params": [],
+                "returns": null,
+                "return_type": "table",
+                "example": "ctrl = Controls.getDeviceInfo()\nctrl_type = ctrl[1].type\n",
+                "group": "Controls",
+                "description": "Get info about controllers."
+            },
+            "headsetStatus": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Controls.headsetStatus() then\nheadset = true\nend\n",
+                "group": "Controls",
+                "description": "Check if an headset is plugged in."
+            },
+            "getEnterButton": {
+                "params": [],
+                "returns": null,
+                "return_type": "Ctrl",
+                "example": "pad = Controls.read()\nSCE_CTRL_CONFIRM = Controls.getEnterButton()\nif Controls.check(pad, SCE_CTRL_CONFIRM) then\naccepted = yes\nend\n",
+                "group": "Controls",
+                "description": "Return set controller enter button."
+            },
+            "enableGyro": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.enableGyro()\n",
+                "group": "Controls",
+                "description": "Enable gyroscope sensor."
+            },
+            "enableAccel": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.enableAccel()\n",
+                "group": "Controls",
+                "description": "Enable accelerometer sensor."
+            },
+            "disableGyro": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.disableGyro()\n",
+                "group": "Controls",
+                "description": "Disable gyroscope sensor."
+            },
+            "disableAccel": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Controls.disableAccel()\n",
+                "group": "Controls",
+                "description": "Disable accelerometer sensor."
+            },
+            "readGyro": {
+                "params": [],
+                "returns": null,
+                "return_type": "number[]",
+                "example": "x, y, z = Controls.readGyro()\n",
+                "group": "Controls",
+                "description": "Read gyroscope state."
+            },
+            "readAccel": {
+                "params": [],
+                "returns": null,
+                "return_type": "number[]",
+                "example": "x, y, z = Controls.readAccel()\n",
+                "group": "Controls",
+                "description": "Read accelerometer state."
+            }
+        },
+        "Camera": {
+            "init": {
+                "params": [
+                    {
+                        "param": "type",
+                        "desc": "Camera to init."
+                    },
+                    {
+                        "param": "resolution",
+                        "desc": "Output resolution."
+                    },
+                    {
+                        "param": "framerate",
+                        "desc": "Output framerate."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.init(INNER_CAM, VGA_RES, 30)\n",
+                "group": "Camera",
+                "description": "Init camera hardware."
+            },
+            "term": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.term()\n",
+                "group": "Camera",
+                "description": "Terminate camera hardware."
+            },
+            "getOutput": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "img = Camera.getOutput()\n",
+                "group": "Camera",
+                "description": "Return current camera output as image."
+            },
+            "setBrightness": {
+                "params": [
+                    {
+                        "param": "value",
+                        "desc": "Value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setBrightness(200)\n",
+                "group": "Camera",
+                "description": "Set camera brightness."
+            },
+            "getBrightness": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "brightness = Camera.getBrightness()\n",
+                "group": "Camera",
+                "description": "Get current camera brightness."
+            },
+            "setSaturation": {
+                "params": [
+                    {
+                        "param": "value",
+                        "desc": "Value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setSaturation(2.0)\n",
+                "group": "Camera",
+                "description": "Set camera saturation."
+            },
+            "getSaturation": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "saturation = Camera.getSaturation()\n",
+                "group": "Camera",
+                "description": "Get current camera saturation."
+            },
+            "setSharpness": {
+                "params": [
+                    {
+                        "param": "value",
+                        "desc": "Value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setSharpness(100)\n",
+                "group": "Camera",
+                "description": "Set camera sharpness percentage."
+            },
+            "getSharpness": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "sharpness = Camera.getSharpness()\n",
+                "group": "Camera",
+                "description": "Get current camera sharpness."
+            },
+            "setContrast": {
+                "params": [
+                    {
+                        "param": "value",
+                        "desc": "Value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setContrast(200)\n",
+                "group": "Camera",
+                "description": "Set camera contrast."
+            },
+            "getContrast": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "contrast = Camera.getBrightness()\n",
+                "group": "Camera",
+                "description": "Get current camera contrast."
+            },
+            "setReverse": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "Mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setReverse(REVERSE_FLIP)\n",
+                "group": "Camera",
+                "description": "Set camera reverse mode."
+            },
+            "getReverse": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraReverse",
+                "example": "mode = Camera.getReverse()\n",
+                "group": "Camera",
+                "description": "Get current camera reverse mode."
+            },
+            "setEffect": {
+                "params": [
+                    {
+                        "param": "effect",
+                        "desc": "Effect to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setEffect(EFFECT_SEPIA)\n",
+                "group": "Camera",
+                "description": "Set camera effect."
+            },
+            "getEffect": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraEffect",
+                "example": "effect = Camera.getEffect()\n",
+                "group": "Camera",
+                "description": "Get current camera effect."
+            },
+            "setZoom": {
+                "params": [
+                    {
+                        "param": "value",
+                        "desc": "Value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setZoom(200)\n",
+                "group": "Camera",
+                "description": "Set camera zoom."
+            },
+            "getZoom": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "zoom = Camera.getZoom()\n",
+                "group": "Camera",
+                "description": "Get current camera zoom."
+            },
+            "setAntiFlicker": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "Mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setAntiFlicker(ANTIFLICKER_50HZ)\n",
+                "group": "Camera",
+                "description": "Set camera antiflicker mode."
+            },
+            "getAntiFlicker": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraAntiFlick",
+                "example": "mode = Camera.getAntiflicker()\n",
+                "group": "Camera",
+                "description": "Get current camera antiflicker mode."
+            },
+            "setISO": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "Mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setISO(ISO_AUTO)\n",
+                "group": "Camera",
+                "description": "Set camera ISO speed mode."
+            },
+            "getISO": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraISO",
+                "example": "mode = Camera.getISO()\n",
+                "group": "Camera",
+                "description": "Get current camera ISO speed mode."
+            },
+            "setGain": {
+                "params": [
+                    {
+                        "param": "value",
+                        "desc": "Value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setGain(5)\n",
+                "group": "Camera",
+                "description": "Set camera gain."
+            },
+            "getGain": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "gain = Camera.getGain()\n",
+                "group": "Camera",
+                "description": "Get current camera gain."
+            },
+            "setWhiteBalance": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "Mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setWhiteBalance(WB_SLSA)\n",
+                "group": "Camera",
+                "description": "Set camera white balance mode."
+            },
+            "getWhiteBalance": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraWB",
+                "example": "mode = Camera.getWhiteBalance()\n",
+                "group": "Camera",
+                "description": "Get current camera white balance mode."
+            },
+            "setBacklight": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "Mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setBacklight(BACKLIGHT_ON)\n",
+                "group": "Camera",
+                "description": "Set camera backlight mode."
+            },
+            "getBacklight": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraBacklight",
+                "example": "mode = Camera.getBacklight()\n",
+                "group": "Camera",
+                "description": "Get current camera backlight mode."
+            },
+            "setNightmode": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "Mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Camera.setNightmode(NIGHTMODE_LOW)\n",
+                "group": "Camera",
+                "description": "Set camera nightmode mode."
+            },
+            "getNightmode": {
+                "params": [],
+                "returns": null,
+                "return_type": "CameraNightmode",
+                "example": "mode = Camera.getNightmode()\n",
+                "group": "Camera",
+                "description": "Get current camera nightmode mode."
+            }
+        },
+        "Mic": {
+            "start": {
+                "params": [
+                    {
+                        "param": "time",
+                        "desc": "The time to record in seconds."
+                    },
+                    {
+                        "param": "samplerate",
+                        "desc": "The samplerate of the output in Hz."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "Mic.start(5, 32000)\n",
+                "group": "Mic",
+                "description": "Start a microphone recording phase."
+            },
+            "stop": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the resulting WAV file."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Mic.stop(\"ux0:/data/record.wav\")\n",
+                "group": "Mic",
+                "description": "Stop microphone recording and save result."
+            },
+            "pause": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Mic.pause()\n",
+                "group": "Mic",
+                "description": "Pause microphone recording."
+            },
+            "resume": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Mic.resume()\n",
+                "group": "Mic",
+                "description": "Resume microphone recording."
+            },
+            "isRecording": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Mic.isRecording() then\nMic.pause()\nend\n",
+                "group": "Mic",
+                "description": "Check if the microphone is recording."
+            }
+        },
+        "Network": {
+            "init": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.init()\n",
+                "group": "Network",
+                "description": "Initialize network system."
+            },
+            "term": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.term()\n",
+                "group": "Network",
+                "description": "Terminate network system."
+            },
+            "initFTP": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.initFTP()\n",
+                "group": "Network",
+                "description": "Initialize debug FTP."
+            },
+            "termFTP": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.termFTP()\n",
+                "group": "Network",
+                "description": "Terminate debug FTP."
+            },
+            "getIPAdddress": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "ip_addr = Network.getIPAddress()\n",
+                "group": "Network",
+                "description": "Get console IP address."
+            },
+            "getMacAdddress": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "mac_addr = Network.getMacAddress()\n",
+                "group": "Network",
+                "description": "Get console Mac address."
+            },
+            "isWifiEnabled": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Network.isWifiEnabled() then\nNetwork.downloadFile(\"http://www.website.com/file.zip\", \"ux0:/data/file.zip\")\nend\n",
+                "group": "Network",
+                "description": "Check if WiFi is available."
+            },
+            "getWifiLevel": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "wifi_lv = Network.getWifiLevel()\n",
+                "group": "Network",
+                "description": "Get WiFi strength level."
+            },
+            "downloadFile": {
+                "params": [
+                    {
+                        "param": "url",
+                        "desc": "The url from where to download the file."
+                    },
+                    {
+                        "param": "file",
+                        "desc": "Filename where to save the downloaded file."
+                    },
+                    {
+                        "param": "useragent",
+                        "desc": "Custom useragent to use <b>(optional)</b>."
+                    },
+                    {
+                        "param": "method",
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                    },
+                    {
+                        "param": "postdata",
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.downloadFile(\"http://www.website.com/file.zip\", \"ux0:/data/file.zip\")\n",
+                "group": "Network",
+                "description": "Download a file via HTTP protocol (synchronous)."
+            },
+            "downloadFileAsync": {
+                "params": [
+                    {
+                        "param": "url",
+                        "desc": "The url from where to download the file."
+                    },
+                    {
+                        "param": "file",
+                        "desc": "Filename where to save the downloaded file."
+                    },
+                    {
+                        "param": "useragent",
+                        "desc": "Custom useragent to use <b>(optional)</b>."
+                    },
+                    {
+                        "param": "method",
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                    },
+                    {
+                        "param": "postdata",
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.downloadFileAsync(\"http://www.website.com/file.zip\", \"ux0:/data/file.zip\")\n",
+                "group": "Network",
+                "description": "Download a file via HTTP protocol (asynchronous)."
+            },
+            "requestString": {
+                "params": [
+                    {
+                        "param": "url",
+                        "desc": "The url where to send the HTTP request."
+                    },
+                    {
+                        "param": "useragent",
+                        "desc": "Custom useragent to use <b>(optional)</b>."
+                    },
+                    {
+                        "param": "method",
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                    },
+                    {
+                        "param": "postdata",
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "string",
+                "example": "result = Network.requestString(\"http://www.website.com/file.txt\")\n",
+                "group": "Network",
+                "description": "Get an HTTP request result (synchronous)."
+            },
+            "requestStringAsync": {
+                "params": [
+                    {
+                        "param": "url",
+                        "desc": "The url where to send the HTTP request."
+                    },
+                    {
+                        "param": "useragent",
+                        "desc": "Custom useragent to use <b>(optional)</b>."
+                    },
+                    {
+                        "param": "method",
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                    },
+                    {
+                        "param": "postdata",
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Network.requestStringAsync(\"http://www.website.com/file.txt\")\n",
+                "group": "Network",
+                "description": "Get an HTTP request result (asynchronous)."
+            }
+        },
+        "System": {
+            "openFile": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename to be opened."
+                    },
+                    {
+                        "param": "flags",
+                        "desc": "An attribute flag."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "handle = System.openFile(\"ux0:/data/file.txt\", FREAD)\n",
+                "group": "System",
+                "description": "Open a file."
+            },
+            "writeFile": {
+                "params": [
+                    {
+                        "param": "handle",
+                        "desc": "A file handle opened with ::System.openFile."
+                    },
+                    {
+                        "param": "text",
+                        "desc": "The text to write on file."
+                    },
+                    {
+                        "param": "len",
+                        "desc": "Length of the text."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.writeFile(handle, \"Test\", 4)\n",
+                "group": "System",
+                "description": "Write into an opened file."
+            },
+            "readFile": {
+                "params": [
+                    {
+                        "param": "handle",
+                        "desc": "A file handle opened with ::System.openFile."
+                    },
+                    {
+                        "param": "len",
+                        "desc": "Length of the string to read in bytes."
+                    }
+                ],
+                "returns": null,
+                "return_type": "string",
+                "example": "text = System.readFile(handle, 4)\n",
+                "group": "System",
+                "description": "Read from an opened file."
+            },
+            "seekFile": {
+                "params": [
+                    {
+                        "param": "handle",
+                        "desc": "A file handle opened with ::System.openFile."
+                    },
+                    {
+                        "param": "pos",
+                        "desc": "Position to set."
+                    },
+                    {
+                        "param": "seek",
+                        "desc": "Start point for the position."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.seekFile(handle, 0, END)\n",
+                "group": "System",
+                "description": "Move cursor of an opened file."
+            },
+            "sizeFile": {
+                "params": [
+                    {
+                        "param": "handle",
+                        "desc": "A file handle opened with ::System.openFile."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "size = System.sizeFile(handle)\n",
+                "group": "System",
+                "description": "Calculate size of an opened file in bytes."
+            },
+            "statFile": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename to be checked."
+                    }
+                ],
+                "returns": null,
+                "return_type": "table",
+                "example": "info = System.statFile(\"ux0:/data/file.txt\")\ncreation_year = info.creation_time.year\nlast_access_year = info.access_time.year\nlast_modification_year = info.mod_time.year\nis_directory = info.directory\nfilesize = info.size\n",
+                "group": "System",
+                "description": "Extract info of a file/directory."
+            },
+            "statOpenedFile": {
+                "params": [
+                    {
+                        "param": "handle",
+                        "desc": "A file handle opened with ::System.openFile."
+                    }
+                ],
+                "returns": null,
+                "return_type": "table",
+                "example": "info = System.statOpenedFile(handle)\ncreation_year = info.creation_time.year\nlast_access_year = info.access_time.year\nlast_modification_year = info.mod_time.year\nis_directory = info.directory\nfilesize = info.size\n",
+                "group": "System",
+                "description": "Extract info of an opened file."
+            },
+            "closeFile": {
+                "params": [
+                    {
+                        "param": "handle",
+                        "desc": "A file handle opened with ::System.openFile."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.closeFile(handle)\n",
+                "group": "System",
+                "description": "Close an opened file."
+            },
+            "doesFileExist": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename to be checked."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if System.doesFileExist(\"ux0:/data/file.txt\") then\nhandle = System.openFile(\"ux0:/data/file.txt\", FREAD)\nend\n",
+                "group": "System",
+                "description": "Check if a file exists."
+            },
+            "doesDirExist": {
+                "params": [
+                    {
+                        "param": "dirname",
+                        "desc": "Folder name to be checked."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if System.doesDirExist(\"ux0:/data\") then\nlist = System.listDirectory(\"ux0:/data\")\nend\n",
+                "group": "System",
+                "description": "Check if a folder exists."
+            },
+            "rename": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename to be renamed."
+                    },
+                    {
+                        "param": "filename2",
+                        "desc": "New filename."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.rename(\"ux0:/data/old.txt\", \"ux0:/data/new.txt\")\n",
+                "group": "System",
+                "description": "Rename or move a file."
+            },
+            "copyFile": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename to be copied."
+                    },
+                    {
+                        "param": "filename2",
+                        "desc": "New filename."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.copyFile(\"ux0:/data/old.txt\", \"ux0:/data/new.txt\")\n",
+                "group": "System",
+                "description": "Copy a file."
+            },
+            "deleteFile": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename to be removed."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.deleteFile(\"ux0:/data/file.txt\")\n",
+                "group": "System",
+                "description": "Delete a file."
+            },
+            "deleteDirectory": {
+                "params": [
+                    {
+                        "param": "dirname",
+                        "desc": "Path to be removed."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.deleteDirectory(\"ux0:/data/dir\")\n",
+                "group": "System",
+                "description": "Delete a directory."
+            },
+            "createDirectory": {
+                "params": [
+                    {
+                        "param": "dirname",
+                        "desc": "Path to be created."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.createDirectory(\"ux0:/data/dir\")\n",
+                "group": "System",
+                "description": "Create a new directory."
+            },
+            "listDirectory": {
+                "params": [
+                    {
+                        "param": "dirname",
+                        "desc": "Path to be listed."
+                    }
+                ],
+                "returns": null,
+                "return_type": "table",
+                "example": "files = System.listDirectory(\"ux0:/data/dir\")\nname = files[0].name\nsize = files[0].size\nis_directory = files[0].directory\n",
+                "group": "System",
+                "description": "List a directory contents."
+            },
+            "exit": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.exit()\n",
+                "group": "System",
+                "description": "Close the interpreter."
+            },
+            "getFirmware": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "fw = System.getFirmware()\n",
+                "group": "System",
+                "description": "Get unspoofed system firmware version."
+            },
+            "getSpoofedFirmware": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "fw = System.getSpoofedFirmware()\n",
+                "group": "System",
+                "description": "Get spoofed system firmware version."
+            },
+            "getFactoryFirmware": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "fw = System.getFactoryFirmware()\n",
+                "group": "System",
+                "description": "Get factory system firmware version."
+            },
+            "wait": {
+                "params": [
+                    {
+                        "param": "msecs",
+                        "desc": "Time to wait in microseconds."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.wait(1000000)\n",
+                "group": "System",
+                "description": "Sleep the application for a certain time."
+            },
+            "isBatteryCharging": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if System.isBatteryCharging() then\nGraphics.debugPrint(0, 0, \"Battery is charging\", Color.new(255, 255, 255))\nend\n",
+                "group": "System",
+                "description": "Check if the battery is under charge."
+            },
+            "getBatteryPercentage": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "life = System.getBatteryPercentage()\n",
+                "group": "System",
+                "description": "Get current battery life percentage."
+            },
+            "getBatteryLife": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "life = System.getBatteryLife()\n",
+                "group": "System",
+                "description": "Get current battery life."
+            },
+            "getBatteryCapacity": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "cap = System.getBatteryCapacity()\n",
+                "group": "System",
+                "description": "Get current battery capacity."
+            },
+            "getBatteryFullCapacity": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "cap_max = System.getBatteryFullCapacity()\n",
+                "group": "System",
+                "description": "Get full battery capacity."
+            },
+            "getBatteryTemp": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "temp = System.getBatteryTemp()\n",
+                "group": "System",
+                "description": "Get battery temperature."
+            },
+            "getBatteryVolt": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "voltage = System.getBatteryVolt()\n",
+                "group": "System",
+                "description": "Get battery voltage."
+            },
+            "getBatteryHealth": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "soh = System.getBatteryHealth()\n",
+                "group": "System",
+                "description": "Get battery state of health percentage."
+            },
+            "getBatteryCycles": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "cycles = System.getBatteryCycles()\n",
+                "group": "System",
+                "description": "Get battery cycles count."
+            },
+            "disableTimer": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer feature to disable."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.disableTimer(SCREEN_DIMMING_TIMER)\n",
+                "group": "System",
+                "description": "Disable a power management timer feature."
+            },
+            "enableTimer": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer feature to enable."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.enableTimer(SCREEN_DIMMING_TIMER)\n",
+                "group": "System",
+                "description": "Enable a power management timer feature."
+            },
+            "resetTimer": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer feature to reset."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.resetTimer(SCREEN_DIMMING_TIMER)\n",
+                "group": "System",
+                "description": "Reset a power management timer feature."
+            },
+            "setCpuSpeed": {
+                "params": [
+                    {
+                        "param": "clock",
+                        "desc": "The clock to set in Mhz."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.setCpuSpeed(444)\n",
+                "group": "System",
+                "description": "Set CPU clock speed."
+            },
+            "setGpuSpeed": {
+                "params": [
+                    {
+                        "param": "clock",
+                        "desc": "The clock to set in Mhz."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.setGpuSpeed(222)\n",
+                "group": "System",
+                "description": "Set GPU clock speed."
+            },
+            "setBusSpeed": {
+                "params": [
+                    {
+                        "param": "clock",
+                        "desc": "The clock to set in Mhz."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.setGpuXbarSpeed(166)\n",
+                "group": "System",
+                "description": "Set GPU Crossbar clock speed."
+            },
+            "getCpuSpeed": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "clock = System.getCpuSpeed()\n",
+                "group": "System",
+                "description": "Get CPU clock speed."
+            },
+            "getGpuSpeed": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "clock = System.getGpuSpeed()\n",
+                "group": "System",
+                "description": "Get GPU clock speed."
+            },
+            "getBusSpeed": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "clock = System.getBusSpeed()\n",
+                "group": "System",
+                "description": "Get BUS clock speed."
+            },
+            "getGpuXbarSpeed": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "clock = System.getGpuXbarSpeed()\n",
+                "group": "System",
+                "description": "Get GPU Crossbar clock speed."
+            },
+            "launchEboot": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The file to start."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.launchEboot(\"app0:/updater.bin\")\n",
+                "group": "System",
+                "description": "Launches a binary file."
+            },
+            "launchApp": {
+                "params": [
+                    {
+                        "param": "titleid",
+                        "desc": "The title ID of the application to start."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.launchApp(\"MLCL00001\")\n",
+                "group": "System",
+                "description": "Launches an installed application."
+            },
+            "getFreeSpace": {
+                "params": [
+                    {
+                        "param": "dev",
+                        "desc": "The device name."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.debugPrint(5, 5, System.getFreeSpace(\"ux0:\") .. \"/\" .. System.getTotalSpace(\"ux0:\"), Color.new(255, 255, 255))\n",
+                "group": "System",
+                "description": "Get free space for a given device."
+            },
+            "getTotalSpace": {
+                "params": [
+                    {
+                        "param": "dev",
+                        "desc": "The device name."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.debugPrint(5, 5, System.getFreeSpace(\"ux0:\") .. \"/\" .. System.getTotalSpace(\"ux0:\"), Color.new(255, 255, 255))\n",
+                "group": "System",
+                "description": "Get total space for a given device."
+            },
+            "getTime": {
+                "params": [],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "h,m,s = System.getTime()\n",
+                "group": "System",
+                "description": "Get console time."
+            },
+            "getDate": {
+                "params": [],
+                "returns": null,
+                "return_type": "int[]",
+                "example": "day_num, d, m, y = System.getDate()\nif day_num == 1 then\nday_name = \"Monday\"\nend\n",
+                "group": "System",
+                "description": "Get console date."
+            },
+            "getUsername": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "username = System.getUsername()\n",
+                "group": "System",
+                "description": "Get account username."
+            },
+            "getLanguage": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "lang = System.getLanguage()\n",
+                "group": "System",
+                "description": "Get console language."
+            },
+            "getModel": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "model = System.getModel()\n",
+                "group": "System",
+                "description": "Get console model."
+            },
+            "getPsId": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "psid = System.getPsId()\n",
+                "group": "System",
+                "description": "Get console unique PsId."
+            },
+            "getTitle": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "title = System.getTitle()\n",
+                "group": "System",
+                "description": "Get running application title."
+            },
+            "getTitleID": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "title_id = System.getTitleID()\n",
+                "group": "System",
+                "description": "Get running application title ID."
+            },
+            "extractSfo": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename to extract info from."
+                    }
+                ],
+                "returns": null,
+                "return_type": "table",
+                "example": "info = System.extractSfo(\"app0:/sce_sys/param.sfo\")\napp_version = info.version\napp_title = info.title\napp_short_title = info.short_title\napp_category = info.category\napp_titleid = info.titleid\n",
+                "group": "System",
+                "description": "Extract info from an SFO file."
+            },
+            "extractPbp": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename to extract."
+                    },
+                    {
+                        "param": "dirname",
+                        "desc": "The path where to extract files."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.extractPbp(\"app0:/files.zip\", \"ux0:/data/app_files\")\n",
+                "group": "System",
+                "description": "Extract a PBP file (synchronous)."
+            },
+            "extractZip": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename to extract."
+                    },
+                    {
+                        "param": "dirname",
+                        "desc": "The path where to extract files."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.extractZip(\"app0:/files.zip\", \"ux0:/data/app_files\")\n",
+                "group": "System",
+                "description": "Extract a ZIP file (synchronous)."
+            },
+            "extractFromZip": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the ZIP archive."
+                    },
+                    {
+                        "param": "file",
+                        "desc": "The file to extract."
+                    },
+                    {
+                        "param": "destname",
+                        "desc": "The filename where to extract file."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.extractFromZip(\"app0:/files.zip\", \"image.jpg\", \"ux0:/data/app_files/my_image.jpg\")\n",
+                "group": "System",
+                "description": "Extract a specific file from a ZIP file (synchronous)."
+            },
+            "extractZipAsync": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename to extract."
+                    },
+                    {
+                        "param": "dirname",
+                        "desc": "The path where to extract files."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.extractZipAsync(\"app0:/files.zip\", \"ux0:/data/app_files\")\n",
+                "group": "System",
+                "description": "Extract a ZIP file (asynchronous)."
+            },
+            "extractFromZipAsync": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the ZIP archive."
+                    },
+                    {
+                        "param": "file",
+                        "desc": "The file to extract."
+                    },
+                    {
+                        "param": "destname",
+                        "desc": "The filename where to extract file."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.extractFromZipAsync(\"app0:/files.zip\", \"image.jpg\", \"ux0:/data/app_files/my_image.jpg\")\n",
+                "group": "System",
+                "description": "Extract a specific file from a ZIP file (asynchronous)."
+            },
+            "compressZip": {
+                "params": [
+                    {
+                        "param": "path",
+                        "desc": "The filename or path to compress."
+                    },
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the resulting zip file."
+                    },
+                    {
+                        "param": "ratio",
+                        "desc": "The compression ratio to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.compressZip(\"app0:/sce_sys\", \"ux0:/data/file.zip\", 9)\n",
+                "group": "System",
+                "description": "Compress a file or a folder in a ZIP file (synchronous)."
+            },
+            "addToZip": {
+                "params": [
+                    {
+                        "param": "path",
+                        "desc": "The filename or path to compress."
+                    },
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the resulting zip file."
+                    },
+                    {
+                        "param": "parent",
+                        "desc": "The parent folder inside the zip file where to place the path."
+                    },
+                    {
+                        "param": "ratio",
+                        "desc": "The compression ratio to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.addToZip(\"app0:/sce_sys/icon0.png\", \"ux0:/data/file.zip\", \"sce_sys\", 9)\n",
+                "group": "System",
+                "description": "Add a file or a folder in a ZIP file (synchronous)."
+            },
+            "getAsyncState": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "while System.getAsyncState() == 0 do\nrunning = true\nend\nrunning = false\n",
+                "group": "System",
+                "description": "Get current state of an asynchronous task."
+            },
+            "getAsyncResult": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "if System.getAsyncState() == 1 then\nres = System.getAsyncResult()\nend\n",
+                "group": "System",
+                "description": "Get result from a finished asynchronous task."
+            },
+            "takeScreenshot": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the screenshot output."
+                    },
+                    {
+                        "param": "format",
+                        "desc": "The format to use for the output file <b>(optional)</b>."
+                    },
+                    {
+                        "param": "ratio",
+                        "desc": "Compression ratio for JPG compression <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.takeScreenshot(\"ux0:/data/shot.jpg\", FORMAT_JPG, 255)\n",
+                "group": "System",
+                "description": "Take a screenshot."
+            },
+            "executeUri": {
+                "params": [
+                    {
+                        "param": "uri",
+                        "desc": "URI to exec."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.executeUri(\"psgm:play?titleid=MLCL00001\")\n",
+                "group": "System",
+                "description": "Execute an URI call."
+            },
+            "reboot": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "System.reboot()\n",
+                "group": "System",
+                "description": "Reboot the console."
+            },
+            "shutdown": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "System.shutdown()\n",
+                "group": "System",
+                "description": "Shutdown the console."
+            },
+            "standby": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "System.standby()\n",
+                "group": "System",
+                "description": "Put the console in standby."
+            },
+            "isSafeMode": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if System.isSafeMode() then\nmode = \"safe\"\nend\n",
+                "group": "System",
+                "description": "Get if application is running in safe mode."
+            },
+            "setMessage": {
+                "params": [
+                    {
+                        "param": "text",
+                        "desc": "The text of the system message."
+                    },
+                    {
+                        "param": "progressbar",
+                        "desc": "Progressbar mode."
+                    },
+                    {
+                        "param": "buttons",
+                        "desc": "Buttons scheme to use <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.setMessage(\"Do you want to start this app?\", false, BUTTON_YES_NO)\n",
+                "group": "System",
+                "description": "Start a system message instance."
+            },
+            "getMessageState": {
+                "params": [],
+                "returns": null,
+                "return_type": "DlgState",
+                "example": "state = System.getMessageState()\n",
+                "group": "System",
+                "description": "Get current system message instance state."
+            },
+            "setMessageProgress": {
+                "params": [
+                    {
+                        "param": "progress",
+                        "desc": "Progress percentage."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.setMessageProgress(10)\n",
+                "group": "System",
+                "description": "Set current progress for the system message instance."
+            },
+            "setMessageProgMsg": {
+                "params": [
+                    {
+                        "param": "text",
+                        "desc": "Submessage text to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.setMessageProgMsg(\"10%%\")\n",
+                "group": "System",
+                "description": "Set a submessage for the system message instance."
+            },
+            "closeMessage": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.closeMessage()\n",
+                "group": "System",
+                "description": "Close the current system message instance."
+            },
+            "unmountPartition": {
+                "params": [
+                    {
+                        "param": "idx",
+                        "desc": "The index number of the partition."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.unmountPartition(0x300)\n",
+                "group": "System",
+                "description": "Unmount an already mounted partition."
+            },
+            "mountPartition": {
+                "params": [
+                    {
+                        "param": "idx",
+                        "desc": "The index number of the partition."
+                    },
+                    {
+                        "param": "perms",
+                        "desc": "Permissions to set for the mounted partition."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.mountPartition(0x300, READ_WRITE)\n",
+                "group": "System",
+                "description": "Mount an unmounted partition."
+            },
+            "installApp": {
+                "params": [
+                    {
+                        "param": "dir",
+                        "desc": "The path to the extracted app."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.installApp(\"ux0:/vitaQuake\")\n",
+                "group": "System",
+                "description": "Install an extracted app."
+            },
+            "uninstallApp": {
+                "params": [
+                    {
+                        "param": "titleid",
+                        "desc": "The titleid of the app to uninstall."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.uninstallApp(\"GTAVCECTY\")\n",
+                "group": "System",
+                "description": "Uninstall an installed app."
+            },
+            "doesAppExist": {
+                "params": [
+                    {
+                        "param": "titleid",
+                        "desc": "The titleid of the app to check."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if System.doesAppExist(\"GTAVCECTY\") then\nSystem.uninstallApp(\"GTAVCECTY\")\nend\n",
+                "group": "System",
+                "description": "Check if an app is installed."
+            },
+            "getBootParams": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "args = System.getBootParams()\n",
+                "group": "System",
+                "description": "Retrieve params used at app boot."
+            },
+            "loadUserPlugin": {
+                "params": [
+                    {
+                        "param": "path",
+                        "desc": "The path to the plugin to load."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "plug_id = System.loadUserPlugin(\"ux0:data/plugin.suprx\")\n",
+                "group": "System",
+                "description": "Load and start an user plugin."
+            },
+            "loadKernelPlugin": {
+                "params": [
+                    {
+                        "param": "path",
+                        "desc": "The path to the plugin to load."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "plug_id = System.loadKernelPlugin(\"ux0:data/plugin.skprx\")\n",
+                "group": "System",
+                "description": "Load and start a kernel plugin."
+            },
+            "unloadUserPlugin": {
+                "params": [
+                    {
+                        "param": "plug_id",
+                        "desc": "The module identifier for the plugin to unload."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.unloadKernelPlugin(plug_id)\n",
+                "group": "System",
+                "description": "Stop and unload a kernel plugin."
+            },
+            "unmountMountpoint": {
+                "params": [
+                    {
+                        "param": "mnt",
+                        "desc": "The mountpoint to unmount."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "System.unmountMountpoint(\"app0:\")\n",
+                "group": "System",
+                "description": "Unmount a virtual mountpoint."
+            }
+        },
+        "Video": {
+            "init": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.init()\n",
+                "group": "Video",
+                "description": "Init video sub-system."
+            },
+            "term": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.term()\n",
+                "group": "Video",
+                "description": "Terminate video sub-system."
+            },
+            "open": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filepath of the file to reproduce."
+                    },
+                    {
+                        "param": "loop",
+                        "desc": "If true, playback will loop <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.open(\"app0:/video.mp4\", false)\n",
+                "group": "Video",
+                "description": "Open an MP4 video file."
+            },
+            "close": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.close()\n",
+                "group": "Video",
+                "description": "Close the current video playback."
+            },
+            "getOutput": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "frame = Video.getOutput()\nif frame ~= 0 then\nGraphics.drawImage(0, 0, frame)\nend\n",
+                "group": "Video",
+                "description": "Get the current video frame as image."
+            },
+            "pause": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.pause()\n",
+                "group": "Video",
+                "description": "Pause current video playback."
+            },
+            "resume": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.resume()\n",
+                "group": "Video",
+                "description": "Resume current video playback."
+            },
+            "isPlaying": {
+                "params": [],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Video.isPlaying() then\nVideo.pause()\nend\n",
+                "group": "Video",
+                "description": "Get current playback state."
+            },
+            "setVolume": {
+                "params": [
+                    {
+                        "param": "volume",
+                        "desc": "Volume value to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.setVolume(100)\n",
+                "group": "Video",
+                "description": "Set internal volume for current video playback."
+            },
+            "getVolume": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "vol = Volume.getVolume()\n",
+                "group": "Video",
+                "description": "Get internal volume for current video playback."
+            },
+            "getTime": {
+                "params": [],
+                "returns": null,
+                "return_type": "number",
+                "example": "t = Volume.getTime()\n",
+                "group": "Video",
+                "description": "Get current time for current video playback."
+            },
+            "jumpToTime": {
+                "params": [
+                    {
+                        "param": "time",
+                        "desc": "The position in milliseconds where to jump in the video playback."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.jumpToTime(Video.getTime() + 5000)\n",
+                "group": "Video",
+                "description": "Jump to a specific position for current video playback."
+            },
+            "setPlayMode": {
+                "params": [
+                    {
+                        "param": "mode",
+                        "desc": "The mode to set."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.setPlayMode(FAST_FORWARD_16X_MODE)\n",
+                "group": "Video",
+                "description": "Set play mode for current video playback."
+            },
+            "openSubs": {
+                "params": [
+                    {
+                        "param": "fname",
+                        "desc": "The file to use as subtitles source."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.openSubs(\"ux0:data/subtitles.vtt\")\n",
+                "group": "Video",
+                "description": "Open a subtitles file for current video playback."
+            },
+            "closeSubs": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Video.closeSubs()\n",
+                "group": "Video",
+                "description": "Close currently opened subtitles file."
+            },
+            "getSubs": {
+                "params": [],
+                "returns": null,
+                "return_type": "string",
+                "example": "Graphics.debugPrint(20, 20, Video.getSubs(), Color.new(255, 255, 255))\n",
+                "group": "Video",
+                "description": "Get current available subtitles for the video playback."
+            }
+        },
+        "Timer": {
+            "new": {
+                "params": [],
+                "returns": null,
+                "return_type": "int",
+                "example": "tmr = Timer.new()\n",
+                "group": "Timer",
+                "description": "Create a new system timer."
+            },
+            "getTime": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to get the time of."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "time = Timer.getTime(tmr)\n",
+                "group": "Timer",
+                "description": "Get a system timer time."
+            },
+            "setTime": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to set the time of."
+                    },
+                    {
+                        "param": "msecs",
+                        "desc": "The time to set in milliseconds."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Timer.setTime(tmr, 1000)\n",
+                "group": "Timer",
+                "description": "Set a system timer time."
+            },
+            "destroy": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to destroy."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Timer.destroy(tmr)\n",
+                "group": "Timer",
+                "description": "Destroy a system timer."
+            },
+            "pause": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to pause."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Timer.pause(tmr)\n",
+                "group": "Timer",
+                "description": "Pause a system timer."
+            },
+            "resume": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to resume."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Timer.resume(tmr)\n",
+                "group": "Timer",
+                "description": "Resume a system timer."
+            },
+            "reset": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to reset."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Timer.reset(tmr)\n",
+                "group": "Timer",
+                "description": "Reset a system timer time."
+            },
+            "isPlaying": {
+                "params": [
+                    {
+                        "param": "timer",
+                        "desc": "The timer ID to check."
+                    }
+                ],
+                "returns": null,
+                "return_type": "bool",
+                "example": "if Timer.isPlaying(tmr) then\nTimer.pause(tmr)\nend\n",
+                "group": "Timer",
+                "description": "Check if a system timer is in playing state."
+            }
+        },
+        "Graphics": {
+            "initBlend": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.initBlend()\n",
+                "group": "Graphics",
+                "description": "Initialize drawing phase."
+            },
+            "termBlend": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.termBlend()\n",
+                "group": "Graphics",
+                "description": "Terminate drawing phase."
+            },
+            "debugPrint": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the text position in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the text position in pixels."
+                    },
+                    {
+                        "param": "text",
+                        "desc": "Text to print."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.debugPrint(10, 10, \"Hello World\", Color.new(255, 255, 255))\n",
+                "group": "Graphics",
+                "description": "Print a text on screen using system font."
+            },
+            "drawPixel": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the pixel position in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the pixel position in pixels."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color)."
+                    },
+                    {
+                        "param": "image",
+                        "desc": "Image to draw on <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawPixel(5, 5, Color.new(15, 255, 200))\n",
+                "group": "Graphics",
+                "description": "Draw a pixel."
+            },
+            "getPixel": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the pixel."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the pixel."
+                    },
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "pixel_color = Graphics.getPixel(5, 25, img)\n",
+                "group": "Graphics",
+                "description": "Get a pixel color from a loaded image."
+            },
+            "drawLine": {
+                "params": [
+                    {
+                        "param": "x1",
+                        "desc": "Starting X coordinate of the line in pixels."
+                    },
+                    {
+                        "param": "x2",
+                        "desc": "Ending X coordinate of the line in pixels."
+                    },
+                    {
+                        "param": "y1",
+                        "desc": "Starting Y coordinate of the line in pixels."
+                    },
+                    {
+                        "param": "y2",
+                        "desc": "Ending Y coordinate of the line in pixels."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawLine(10, 25, 100, 250, Color.new(25, 200, 120))\n",
+                "group": "Graphics",
+                "description": "Draw a line."
+            },
+            "fillRect": {
+                "params": [
+                    {
+                        "param": "x1",
+                        "desc": "Starting X coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "x2",
+                        "desc": "Ending X coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "y1",
+                        "desc": "Starting Y coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "y2",
+                        "desc": "Ending Y coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.fillRect(10, 25, 100, 250, Color.new(25, 200, 120))\n",
+                "group": "Graphics",
+                "description": "Draw a rectangle."
+            },
+            "fillEmptyRect": {
+                "params": [
+                    {
+                        "param": "x1",
+                        "desc": "Starting X coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "x2",
+                        "desc": "Ending X coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "y1",
+                        "desc": "Starting Y coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "y2",
+                        "desc": "Ending Y coordinate of the rectangle in pixels."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.fillEmptyRect(10, 25, 100, 250, Color.new(25, 200, 120))\n",
+                "group": "Graphics",
+                "description": "Draw an empty rectangle."
+            },
+            "fillCircle": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the circle in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the circle in pixels."
+                    },
+                    {
+                        "param": "rad",
+                        "desc": "Radius size of the circle."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color)."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.fillCircle(10, 25, 1.0, Color.new(25, 200, 120))\n",
+                "group": "Graphics",
+                "description": "Draw a circle."
+            },
+            "createImage": {
+                "params": [
+                    {
+                        "param": "width",
+                        "desc": "Image width."
+                    },
+                    {
+                        "param": "height",
+                        "desc": "Image height."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "A valid color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "img = Graphics.createImage(Color.new(25, 200, 120))\n",
+                "group": "Graphics",
+                "description": "Create an empty image."
+            },
+            "loadImage": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Name of the file to open."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "img = Graphics.loadImage(\"app0:/image.jpg\")\n",
+                "group": "Graphics",
+                "description": "Load a .png/.jpg/.bmp image."
+            },
+            "saveImage": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "filename",
+                        "desc": "The filename of the screenshot output."
+                    },
+                    {
+                        "param": "format",
+                        "desc": "The format to use for the output file <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.saveImage(img, \"ux0:/data/image.png\", FORMAT_PNG)\n",
+                "group": "Graphics",
+                "description": "Save a loaded image to a .png/.bmp image."
+            },
+            "loadImageAsync": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Name of the file to open."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.loadImageAsync(\"app0:/image.jpg\")\nwhile System.getAsyncState() == 0 do\n\nend\nimg = System.getAsyncResult()\n",
+                "group": "Graphics",
+                "description": "Load a .png/.jpg/.bmp image (asynchronous)."
+            },
+            "loadAnimatedImage": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Name of the file to open."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "img = Graphics.loadAnimatedImage(\"app0:/image.gif\")\n",
+                "group": "Graphics",
+                "description": "Load a .gif animated image."
+            },
+            "getImageFramesNum": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "img = Graphics.loadAnimatedImage(\"app0:/image.gif\")\nframes = Graphics.getImageFramesNum(img)\n",
+                "group": "Graphics",
+                "description": "Gets the number of frames of a loaded animated image."
+            },
+            "setImageFrame": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "frame",
+                        "desc": "The frame to set as active."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "img = Graphics.loadAnimatedImage(\"app0:/image.gif\")\nGraphics.setImageFrame(img, 8)\n",
+                "group": "Graphics",
+                "description": "Set current active frame for a loaded animated image."
+            },
+            "freeImage": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.freeImage(img)\n",
+                "group": "Graphics",
+                "description": "Free a loaded image."
+            },
+            "setImageFilters": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "min_filter",
+                        "desc": "Min filter to use."
+                    },
+                    {
+                        "param": "mag_filter",
+                        "desc": "Mag filter to use."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.setImageFilters(img, FILTER_LINEAR, FILTER_LINEAR)\n",
+                "group": "Graphics",
+                "description": "Set filters to use for a given image."
+            },
+            "getImageWidth": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "width = Graphics.getImageWidth(img)\n",
+                "group": "Graphics",
+                "description": "Get an image width."
+            },
+            "getImageHeight": {
+                "params": [
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "height = Graphics.getImageHeight(img)\n",
+                "group": "Graphics",
+                "description": "Get an image height."
+            },
+            "drawImage": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawImage(50, 100, img)\n",
+                "group": "Graphics",
+                "description": "Draw an image."
+            },
+            "drawRotateImage": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "rad",
+                        "desc": "Rotation radius."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawRotateImage(50, 100, img, 1.0)\n",
+                "group": "Graphics",
+                "description": "Draw a rotated image."
+            },
+            "drawScaleImage": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "x_scale",
+                        "desc": "Scale value for X parameter."
+                    },
+                    {
+                        "param": "y_scale",
+                        "desc": "Scale value for Y parameter."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawScaleImage(50, 100, img, 0.5, 0.5)\n",
+                "group": "Graphics",
+                "description": "Draw a scaled image."
+            },
+            "drawPartialImage": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "x_start",
+                        "desc": "Image X coordinate for the partial drawing."
+                    },
+                    {
+                        "param": "y_start",
+                        "desc": "Image Y coordinate for the partial drawing."
+                    },
+                    {
+                        "param": "width",
+                        "desc": "Partial drawing width."
+                    },
+                    {
+                        "param": "height",
+                        "desc": "Partial drawing height."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawPartialImage(50, 100, img, 20, 20, 100, 100)\n",
+                "group": "Graphics",
+                "description": "Draw a part of an image."
+            },
+            "drawImageExtended": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the image in pixels."
+                    },
+                    {
+                        "param": "img",
+                        "desc": "A valid image ID."
+                    },
+                    {
+                        "param": "x_start",
+                        "desc": "Image X coordinate for the partial drawing."
+                    },
+                    {
+                        "param": "y_start",
+                        "desc": "Image Y coordinate for the partial drawing."
+                    },
+                    {
+                        "param": "width",
+                        "desc": "Partial drawing width."
+                    },
+                    {
+                        "param": "height",
+                        "desc": "Partial drawing height."
+                    },
+                    {
+                        "param": "rad",
+                        "desc": "Rotation radius."
+                    },
+                    {
+                        "param": "x_scale",
+                        "desc": "Scale value for X parameter."
+                    },
+                    {
+                        "param": "y_scale",
+                        "desc": "Scale value for Y parameter."
+                    },
+                    {
+                        "param": "color",
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.drawImageExtended(50, 100, img, 20, 20, 100, 100, 1.0, 0.5, 0.5)\n",
+                "group": "Graphics",
+                "description": "Draw an image with several effects."
+            },
+            "initRescaler": {
+                "params": [
+                    {
+                        "param": "x",
+                        "desc": "X coordinate of the rescaler output."
+                    },
+                    {
+                        "param": "y",
+                        "desc": "Y coordinate of the rescaler output."
+                    },
+                    {
+                        "param": "x_scale",
+                        "desc": "Scale value for X parameter."
+                    },
+                    {
+                        "param": "y_scale",
+                        "desc": "Scale value for Y parameter."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.initRescaler(0, 0, 2.0, 2.0)\n",
+                "group": "Graphics",
+                "description": "Initialize a rescaler."
+            },
+            "termRescaler": {
+                "params": [],
+                "returns": null,
+                "return_type": "void",
+                "example": "Graphics.termRescaler()\n",
+                "group": "Graphics",
+                "description": "Terminate a rescaler."
+            }
+        },
+        "Registry": {
+            "getKey": {
+                "params": [
+                    {
+                        "param": "category",
+                        "desc": "The category from which to take the value."
+                    },
+                    {
+                        "param": "name",
+                        "desc": "The key related to the value."
+                    },
+                    {
+                        "param": "type",
+                        "desc": "The type of the value."
+                    }
+                ],
+                "returns": null,
+                "return_type": "auto",
+                "example": "flight_mode = Registry.getKey(\"/CONFIG/SYSTEM/\", \"flight_mode\", TYPE_NUMBER)\n",
+                "group": "Registry",
+                "description": "Get a value for a given key."
+            },
+            "getSysKey": {
+                "params": [
+                    {
+                        "param": "id",
+                        "desc": "The identifier of the key."
+                    },
+                    {
+                        "param": "type",
+                        "desc": "The type of the value."
+                    }
+                ],
+                "returns": null,
+                "return_type": "auto",
+                "example": "val = Registry.getSysKey(0, TYPE_NUMBER)\n",
+                "group": "Registry",
+                "description": "Get a value for a given system key."
+            },
+            "setKey": {
+                "params": [
+                    {
+                        "param": "category",
+                        "desc": "The category from which to take the value."
+                    },
+                    {
+                        "param": "name",
+                        "desc": "The key related to the value."
+                    },
+                    {
+                        "param": "type",
+                        "desc": "The type of the value."
+                    },
+                    {
+                        "param": "value",
+                        "desc": "The value to set."
+                    },
+                    {
+                        "param": "size",
+                        "desc": "The size of the value <b>(optional)</b>."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "flight_mode = Registry.setKey(\"/CONFIG/SYSTEM/\", \"flight_mode\", TYPE_NUMBER, 1)\n",
+                "group": "Registry",
+                "description": "Set a value for a given key."
+            }
+        },
+        "Database": {
+            "open": {
+                "params": [
+                    {
+                        "param": "filename",
+                        "desc": "Filename of the database to open."
+                    }
+                ],
+                "returns": null,
+                "return_type": "int",
+                "example": "db = Database.open(\"ur0:shell/db/app.db\")\n",
+                "group": "Database",
+                "description": "Open/Create an SQLite database."
+            },
+            "close": {
+                "params": [
+                    {
+                        "param": "db",
+                        "desc": "A valid database handle."
+                    }
+                ],
+                "returns": null,
+                "return_type": "void",
+                "example": "Database.close(db)\n",
+                "group": "Database",
+                "description": "Close an opened database"
+            },
+            "execQuery": {
+                "params": [
+                    {
+                        "param": "db",
+                        "desc": "A valid database handle."
+                    },
+                    {
+                        "param": "query",
+                        "desc": "An SQL query to execute."
+                    }
+                ],
+                "returns": null,
+                "return_type": "table",
+                "example": "results = Database.execQuery(db, \"SELECT columnName FROM tableName\")\nGraphics.debugPrint(0, 0, results[1].columnName, Color.new(255, 255, 255))\n",
+                "group": "Database",
+                "description": "Execute a query."
+            }
+        }
+    },
+    "enums": {
+        "ShutterId": {
+            "params": [
+                {
+                    "param": "IMAGE_CAPTURE",
+                    "desc": "Image capture shutter sound"
+                },
+                {
+                    "param": "VIDEO_CAPTURE_START",
+                    "desc": "Video record start shutter sound"
+                },
+                {
+                    "param": "VIDEO_CAPTURE_END",
+                    "desc": "Video record end shutter sound"
+                }
+            ],
+            "desc": "Module that handles audio features."
+        },
+        "GuiTheme": {
+            "params": [
+                {
+                    "param": "DARK_THEME",
+                    "desc": "Dark Theme."
+                },
+                {
+                    "param": "LIGHT_THEME",
+                    "desc": "Light Theme."
+                },
+                {
+                    "param": "CLASSIC_THEME",
+                    "desc": "Classic Theme"
+                }
+            ],
+            "desc": "Module that handles 2D GUI development through dear ImGui wrapper."
+        },
+        "WinFlags": {
+            "params": [
+                {
+                    "param": "FLAG_NONE",
+                    "desc": "No flags."
+                },
+                {
+                    "param": "FLAG_NO_COLLAPSE",
+                    "desc": "The window can't be collapsed."
+                },
+                {
+                    "param": "FLAG_NO_MOVE",
+                    "desc": "The window can't be moved."
+                },
+                {
+                    "param": "FLAG_NO_RESIZE",
+                    "desc": "The window can't be resized."
+                },
+                {
+                    "param": "FLAG_NO_SCROLLBAR",
+                    "desc": "The window has no vertical scrollbar."
+                },
+                {
+                    "param": "FLAG_NO_TITLEBAR",
+                    "desc": "The window doesn't show a label."
+                },
+                {
+                    "param": "FLAG_HORIZONTAL_SCROLLBAR",
+                    "desc": "The window has an horizontal scrollbar."
+                }
+            ],
+            "desc": "Window flags to use with ::Gui.initWindow."
+        },
+        "ConfigMode": {
+            "params": [
+                {
+                    "param": "SET_ONCE",
+                    "desc": "The function is executed only once."
+                },
+                {
+                    "param": "SET_ALWAYS",
+                    "desc": "The function is executed at every frame."
+                }
+            ],
+            "desc": "Function mode to alter frequency of execution."
+        },
+        "NetProtocol": {
+            "params": [
+                {
+                    "param": "TCP_SOCKET",
+                    "desc": "TCP protocol"
+                },
+                {
+                    "param": "UDP_SOCKET",
+                    "desc": "UDP protocol"
+                }
+            ],
+            "desc": "Module that handles network sockets."
+        },
+        "KeyMode": {
+            "params": [
+                {
+                    "param": "MODE_TEXT",
+                    "desc": "Text mode"
+                },
+                {
+                    "param": "MODE_PASSWORD",
+                    "desc": "Password mode"
+                }
+            ],
+            "desc": "Module that handles system keyboard."
+        },
+        "KeyType": {
+            "params": [
+                {
+                    "param": "TYPE_DEFAULT",
+                    "desc": "Default type"
+                },
+                {
+                    "param": "TYPE_LATIN",
+                    "desc": "Latin encode type"
+                },
+                {
+                    "param": "TYPE_NUMBER",
+                    "desc": "Basic number type"
+                },
+                {
+                    "param": "TYPE_NUMBER_EXT",
+                    "desc": "Extended number type"
+                }
+            ],
+            "desc": "Keyboard types to use with Keyboard.start."
+        },
+        "KeyOption": {
+            "params": [
+                {
+                    "param": "OPT_MULTILINE",
+                    "desc": "Multiline keyboard"
+                },
+                {
+                    "param": "OPT_NO_AUTOCAP",
+                    "desc": "Disabled auto-cap on first letter"
+                },
+                {
+                    "param": "OPT_NO_ASSISTANCE",
+                    "desc": "Disabled word assistant"
+                }
+            ],
+            "desc": "Optional keyboard features usable."
+        },
+        "DevType": {
+            "params": [
+                {
+                    "param": "UNPAIRED_DEV",
+                    "desc": "Unpaired device"
+                },
+                {
+                    "param": "VITA_DEV",
+                    "desc": "PSVITA controller device"
+                },
+                {
+                    "param": "VIRTUAL_DEV",
+                    "desc": "Virtual controller device"
+                },
+                {
+                    "param": "DS3_DEV",
+                    "desc": "Dualshock 3 device"
+                },
+                {
+                    "param": "DS4_DEV",
+                    "desc": "Dualshock 4 device"
+                }
+            ],
+            "desc": "Module that handles physical user input systems."
+        },
+        "Ctrl": {
+            "params": [
+                {
+                    "param": "SCE_CTRL_UP",
+                    "desc": "Digital Up button"
+                },
+                {
+                    "param": "SCE_CTRL_DOWN",
+                    "desc": "Digital Down button"
+                },
+                {
+                    "param": "SCE_CTRL_LEFT",
+                    "desc": "Digital Left button"
+                },
+                {
+                    "param": "SCE_CTRL_RIGHT",
+                    "desc": "Digital Right button"
+                },
+                {
+                    "param": "SCE_CTRL_CROSS",
+                    "desc": "Cross button"
+                },
+                {
+                    "param": "SCE_CTRL_CIRCLE",
+                    "desc": "Circle button"
+                },
+                {
+                    "param": "SCE_CTRL_SQUARE",
+                    "desc": "Square button"
+                },
+                {
+                    "param": "SCE_CTRL_TRIANGLE",
+                    "desc": "Triangle button"
+                },
+                {
+                    "param": "SCE_CTRL_LTRIGGER",
+                    "desc": "L Trigger button"
+                },
+                {
+                    "param": "SCE_CTRL_RTRIGGER",
+                    "desc": "R Trigger button"
+                },
+                {
+                    "param": "SCE_CTRL_START",
+                    "desc": "Start button"
+                },
+                {
+                    "param": "SCE_CTRL_SELECT",
+                    "desc": "Select button"
+                },
+                {
+                    "param": "SCE_CTRL_POWER",
+                    "desc": "Power button"
+                },
+                {
+                    "param": "SCE_CTRL_VOLUP",
+                    "desc": "Volume Up button"
+                },
+                {
+                    "param": "SCE_CTRL_VOLDOWN",
+                    "desc": "Volume Down button"
+                },
+                {
+                    "param": "SCE_CTRL_PSBUTTON",
+                    "desc": "PS button"
+                }
+            ],
+            "desc": "Available controls value."
+        },
+        "CameraType": {
+            "params": [
+                {
+                    "param": "INNER_CAM",
+                    "desc": "Front camera"
+                },
+                {
+                    "param": "OUTER_CAM",
+                    "desc": "Retro camera"
+                }
+            ],
+            "desc": "Module that handles photo cameras hardware."
+        },
+        "CameraRes": {
+            "params": [
+                {
+                    "param": "VGA_RES",
+                    "desc": "VGA (640x480) resolution"
+                },
+                {
+                    "param": "QVGA_RES",
+                    "desc": "QVGA (320x240) resolution"
+                },
+                {
+                    "param": "QQVGA_RES",
+                    "desc": "QQVGA (160x120) resolution"
+                },
+                {
+                    "param": "CIF_RES",
+                    "desc": "CIF (352x288) resolution"
+                },
+                {
+                    "param": "QCIF_RES",
+                    "desc": "QCIF (176x144) resolution"
+                },
+                {
+                    "param": "PSP_RES",
+                    "desc": "PSP (480x272) resolution"
+                },
+                {
+                    "param": "NGP_RES",
+                    "desc": "NGP (640x360) resolution"
+                }
+            ],
+            "desc": "Camera resolutions."
+        },
+        "CameraAntiFlick": {
+            "params": [
+                {
+                    "param": "ANTIFLICKER_AUTO",
+                    "desc": "Automatic Antiflicker"
+                },
+                {
+                    "param": "ANTIFLICKER_50HZ",
+                    "desc": "50Hz Antiflicker"
+                },
+                {
+                    "param": "ANTIFLICKER_60HZ",
+                    "desc": "60Hz Antiflicker"
+                }
+            ],
+            "desc": "Camera antiflicker modes."
+        },
+        "CameraISO": {
+            "params": [
+                {
+                    "param": "ISO_AUTO",
+                    "desc": "Automatic ISO speed mode"
+                },
+                {
+                    "param": "ISO_100",
+                    "desc": "100/21 ISO speed mode"
+                },
+                {
+                    "param": "ISO_200",
+                    "desc": "100/24 ISO speed mode"
+                },
+                {
+                    "param": "ISO_400",
+                    "desc": "100/27 ISO speed mode"
+                }
+            ],
+            "desc": "Camera ISO speed mode."
+        },
+        "CameraWB": {
+            "params": [
+                {
+                    "param": "WB_AUTO",
+                    "desc": "Automatic White Balance mode"
+                },
+                {
+                    "param": "WB_DAYLIGHT",
+                    "desc": "Daylight White Balance mode"
+                },
+                {
+                    "param": "WB_CWF",
+                    "desc": "Cool White Fluorescent mode"
+                },
+                {
+                    "param": "WB_SLSA",
+                    "desc": "Standard Light Source A mode"
+                }
+            ],
+            "desc": "Camera White Balance mode."
+        },
+        "CameraBacklight": {
+            "params": [
+                {
+                    "param": "BACKLIGHT_OFF",
+                    "desc": "Backlight disabled"
+                },
+                {
+                    "param": "BACKLIGHT_ON",
+                    "desc": "Backlight enabled"
+                }
+            ],
+            "desc": "Camera Backlight mode."
+        },
+        "CameraNightmode": {
+            "params": [
+                {
+                    "param": "NIGHTMODE_OFF",
+                    "desc": "Nightmode disabled"
+                },
+                {
+                    "param": "NIGHTMODE_LOW",
+                    "desc": "Nightmode for 10 lux or below"
+                },
+                {
+                    "param": "NIGHTMODE_MED",
+                    "desc": "Nightmode for 100 lux or below"
+                },
+                {
+                    "param": "NIGHTMODE_HIGH",
+                    "desc": "Nightmode for over 100 lux"
+                }
+            ],
+            "desc": "Camera Nightmode mode."
+        },
+        "CameraReverse": {
+            "params": [
+                {
+                    "param": "REVERSE_OFF",
+                    "desc": "Reverse mode disabled"
+                },
+                {
+                    "param": "REVERSE_MIRROR",
+                    "desc": "Mirror reverse mode"
+                },
+                {
+                    "param": "REVERSE_FLIP",
+                    "desc": "Flip reverse mode"
+                },
+                {
+                    "param": "REVERSE_BOTH",
+                    "desc": "Flip and Mirror reverse mode"
+                }
+            ],
+            "desc": "Camera Reverse mode."
+        },
+        "CameraEffect": {
+            "params": [
+                {
+                    "param": "EFFECT_NONE",
+                    "desc": "No effect"
+                },
+                {
+                    "param": "EFFECT_NEGATIVE",
+                    "desc": "Negative effect"
+                },
+                {
+                    "param": "EFFECT_BLACKWHITE",
+                    "desc": "Black and White effect"
+                },
+                {
+                    "param": "EFFECT_SEPIA",
+                    "desc": "Sepia effect"
+                },
+                {
+                    "param": "EFFECT_BLUE",
+                    "desc": "Blue Neon effect"
+                },
+                {
+                    "param": "EFFECT_RED",
+                    "desc": "Red Neon effect"
+                },
+                {
+                    "param": "EFFECT_GREEN",
+                    "desc": "Green Neon effect"
+                }
+            ],
+            "desc": "Camera effects."
+        },
+        "HTTPMethod": {
+            "params": [
+                {
+                    "param": "GET_METHOD",
+                    "desc": "GET method"
+                },
+                {
+                    "param": "POST_METHOD",
+                    "desc": "POST method"
+                },
+                {
+                    "param": "HEAD_METHOD",
+                    "desc": "HEAD method"
+                },
+                {
+                    "param": "OPTIONS_METHOD",
+                    "desc": "OPTIONS method"
+                },
+                {
+                    "param": "PUT_METHOD",
+                    "desc": "PUT method"
+                },
+                {
+                    "param": "DELETE_METHOD",
+                    "desc": "DELETE method"
+                },
+                {
+                    "param": "TRACE_METHOD",
+                    "desc": "TRACE method"
+                },
+                {
+                    "param": "CONNECT_METHOD",
+                    "desc": "CONNECT method"
+                }
+            ],
+            "desc": "Module that handles network and online features."
+        },
+        "IOFlags": {
+            "params": [
+                {
+                    "param": "FREAD",
+                    "desc": "Read attribute."
+                },
+                {
+                    "param": "FWRITE",
+                    "desc": "Write attribute."
+                },
+                {
+                    "param": "FRDWR",
+                    "desc": "Read/Write attribute."
+                },
+                {
+                    "param": "FCREATE",
+                    "desc": "Create/Write attribute."
+                }
+            ],
+            "desc": "Module that handles system related utilities."
+        },
+        "IOSeek": {
+            "params": [
+                {
+                    "param": "SET",
+                    "desc": "Starts from the begin of the file."
+                },
+                {
+                    "param": "CUR",
+                    "desc": "Starts from current position."
+                },
+                {
+                    "param": "END",
+                    "desc": "Starts from the end of the file."
+                }
+            ],
+            "desc": "I/O seek modes to use with ::System.seekFile."
+        },
+        "PowerTimer": {
+            "params": [
+                {
+                    "param": "AUTO_SUSPEND_TIMER",
+                    "desc": "Automatic console suspension."
+                },
+                {
+                    "param": "SCREEN_OFF_TIMER",
+                    "desc": "Automatic screen disabling."
+                },
+                {
+                    "param": "SCREEN_DIMMING_TIMER",
+                    "desc": "Automatic screen dimming."
+                }
+            ],
+            "desc": "Power management timer features."
+        },
+        "ImgFmt": {
+            "params": [
+                {
+                    "param": "FORMAT_BMP",
+                    "desc": "32bpp BMP format."
+                },
+                {
+                    "param": "FORMAT_JPG",
+                    "desc": "JPG format."
+                },
+                {
+                    "param": "FORMAT_PNG",
+                    "desc": "8bpp paletted PNG format."
+                }
+            ],
+            "desc": "Image format modes to use with ::System.takeScreenshot."
+        },
+        "BtnMode": {
+            "params": [
+                {
+                    "param": "BUTTON_NONE",
+                    "desc": "No buttons."
+                },
+                {
+                    "param": "BUTTON_OK",
+                    "desc": "OK button only."
+                },
+                {
+                    "param": "BUTTON_CANCEL",
+                    "desc": "CANCEL button only."
+                },
+                {
+                    "param": "BUTTON_OK_CANCEL",
+                    "desc": "OK and CANCEL buttons."
+                },
+                {
+                    "param": "BUTTON_YES_NO",
+                    "desc": "YES and NO buttons."
+                }
+            ],
+            "desc": "Buttons schemes for ::System.setMessage."
+        },
+        "DlgState": {
+            "params": [
+                {
+                    "param": "RUNNING",
+                    "desc": "Dialog running."
+                },
+                {
+                    "param": "FINISHED",
+                    "desc": "Dialog finished successfully."
+                },
+                {
+                    "param": "CANCELED",
+                    "desc": "Dialog canceled by user."
+                }
+            ],
+            "desc": "Dialog states for system messages and system keyboard."
+        },
+        "MntPerm": {
+            "params": [
+                {
+                    "param": "READ_ONLY",
+                    "desc": "Read only permissions."
+                },
+                {
+                    "param": "READ_WRITE",
+                    "desc": "Read/Write permissions."
+                }
+            ],
+            "desc": "Mount permissions for partition mounting."
+        },
+        "PlayMode": {
+            "params": [
+                {
+                    "param": "NORMAL_MODE",
+                    "desc": "Normal speed with audio"
+                },
+                {
+                    "param": "FAST_FORWARD_2X_MODE",
+                    "desc": "Fast Forward at 2x speed without audio"
+                },
+                {
+                    "param": "FAST_FORWARD_4X_MODE",
+                    "desc": "Fast Forward at 4x speed without audio"
+                },
+                {
+                    "param": "FAST_FORWARD_8X_MODE",
+                    "desc": "Fast Forward at 8x speed without audio"
+                },
+                {
+                    "param": "FAST_FORWARD_16X_MODE",
+                    "desc": "Fast Forward at 16x speed without audio"
+                },
+                {
+                    "param": "FAST_FORWARD_32X_MODE",
+                    "desc": "Fast Forward at 32x speed without audio"
+                }
+            ],
+            "desc": "Module that handles video files playback."
+        },
+        "ImageFilter": {
+            "params": [
+                {
+                    "param": "FILTER_POINT",
+                    "desc": "Point filter"
+                },
+                {
+                    "param": "FILTER_LINEAR",
+                    "desc": "Linear filter"
+                }
+            ],
+            "desc": "Module that handles 2D rendering."
+        },
+        "RegType": {
+            "params": [
+                {
+                    "param": "TYPE_STRING",
+                    "desc": "String type."
+                },
+                {
+                    "param": "TYPE_NUMBER",
+                    "desc": "Integer type."
+                },
+                {
+                    "param": "TYPE_BINARY",
+                    "desc": "Binary Type."
+                }
+            ],
+            "desc": "Module that handles system registry."
+        }
+    }
+}
