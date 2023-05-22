@@ -455,7 +455,7 @@ function Sound.term() end
 ---
 ---
 ---
----@param filename any Name of the file to open
+---@param filename string Name of the file to open
 ---@return integer
 function Sound.open(filename) end
 
@@ -464,8 +464,8 @@ function Sound.open(filename) end
 ---
 ---
 ---
----@param music any A valid sound ID.
----@param loop any If true, playback will loop <b>(optional)</b>.
+---@param music integer A valid sound ID.
+---@param loop? boolean If true, playback will loop <b>(optional)</b>.
 ---@return nil
 function Sound.play(music, loop) end
 
@@ -474,7 +474,7 @@ function Sound.play(music, loop) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return nil
 function Sound.pause(music) end
 
@@ -483,7 +483,7 @@ function Sound.pause(music) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return nil
 function Sound.resume(music) end
 
@@ -492,7 +492,7 @@ function Sound.resume(music) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return nil
 function Sound.close(music) end
 
@@ -501,7 +501,7 @@ function Sound.close(music) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return boolean
 function Sound.isPlaying(music) end
 
@@ -510,8 +510,8 @@ function Sound.isPlaying(music) end
 ---
 ---
 ---
----@param music any A valid sound ID.
----@param volume any Volume value to set.
+---@param music integer A valid sound ID.
+---@param volume integer Volume value to set.
 ---@return nil
 function Sound.setVolume(music, volume) end
 
@@ -520,7 +520,7 @@ function Sound.setVolume(music, volume) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return integer
 function Sound.getVolume(music) end
 
@@ -529,7 +529,7 @@ function Sound.getVolume(music) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return string
 function Sound.getTitle(music) end
 
@@ -538,7 +538,7 @@ function Sound.getTitle(music) end
 ---
 ---
 ---
----@param music any A valid sound ID.
+---@param music integer A valid sound ID.
 ---@return string
 function Sound.getAuthor(music) end
 
@@ -547,7 +547,7 @@ function Sound.getAuthor(music) end
 ---
 ---
 ---
----@param id any A valid shutter sound ID.
+---@param id ShutterId A valid shutter sound ID.
 ---@return nil
 function Sound.playShutter(id) end
 
@@ -558,10 +558,10 @@ Color = {}
 ---
 ---
 ---
----@param r any R channel value.
----@param g any G channel value.
----@param b any B channel value.
----@param a any A channel value <B>(optional)</B>.
+---@param r integer R channel value.
+---@param g integer G channel value.
+---@param b integer B channel value.
+---@param a integer A channel value <B>(optional)</B>.
 ---@return integer
 function Color.new(r, g, b, a) end
 
@@ -570,7 +570,7 @@ function Color.new(r, g, b, a) end
 ---
 ---
 ---
----@param clr any A color created with ::Color.new.
+---@param clr integer A color created with ::Color.new.
 ---@return integer
 function Color.getR(clr) end
 
@@ -579,7 +579,7 @@ function Color.getR(clr) end
 ---
 ---
 ---
----@param clr any A color created with ::Color.new.
+---@param clr integer A color created with ::Color.new.
 ---@return integer
 function Color.getG(clr) end
 
@@ -588,7 +588,7 @@ function Color.getG(clr) end
 ---
 ---
 ---
----@param clr any A color created with ::Color.new.
+---@param clr integer A color created with ::Color.new.
 ---@return integer
 function Color.getB(clr) end
 
@@ -597,7 +597,7 @@ function Color.getB(clr) end
 ---
 ---
 ---
----@param clr any A color created with ::Color.new.
+---@param clr integer A color created with ::Color.new.
 ---@return integer
 function Color.getA(clr) end
 
@@ -608,14 +608,14 @@ Render = {}
 ---
 ---
 ---
----@param x any X coordinate of the vertex.
----@param y any Y coordinate of the vertex.
----@param z any Z coordinate of the vertex.
----@param u any U coordinate for texture mapping.
----@param v any v coordinate for texture mapping.
----@param n1 any Normal X coordinate of the vertex.
----@param n2 any Normal Y coordinate of the vertex.
----@param n3 any Normal Z coordinate of the vertex.
+---@param x number X coordinate of the vertex.
+---@param y number Y coordinate of the vertex.
+---@param z number Z coordinate of the vertex.
+---@param u number U coordinate for texture mapping.
+---@param v number v coordinate for texture mapping.
+---@param n1 number Normal X coordinate of the vertex.
+---@param n2 number Normal Y coordinate of the vertex.
+---@param n3 number Normal Z coordinate of the vertex.
 ---@return integer
 function Render.createVertex(x, y, z, u, v, n1, n2, n3) end
 
@@ -624,7 +624,7 @@ function Render.createVertex(x, y, z, u, v, n1, n2, n3) end
 ---
 ---
 ---
----@param v any Vertex ID created with Render.createVertex to destroy.
+---@param v integer Vertex ID created with Render.createVertex to destroy.
 ---@return nil
 function Render.destroyVertex(v) end
 
@@ -633,8 +633,8 @@ function Render.destroyVertex(v) end
 ---
 ---
 ---
----@param v any A table with the model vertices.
----@param texture any A valid image ID.
+---@param v table A table with the model vertices.
+---@param texture integer A valid image ID.
 ---@return integer
 function Render.loadModel(v, texture) end
 
@@ -643,8 +643,8 @@ function Render.loadModel(v, texture) end
 ---
 ---
 ---
----@param filename any Name of the file to load.
----@param texture any Texture ID to use.
+---@param filename string Name of the file to load.
+---@param texture integer Texture ID to use.
 ---@return integer
 function Render.loadObject(filename, texture) end
 
@@ -653,7 +653,7 @@ function Render.loadObject(filename, texture) end
 ---
 ---
 ---
----@param model any A valid model ID.
+---@param model integer A valid model ID.
 ---@return nil
 function Render.unloadModel(model) end
 
@@ -662,14 +662,14 @@ function Render.unloadModel(model) end
 ---
 ---
 ---
----@param model any A valid model ID.
----@param x any X coordinate of the model.
----@param y any Y coordinate of the model.
----@param z any Z coordinate of the model.
----@param angleX any X rotation value of the model.
----@param angleY any Y rotation value of the model.
----@param angleZ any Z rotation value of the model.
----@param unbind any Draw the model unbinded from camera instance <b>(optional)</b>.
+---@param model integer A valid model ID.
+---@param x number X coordinate of the model.
+---@param y number Y coordinate of the model.
+---@param z number Z coordinate of the model.
+---@param angleX number X rotation value of the model.
+---@param angleY number Y rotation value of the model.
+---@param angleZ number Z rotation value of the model.
+---@param unbind? boolean Draw the model unbinded from camera instance <b>(optional)</b>.
 ---@return nil
 function Render.drawModel(model, x, y, z, angleX, angleY, angleZ, unbind) end
 
@@ -678,8 +678,8 @@ function Render.drawModel(model, x, y, z, angleX, angleY, angleZ, unbind) end
 ---
 ---
 ---
----@param model any A valid model ID.
----@param texture any Texture ID to use.
+---@param model integer A valid model ID.
+---@param texture integer Texture ID to use.
 ---@return nil
 function Render.useTexture(model, texture) end
 
@@ -688,12 +688,12 @@ function Render.useTexture(model, texture) end
 ---
 ---
 ---
----@param x any X coordinate of the camera.
----@param y any Y coordinate of the camera.
----@param z any Z coordinate of the camera.
----@param rot_x any X related rotation value of the camera.
----@param rot_y any Y related rotation value of the camera.
----@param rot_z any Z related rotation value of the camera.
+---@param x number X coordinate of the camera.
+---@param y number Y coordinate of the camera.
+---@param z number Z coordinate of the camera.
+---@param rot_x number X related rotation value of the camera.
+---@param rot_y number Y related rotation value of the camera.
+---@param rot_z number Z related rotation value of the camera.
 ---@return nil
 function Render.setCamera(x, y, z, rot_x, rot_y, rot_z) end
 
@@ -736,7 +736,7 @@ function Gui.termBlend() end
 ---
 ---
 ---
----@param theme any The theme to set.
+---@param theme GuiTheme The theme to set.
 ---@return nil
 function Gui.setTheme(theme) end
 
@@ -745,10 +745,10 @@ function Gui.setTheme(theme) end
 ---
 ---
 ---
----@param use_touch any Enable front touch usage for cursor movement.
----@param use_rear any Enable rearpad touch usage for cursor movement.
----@param use_buttons any Enable buttons usage for cursor movement.
----@param indirect_touch any If enabled, cursor is moved by dragging it. If disabled, cursor jumps to the touched location.
+---@param use_touch boolean Enable front touch usage for cursor movement.
+---@param use_rear boolean Enable rearpad touch usage for cursor movement.
+---@param use_buttons boolean Enable buttons usage for cursor movement.
+---@param indirect_touch boolean If enabled, cursor is moved by dragging it. If disabled, cursor jumps to the touched location.
 ---@return nil
 function Gui.setInputMode(use_touch, use_rear, use_buttons, indirect_touch) end
 
@@ -773,8 +773,8 @@ function Gui.termMainMenubar() end
 ---
 ---
 ---
----@param label any The label to show.
----@param enabled any The menu status to set <b>(optional)</b>.
+---@param label string The label to show.
+---@param enabled? boolean The menu status to set <b>(optional)</b>.
 ---@return boolean
 function Gui.initMenu(label, enabled) end
 
@@ -791,9 +791,9 @@ function Gui.termMenu() end
 ---
 ---
 ---
----@param label any The label to show.
----@param selected any The item checked status <b>(optional)</b>.
----@param enabled any The item status to set <b>(optional)</b>.
+---@param label string The label to show.
+---@param selected? boolean The item checked status <b>(optional)</b>.
+---@param enabled? boolean The item status to set <b>(optional)</b>.
 ---@return boolean
 function Gui.drawMenuItem(label, selected, enabled) end
 
@@ -802,26 +802,17 @@ function Gui.drawMenuItem(label, selected, enabled) end
 ---
 ---
 ---
----@param label any The label to show.
----@param color any A valid color (See ::Color) <b>(optional)</b>.
+---@param label string The label to show.
+---@param color? integer A valid color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Gui.drawText(label, color) end
-
----
----Calculate a text size.
----
----
----
----@param text any The text to calculate the size about.
----@return table
-function Gui.getTextSize(text) end
 
 ---
 ---Draw a greyed out text.
 ---
 ---
 ---
----@param label any The label to show.
+---@param label string The label to show.
 ---@return nil
 function Gui.drawDisabledText(label) end
 
@@ -830,7 +821,7 @@ function Gui.drawDisabledText(label) end
 ---
 ---
 ---
----@param label any The label to show.
+---@param label string The label to show.
 ---@return nil
 function Gui.drawWrappedText(label) end
 
@@ -839,9 +830,9 @@ function Gui.drawWrappedText(label) end
 ---
 ---
 ---
----@param label any The label to show.
----@param width any The width of the button <b>(optional)</b>.
----@param height any The height of the button <b>(optional)</b>.
+---@param label string The label to show.
+---@param width? number The width of the button <b>(optional)</b>.
+---@param height? number The height of the button <b>(optional)</b>.
 ---@return boolean
 function Gui.drawButton(label, width, height) end
 
@@ -850,7 +841,7 @@ function Gui.drawButton(label, width, height) end
 ---
 ---
 ---
----@param label any The label to show.
+---@param label string The label to show.
 ---@return boolean
 function Gui.drawSmallButton(label) end
 
@@ -859,8 +850,8 @@ function Gui.drawSmallButton(label) end
 ---
 ---
 ---
----@param label any The label to show.
----@param status any The initial checked status of the checkbox.
+---@param label string The label to show.
+---@param status boolean The initial checked status of the checkbox.
 ---@return boolean
 function Gui.drawCheckbox(label, status) end
 
@@ -869,8 +860,8 @@ function Gui.drawCheckbox(label, status) end
 ---
 ---
 ---
----@param label any The label to show.
----@param status any The initial checked status of the radiobutton.
+---@param label string The label to show.
+---@param status boolean The initial checked status of the radiobutton.
 ---@return boolean
 function Gui.drawRadioButton(label, status) end
 
@@ -887,8 +878,8 @@ function Gui.resetLine() end
 ---
 ---
 ---
----@param label any The label to show.
----@param flags any The flags to use with the window.
+---@param label string The label to show.
+---@param flags WinFlags The flags to use with the window.
 ---@return nil
 function Gui.initWindow(label, flags) end
 
@@ -905,9 +896,9 @@ function Gui.termWindow() end
 ---
 ---
 ---
----@param x any X coordinate of the window position in pixels.
----@param y any Y coordinate of the window position in pixels.
----@param mode any A mode to use for the function.
+---@param x number X coordinate of the window position in pixels.
+---@param y number Y coordinate of the window position in pixels.
+---@param mode ConfigMode A mode to use for the function.
 ---@return nil
 function Gui.setWindowPos(x, y, mode) end
 
@@ -916,9 +907,9 @@ function Gui.setWindowPos(x, y, mode) end
 ---
 ---
 ---
----@param w any of the window in pixels.
----@param h any Height of the window in pixels.
----@param mode any A mode to use for the function.
+---@param w number of the window in pixels.
+---@param h number Height of the window in pixels.
+---@param mode ConfigMode A mode to use for the function.
 ---@return nil
 function Gui.setWindowSize(w, h, mode) end
 
@@ -935,48 +926,18 @@ function Gui.drawSeparator() end
 ---
 ---
 ---
----@param label any The label to show.
+---@param label string The label to show.
 ---@return nil
 function Gui.drawTooltip(label) end
-
----
----Draw a slider with variable amount of values.
----
----
----
----@param label any The label to show.
----@param val_min any The minimum value settable through the slider.
----@param val_max any The maximum value settable through the slider.
----@param val1 any The first value to handle with the slider.
----@param val2 any The second value to handle with the slider <b>(optional)</b>.
----@param val3 any The third value to handle with the slider <b>(optional)</b>.
----@param val4 any The forth value to handle with the slider <b>(optional)</b>.
----@return table
-function Gui.drawSlider(label, val_min, val_max, val1, val2, val3, val4) end
-
----
----Draw a slider with variable amount of integer values.
----
----
----
----@param label any The label to show.
----@param val_min any The minimum value settable through the slider.
----@param val_max any The maximum value settable through the slider.
----@param val1 any The first value to handle with the slider.
----@param val2 any The second value to handle with the slider <b>(optional)</b>.
----@param val3 any The third value to handle with the slider <b>(optional)</b>.
----@param val4 any The forth value to handle with the slider <b>(optional)</b>.
----@return table
-function Gui.drawIntSlider(label, val_min, val_max, val1, val2, val3, val4) end
 
 ---
 ---Draw a combobox.
 ---
 ---
 ---
----@param label any The label to show.
----@param index any The currently selected element.
----@param elements any The elements to use for the combobox.
+---@param label string The label to show.
+---@param index integer The currently selected element.
+---@param elements table The elements to use for the combobox.
 ---@return integer
 function Gui.drawComboBox(label, index, elements) end
 
@@ -985,9 +946,9 @@ function Gui.drawComboBox(label, index, elements) end
 ---
 ---
 ---
----@param label any The label to show.
----@param index any The currently selected element.
----@param elements any The elements to use for the combobox.
+---@param label string The label to show.
+---@param index integer The currently selected element.
+---@param elements table The elements to use for the combobox.
 ---@return integer
 function Gui.drawListBox(label, index, elements) end
 
@@ -996,9 +957,9 @@ function Gui.drawListBox(label, index, elements) end
 ---
 ---
 ---
----@param label any The label to show.
----@param color any The currently picked color (See ::Color)
----@param alpha any If true, alpha value will be pickable, not otherwise. <b>(optional)</b>.
+---@param label string The label to show.
+---@param color integer The currently picked color (See ::Color)
+---@param alpha? boolean If true, alpha value will be pickable, not otherwise. <b>(optional)</b>.
 ---@return integer
 function Gui.drawColorPicker(label, color, alpha) end
 
@@ -1007,9 +968,9 @@ function Gui.drawColorPicker(label, color, alpha) end
 ---
 ---
 ---
----@param fraction any Progress value to show in 0.0 - 1.0 range.
----@param w any Width of the element in pixels <b>(optional)</b>.
----@param h any Height of the element in pixels <b>(optional)</b>.
+---@param fraction number Progress value to show in 0.0 - 1.0 range.
+---@param w? number Width of the element in pixels <b>(optional)</b>.
+---@param h? number Height of the element in pixels <b>(optional)</b>.
 ---@return nil
 function Gui.drawProgressbar(fraction, w, h) end
 
@@ -1018,14 +979,14 @@ function Gui.drawProgressbar(fraction, w, h) end
 ---
 ---
 ---
----@param img any A valid image ID.
----@param width any Width in pixels of the widget <b>(optional)</b>.
----@param height any Height in pixels of the widget <b>(optional)</b>.
----@param img_x any Source image X coordinate <b>(optional)</b>.
----@param img_y any Source image Y coordinate <b>(optional)</b>.
----@param img_w any Source image width <b>(optional)</b>.
----@param img_h any Source image height <b>(optional)</b>.
----@param color any Image tint color (See ::Color) <b>(optional)</b>.
+---@param img integer A valid image ID.
+---@param width? number Width in pixels of the widget <b>(optional)</b>.
+---@param height? number Height in pixels of the widget <b>(optional)</b>.
+---@param img_x? number Source image X coordinate <b>(optional)</b>.
+---@param img_y? number Source image Y coordinate <b>(optional)</b>.
+---@param img_w? number Source image width <b>(optional)</b>.
+---@param img_h? number Source image height <b>(optional)</b>.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Gui.drawImage(img, width, height, img_x, img_y, img_w, img_h, color) end
 
@@ -1034,8 +995,8 @@ function Gui.drawImage(img, width, height, img_x, img_y, img_w, img_h, color) en
 ---
 ---
 ---
----@param x any X coordinate in pixels.
----@param y any Y coordinate in pixels.
+---@param x number X coordinate in pixels.
+---@param y number Y coordinate in pixels.
 ---@return nil
 function Gui.setWidgetPos(x, y) end
 
@@ -1044,7 +1005,7 @@ function Gui.setWidgetPos(x, y) end
 ---
 ---
 ---
----@param w any Width of the element in pixels.
+---@param w number Width of the element in pixels.
 ---@return nil
 function Gui.setWidgetWidth(w) end
 
@@ -1063,8 +1024,8 @@ Socket = {}
 ---
 ---
 ---
----@param port any Port to use.
----@param protocol any Protocol to use <b>(optional)</b>.
+---@param port integer Port to use.
+---@param protocol? NetProtocol Protocol to use <b>(optional)</b>.
 ---@return integer
 function Socket.createServerSocket(port, protocol) end
 
@@ -1073,9 +1034,9 @@ function Socket.createServerSocket(port, protocol) end
 ---
 ---
 ---
----@param host any Host to connect to.
----@param port any Port to use.
----@param protocol any Protocol to use <b>(optional)</b>.
+---@param host string Host to connect to.
+---@param port integer Port to use.
+---@param protocol? NetProtocol Protocol to use <b>(optional)</b>.
 ---@return integer
 function Socket.connect(host, port, protocol) end
 
@@ -1084,8 +1045,8 @@ function Socket.connect(host, port, protocol) end
 ---
 ---
 ---
----@param sock any A valid socket id.
----@param data any Data to send.
+---@param sock integer A valid socket id.
+---@param data string Data to send.
 ---@return integer
 function Socket.send(sock, data) end
 
@@ -1094,8 +1055,8 @@ function Socket.send(sock, data) end
 ---
 ---
 ---
----@param sock any A valid socket id.
----@param size any Maximum size of the received data.
+---@param sock integer A valid socket id.
+---@param size integer Maximum size of the received data.
 ---@return string
 function Socket.receive(sock, size) end
 
@@ -1104,7 +1065,7 @@ function Socket.receive(sock, size) end
 ---
 ---
 ---
----@param sock any A valid server socket id.
+---@param sock integer A valid server socket id.
 ---@return integer
 function Socket.accept(sock) end
 
@@ -1113,7 +1074,7 @@ function Socket.accept(sock) end
 ---
 ---
 ---
----@param sock any A valid socket id.
+---@param sock integer A valid socket id.
 ---@return nil
 function Socket.close(sock) end
 
@@ -1124,7 +1085,7 @@ Screen = {}
 ---
 ---
 ---
----@param clr any Color of the screen after the clear <B>(optional)</B>.
+---@param clr integer Color of the screen after the clear <B>(optional)</B>.
 ---@return nil
 function Screen.clear(clr) end
 
@@ -1141,8 +1102,8 @@ function Screen.flip() end
 ---
 ---
 ---
----@param x any X coordinate of the pixel.
----@param y any Y coordinate of the pixel.
+---@param x integer X coordinate of the pixel.
+---@param y integer Y coordinate of the pixel.
 ---@return integer
 function Screen.getPixel(x, y) end
 
@@ -1161,12 +1122,12 @@ Keyboard = {}
 ---
 ---
 ---
----@param title any The keyboard title.
----@param text any The keyboard initial text.
----@param length any The text maximum length <b>(optional)</b>.
----@param type any The keyboard type <b>(optional)</b>.
----@param mode any The keyboard mode <b>(optional)</b>.
----@param opt any Optional keyboard features to use <b>(optional)</b>.
+---@param title string The keyboard title.
+---@param text string The keyboard initial text.
+---@param length? integer The text maximum length <b>(optional)</b>.
+---@param type? KeyType The keyboard type <b>(optional)</b>.
+---@param mode? KeyMode The keyboard mode <b>(optional)</b>.
+---@param opt? KeyOption Optional keyboard features to use <b>(optional)</b>.
 ---@return nil
 function Keyboard.start(title, text, length, type, mode, opt) end
 
@@ -1201,7 +1162,7 @@ Font = {}
 ---
 ---
 ---
----@param filename any The name of the font file
+---@param filename string The name of the font file
 ---@return integer
 function Font.load(filename) end
 
@@ -1210,7 +1171,7 @@ function Font.load(filename) end
 ---
 ---
 ---
----@param font any A valid font loaded with Font.load.
+---@param font integer A valid font loaded with Font.load.
 ---@return nil
 function Font.unload(font) end
 
@@ -1219,8 +1180,8 @@ function Font.unload(font) end
 ---
 ---
 ---
----@param font any A valid font loaded with Font.load.
----@param size any Size to set for Font.print calls in pixels.
+---@param font integer A valid font loaded with Font.load.
+---@param size integer Size to set for Font.print calls in pixels.
 ---@return nil
 function Font.setPixelSizes(font, size) end
 
@@ -1229,8 +1190,8 @@ function Font.setPixelSizes(font, size) end
 ---
 ---
 ---
----@param font any A valid font loaded with Font.load.
----@param text any Text to calculate width of.
+---@param font integer A valid font loaded with Font.load.
+---@param text string Text to calculate width of.
 ---@return integer
 function Font.getTextWidth(font, text) end
 
@@ -1239,8 +1200,8 @@ function Font.getTextWidth(font, text) end
 ---
 ---
 ---
----@param font any A valid font loaded with Font.load.
----@param text any Text to calculate width of.
+---@param font integer A valid font loaded with Font.load.
+---@param text string Text to calculate width of.
 ---@return integer
 function Font.getTextHeight(font, text) end
 
@@ -1249,11 +1210,11 @@ function Font.getTextHeight(font, text) end
 ---
 ---
 ---
----@param font any A valid font loaded with Font.load.
----@param x any X starting coordinate for the print.
----@param y any Y starting coordinate for the print.
----@param text any Text to print.
----@param color any Color of the text (See ::Color).
+---@param font integer A valid font loaded with Font.load.
+---@param x number X starting coordinate for the print.
+---@param y number Y starting coordinate for the print.
+---@param text string Text to print.
+---@param color integer Color of the text (See ::Color).
 ---@return nil
 function Font.print(font, x, y, text, color) end
 
@@ -1264,51 +1225,17 @@ Controls = {}
 ---
 ---
 ---
----@param port any Device port to use <b>(optional)</b>.
+---@param port? integer Device port to use <b>(optional)</b>.
 ---@return integer
 function Controls.read(port) end
-
----
----Read left analog state.
----
----
----
----@param port any Device port to use <b>(optional)</b>.
----@return table
-function Controls.readLeftAnalog(port) end
-
----
----Read right analog state.
----
----
----
----@param port any Device port to use <b>(optional)</b>.
----@return table
-function Controls.readRightAnalog(port) end
-
----
----Read touchscreen state.
----
----
----
----@return table
-function Controls.readTouch() end
-
----
----Read rearpad state.
----
----
----
----@return table
-function Controls.readRetroTouch() end
 
 ---
 ---Check if a button is pressed.
 ---
 ---
 ---
----@param bitmask any A controls bitmask returned by Controls.read.
----@param value any A control value to check.
+---@param bitmask integer A controls bitmask returned by Controls.read.
+---@param value Ctrl A control value to check.
 ---@return boolean
 function Controls.check(bitmask, value) end
 
@@ -1317,9 +1244,9 @@ function Controls.check(bitmask, value) end
 ---
 ---
 ---
----@param port any Device port to use.
----@param small any Intensity for small sensor.
----@param large any Intensity for large sensor.
+---@param port integer Device port to use.
+---@param small integer Intensity for small sensor.
+---@param large integer Intensity for large sensor.
 ---@return nil
 function Controls.rumble(port, small, large) end
 
@@ -1328,8 +1255,8 @@ function Controls.rumble(port, small, large) end
 ---
 ---
 ---
----@param port any Device port to use.
----@param color any An RGBA color value (See ::Color).
+---@param port integer Device port to use.
+---@param color integer An RGBA color value (See ::Color).
 ---@return nil
 function Controls.setLightbar(port, color) end
 
@@ -1405,22 +1332,6 @@ function Controls.disableGyro() end
 ---@return nil
 function Controls.disableAccel() end
 
----
----Read gyroscope state.
----
----
----
----@return table
-function Controls.readGyro() end
-
----
----Read accelerometer state.
----
----
----
----@return table
-function Controls.readAccel() end
-
 Camera = {}
 
 ---
@@ -1428,9 +1339,9 @@ Camera = {}
 ---
 ---
 ---
----@param type any Camera to init.
----@param resolution any Output resolution.
----@param framerate any Output framerate.
+---@param type CameraType Camera to init.
+---@param resolution CameraRes Output resolution.
+---@param framerate integer Output framerate.
 ---@return nil
 function Camera.init(type, resolution, framerate) end
 
@@ -1455,7 +1366,7 @@ function Camera.getOutput() end
 ---
 ---
 ---
----@param value any Value to set.
+---@param value integer Value to set.
 ---@return nil
 function Camera.setBrightness(value) end
 
@@ -1472,7 +1383,7 @@ function Camera.getBrightness() end
 ---
 ---
 ---
----@param value any Value to set.
+---@param value number Value to set.
 ---@return nil
 function Camera.setSaturation(value) end
 
@@ -1489,7 +1400,7 @@ function Camera.getSaturation() end
 ---
 ---
 ---
----@param value any Value to set.
+---@param value integer Value to set.
 ---@return nil
 function Camera.setSharpness(value) end
 
@@ -1506,7 +1417,7 @@ function Camera.getSharpness() end
 ---
 ---
 ---
----@param value any Value to set.
+---@param value integer Value to set.
 ---@return nil
 function Camera.setContrast(value) end
 
@@ -1523,7 +1434,7 @@ function Camera.getContrast() end
 ---
 ---
 ---
----@param mode any Mode to set.
+---@param mode CameraReverse Mode to set.
 ---@return nil
 function Camera.setReverse(mode) end
 
@@ -1540,7 +1451,7 @@ function Camera.getReverse() end
 ---
 ---
 ---
----@param effect any Effect to set.
+---@param effect CameraEffect Effect to set.
 ---@return nil
 function Camera.setEffect(effect) end
 
@@ -1557,7 +1468,7 @@ function Camera.getEffect() end
 ---
 ---
 ---
----@param value any Value to set.
+---@param value integer Value to set.
 ---@return nil
 function Camera.setZoom(value) end
 
@@ -1574,7 +1485,7 @@ function Camera.getZoom() end
 ---
 ---
 ---
----@param mode any Mode to set.
+---@param mode CameraAntiFlick Mode to set.
 ---@return nil
 function Camera.setAntiFlicker(mode) end
 
@@ -1591,7 +1502,7 @@ function Camera.getAntiFlicker() end
 ---
 ---
 ---
----@param mode any Mode to set.
+---@param mode CameraISO Mode to set.
 ---@return nil
 function Camera.setISO(mode) end
 
@@ -1608,7 +1519,7 @@ function Camera.getISO() end
 ---
 ---
 ---
----@param value any Value to set.
+---@param value integer Value to set.
 ---@return nil
 function Camera.setGain(value) end
 
@@ -1625,7 +1536,7 @@ function Camera.getGain() end
 ---
 ---
 ---
----@param mode any Mode to set.
+---@param mode CameraWB Mode to set.
 ---@return nil
 function Camera.setWhiteBalance(mode) end
 
@@ -1642,7 +1553,7 @@ function Camera.getWhiteBalance() end
 ---
 ---
 ---
----@param mode any Mode to set.
+---@param mode CameraBacklight Mode to set.
 ---@return nil
 function Camera.setBacklight(mode) end
 
@@ -1659,7 +1570,7 @@ function Camera.getBacklight() end
 ---
 ---
 ---
----@param mode any Mode to set.
+---@param mode CameraNightmode Mode to set.
 ---@return nil
 function Camera.setNightmode(mode) end
 
@@ -1678,8 +1589,8 @@ Mic = {}
 ---
 ---
 ---
----@param time any The time to record in seconds.
----@param samplerate any The samplerate of the output in Hz.
+---@param time integer The time to record in seconds.
+---@param samplerate integer The samplerate of the output in Hz.
 ---@return integer
 function Mic.start(time, samplerate) end
 
@@ -1688,7 +1599,7 @@ function Mic.start(time, samplerate) end
 ---
 ---
 ---
----@param filename any The filename of the resulting WAV file.
+---@param filename string The filename of the resulting WAV file.
 ---@return nil
 function Mic.stop(filename) end
 
@@ -1787,11 +1698,11 @@ function Network.getWifiLevel() end
 ---
 ---
 ---
----@param url any The url from where to download the file.
----@param file any Filename where to save the downloaded file.
----@param useragent any Custom useragent to use <b>(optional)</b>.
----@param method any Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata any POST data to send with the HTTP request <b>(optional)</b>.
+---@param url string The url from where to download the file.
+---@param file string Filename where to save the downloaded file.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
 ---@return nil
 function Network.downloadFile(url, file, useragent, method, postdata) end
 
@@ -1800,11 +1711,11 @@ function Network.downloadFile(url, file, useragent, method, postdata) end
 ---
 ---
 ---
----@param url any The url from where to download the file.
----@param file any Filename where to save the downloaded file.
----@param useragent any Custom useragent to use <b>(optional)</b>.
----@param method any Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata any POST data to send with the HTTP request <b>(optional)</b>.
+---@param url string The url from where to download the file.
+---@param file string Filename where to save the downloaded file.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
 ---@return nil
 function Network.downloadFileAsync(url, file, useragent, method, postdata) end
 
@@ -1813,10 +1724,10 @@ function Network.downloadFileAsync(url, file, useragent, method, postdata) end
 ---
 ---
 ---
----@param url any The url where to send the HTTP request.
----@param useragent any Custom useragent to use <b>(optional)</b>.
----@param method any Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata any POST data to send with the HTTP request <b>(optional)</b>.
+---@param url string The url where to send the HTTP request.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
 ---@return string
 function Network.requestString(url, useragent, method, postdata) end
 
@@ -1825,10 +1736,10 @@ function Network.requestString(url, useragent, method, postdata) end
 ---
 ---
 ---
----@param url any The url where to send the HTTP request.
----@param useragent any Custom useragent to use <b>(optional)</b>.
----@param method any Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata any POST data to send with the HTTP request <b>(optional)</b>.
+---@param url string The url where to send the HTTP request.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
 ---@return nil
 function Network.requestStringAsync(url, useragent, method, postdata) end
 
@@ -1839,8 +1750,8 @@ System = {}
 ---
 ---
 ---
----@param filename any Filename to be opened.
----@param flags any An attribute flag.
+---@param filename string Filename to be opened.
+---@param flags IOFlags An attribute flag.
 ---@return integer
 function System.openFile(filename, flags) end
 
@@ -1849,9 +1760,9 @@ function System.openFile(filename, flags) end
 ---
 ---
 ---
----@param handle any A file handle opened with ::System.openFile.
----@param text any The text to write on file.
----@param len any Length of the text.
+---@param handle integer A file handle opened with ::System.openFile.
+---@param text string The text to write on file.
+---@param len integer Length of the text.
 ---@return nil
 function System.writeFile(handle, text, len) end
 
@@ -1860,8 +1771,8 @@ function System.writeFile(handle, text, len) end
 ---
 ---
 ---
----@param handle any A file handle opened with ::System.openFile.
----@param len any Length of the string to read in bytes.
+---@param handle integer A file handle opened with ::System.openFile.
+---@param len integer Length of the string to read in bytes.
 ---@return string
 function System.readFile(handle, len) end
 
@@ -1870,9 +1781,9 @@ function System.readFile(handle, len) end
 ---
 ---
 ---
----@param handle any A file handle opened with ::System.openFile.
----@param pos any Position to set.
----@param seek any Start point for the position.
+---@param handle integer A file handle opened with ::System.openFile.
+---@param pos integer Position to set.
+---@param seek IOSeek Start point for the position.
 ---@return nil
 function System.seekFile(handle, pos, seek) end
 
@@ -1881,7 +1792,7 @@ function System.seekFile(handle, pos, seek) end
 ---
 ---
 ---
----@param handle any A file handle opened with ::System.openFile.
+---@param handle integer A file handle opened with ::System.openFile.
 ---@return integer
 function System.sizeFile(handle) end
 
@@ -1890,7 +1801,7 @@ function System.sizeFile(handle) end
 ---
 ---
 ---
----@param filename any Filename to be checked.
+---@param filename string Filename to be checked.
 ---@return table
 function System.statFile(filename) end
 
@@ -1899,7 +1810,7 @@ function System.statFile(filename) end
 ---
 ---
 ---
----@param handle any A file handle opened with ::System.openFile.
+---@param handle integer A file handle opened with ::System.openFile.
 ---@return table
 function System.statOpenedFile(handle) end
 
@@ -1908,7 +1819,7 @@ function System.statOpenedFile(handle) end
 ---
 ---
 ---
----@param handle any A file handle opened with ::System.openFile.
+---@param handle integer A file handle opened with ::System.openFile.
 ---@return nil
 function System.closeFile(handle) end
 
@@ -1917,7 +1828,7 @@ function System.closeFile(handle) end
 ---
 ---
 ---
----@param filename any Filename to be checked.
+---@param filename string Filename to be checked.
 ---@return boolean
 function System.doesFileExist(filename) end
 
@@ -1926,7 +1837,7 @@ function System.doesFileExist(filename) end
 ---
 ---
 ---
----@param dirname any Folder name to be checked.
+---@param dirname string Folder name to be checked.
 ---@return boolean
 function System.doesDirExist(dirname) end
 
@@ -1935,8 +1846,8 @@ function System.doesDirExist(dirname) end
 ---
 ---
 ---
----@param filename any Filename to be renamed.
----@param filename2 any New filename.
+---@param filename string Filename to be renamed.
+---@param filename2 string New filename.
 ---@return nil
 function System.rename(filename, filename2) end
 
@@ -1945,8 +1856,8 @@ function System.rename(filename, filename2) end
 ---
 ---
 ---
----@param filename any Filename to be copied.
----@param filename2 any New filename.
+---@param filename string Filename to be copied.
+---@param filename2 string New filename.
 ---@return nil
 function System.copyFile(filename, filename2) end
 
@@ -1955,7 +1866,7 @@ function System.copyFile(filename, filename2) end
 ---
 ---
 ---
----@param filename any Filename to be removed.
+---@param filename string Filename to be removed.
 ---@return nil
 function System.deleteFile(filename) end
 
@@ -1964,7 +1875,7 @@ function System.deleteFile(filename) end
 ---
 ---
 ---
----@param dirname any Path to be removed.
+---@param dirname string Path to be removed.
 ---@return nil
 function System.deleteDirectory(dirname) end
 
@@ -1973,7 +1884,7 @@ function System.deleteDirectory(dirname) end
 ---
 ---
 ---
----@param dirname any Path to be created.
+---@param dirname string Path to be created.
 ---@return nil
 function System.createDirectory(dirname) end
 
@@ -1982,7 +1893,7 @@ function System.createDirectory(dirname) end
 ---
 ---
 ---
----@param dirname any Path to be listed.
+---@param dirname string Path to be listed.
 ---@return table
 function System.listDirectory(dirname) end
 
@@ -2023,7 +1934,7 @@ function System.getFactoryFirmware() end
 ---
 ---
 ---
----@param msecs any Time to wait in microseconds.
+---@param msecs integer Time to wait in microseconds.
 ---@return nil
 function System.wait(msecs) end
 
@@ -2104,7 +2015,7 @@ function System.getBatteryCycles() end
 ---
 ---
 ---
----@param timer any The timer feature to disable.
+---@param timer PowerTimer The timer feature to disable.
 ---@return nil
 function System.disableTimer(timer) end
 
@@ -2113,7 +2024,7 @@ function System.disableTimer(timer) end
 ---
 ---
 ---
----@param timer any The timer feature to enable.
+---@param timer PowerTimer The timer feature to enable.
 ---@return nil
 function System.enableTimer(timer) end
 
@@ -2122,7 +2033,7 @@ function System.enableTimer(timer) end
 ---
 ---
 ---
----@param timer any The timer feature to reset.
+---@param timer PowerTimer The timer feature to reset.
 ---@return nil
 function System.resetTimer(timer) end
 
@@ -2131,7 +2042,7 @@ function System.resetTimer(timer) end
 ---
 ---
 ---
----@param clock any The clock to set in Mhz.
+---@param clock integer The clock to set in Mhz.
 ---@return nil
 function System.setCpuSpeed(clock) end
 
@@ -2140,7 +2051,7 @@ function System.setCpuSpeed(clock) end
 ---
 ---
 ---
----@param clock any The clock to set in Mhz.
+---@param clock integer The clock to set in Mhz.
 ---@return nil
 function System.setGpuSpeed(clock) end
 
@@ -2149,7 +2060,7 @@ function System.setGpuSpeed(clock) end
 ---
 ---
 ---
----@param clock any The clock to set in Mhz.
+---@param clock integer The clock to set in Mhz.
 ---@return nil
 function System.setBusSpeed(clock) end
 
@@ -2190,7 +2101,7 @@ function System.getGpuXbarSpeed() end
 ---
 ---
 ---
----@param filename any The file to start.
+---@param filename string The file to start.
 ---@return nil
 function System.launchEboot(filename) end
 
@@ -2199,7 +2110,7 @@ function System.launchEboot(filename) end
 ---
 ---
 ---
----@param titleid any The title ID of the application to start.
+---@param titleid string The title ID of the application to start.
 ---@return nil
 function System.launchApp(titleid) end
 
@@ -2208,7 +2119,7 @@ function System.launchApp(titleid) end
 ---
 ---
 ---
----@param dev any The device name.
+---@param dev string The device name.
 ---@return nil
 function System.getFreeSpace(dev) end
 
@@ -2217,25 +2128,9 @@ function System.getFreeSpace(dev) end
 ---
 ---
 ---
----@param dev any The device name.
+---@param dev string The device name.
 ---@return nil
 function System.getTotalSpace(dev) end
-
----
----Get console time.
----
----
----
----@return table
-function System.getTime() end
-
----
----Get console date.
----
----
----
----@return table
-function System.getDate() end
 
 ---
 ---Get account username.
@@ -2290,7 +2185,7 @@ function System.getTitleID() end
 ---
 ---
 ---
----@param filename any The filename to extract info from.
+---@param filename string The filename to extract info from.
 ---@return table
 function System.extractSfo(filename) end
 
@@ -2299,8 +2194,8 @@ function System.extractSfo(filename) end
 ---
 ---
 ---
----@param filename any The filename to extract.
----@param dirname any The path where to extract files.
+---@param filename string The filename to extract.
+---@param dirname string The path where to extract files.
 ---@return nil
 function System.extractPbp(filename, dirname) end
 
@@ -2309,8 +2204,8 @@ function System.extractPbp(filename, dirname) end
 ---
 ---
 ---
----@param filename any The filename to extract.
----@param dirname any The path where to extract files.
+---@param filename string The filename to extract.
+---@param dirname string The path where to extract files.
 ---@return nil
 function System.extractZip(filename, dirname) end
 
@@ -2319,9 +2214,9 @@ function System.extractZip(filename, dirname) end
 ---
 ---
 ---
----@param filename any The filename of the ZIP archive.
----@param file any The file to extract.
----@param destname any The filename where to extract file.
+---@param filename string The filename of the ZIP archive.
+---@param file string The file to extract.
+---@param destname string The filename where to extract file.
 ---@return nil
 function System.extractFromZip(filename, file, destname) end
 
@@ -2330,8 +2225,8 @@ function System.extractFromZip(filename, file, destname) end
 ---
 ---
 ---
----@param filename any The filename to extract.
----@param dirname any The path where to extract files.
+---@param filename string The filename to extract.
+---@param dirname string The path where to extract files.
 ---@return nil
 function System.extractZipAsync(filename, dirname) end
 
@@ -2340,9 +2235,9 @@ function System.extractZipAsync(filename, dirname) end
 ---
 ---
 ---
----@param filename any The filename of the ZIP archive.
----@param file any The file to extract.
----@param destname any The filename where to extract file.
+---@param filename string The filename of the ZIP archive.
+---@param file string The file to extract.
+---@param destname string The filename where to extract file.
 ---@return nil
 function System.extractFromZipAsync(filename, file, destname) end
 
@@ -2351,9 +2246,9 @@ function System.extractFromZipAsync(filename, file, destname) end
 ---
 ---
 ---
----@param path any The filename or path to compress.
----@param filename any The filename of the resulting zip file.
----@param ratio any The compression ratio to use <b>(optional)</b>.
+---@param path string The filename or path to compress.
+---@param filename string The filename of the resulting zip file.
+---@param ratio? integer The compression ratio to use <b>(optional)</b>.
 ---@return nil
 function System.compressZip(path, filename, ratio) end
 
@@ -2362,10 +2257,10 @@ function System.compressZip(path, filename, ratio) end
 ---
 ---
 ---
----@param path any The filename or path to compress.
----@param filename any The filename of the resulting zip file.
----@param parent any The parent folder inside the zip file where to place the path.
----@param ratio any The compression ratio to use <b>(optional)</b>.
+---@param path string The filename or path to compress.
+---@param filename string The filename of the resulting zip file.
+---@param parent string The parent folder inside the zip file where to place the path.
+---@param ratio? integer The compression ratio to use <b>(optional)</b>.
 ---@return nil
 function System.addToZip(path, filename, parent, ratio) end
 
@@ -2390,9 +2285,9 @@ function System.getAsyncResult() end
 ---
 ---
 ---
----@param filename any The filename of the screenshot output.
----@param format any The format to use for the output file <b>(optional)</b>.
----@param ratio any Compression ratio for JPG compression <b>(optional)</b>.
+---@param filename string The filename of the screenshot output.
+---@param format? ImgFmt The format to use for the output file <b>(optional)</b>.
+---@param ratio? integer Compression ratio for JPG compression <b>(optional)</b>.
 ---@return nil
 function System.takeScreenshot(filename, format, ratio) end
 
@@ -2401,7 +2296,7 @@ function System.takeScreenshot(filename, format, ratio) end
 ---
 ---
 ---
----@param uri any URI to exec.
+---@param uri string URI to exec.
 ---@return nil
 function System.executeUri(uri) end
 
@@ -2442,9 +2337,9 @@ function System.isSafeMode() end
 ---
 ---
 ---
----@param text any The text of the system message.
----@param progressbar any Progressbar mode.
----@param buttons any Buttons scheme to use <b>(optional)</b>.
+---@param text string The text of the system message.
+---@param progressbar boolean Progressbar mode.
+---@param buttons? BtnMode Buttons scheme to use <b>(optional)</b>.
 ---@return nil
 function System.setMessage(text, progressbar, buttons) end
 
@@ -2461,7 +2356,7 @@ function System.getMessageState() end
 ---
 ---
 ---
----@param progress any Progress percentage.
+---@param progress integer Progress percentage.
 ---@return nil
 function System.setMessageProgress(progress) end
 
@@ -2470,7 +2365,7 @@ function System.setMessageProgress(progress) end
 ---
 ---
 ---
----@param text any Submessage text to set.
+---@param text string Submessage text to set.
 ---@return nil
 function System.setMessageProgMsg(text) end
 
@@ -2487,7 +2382,7 @@ function System.closeMessage() end
 ---
 ---
 ---
----@param idx any The index number of the partition.
+---@param idx integer The index number of the partition.
 ---@return nil
 function System.unmountPartition(idx) end
 
@@ -2496,8 +2391,8 @@ function System.unmountPartition(idx) end
 ---
 ---
 ---
----@param idx any The index number of the partition.
----@param perms any Permissions to set for the mounted partition.
+---@param idx integer The index number of the partition.
+---@param perms MntPerm Permissions to set for the mounted partition.
 ---@return nil
 function System.mountPartition(idx, perms) end
 
@@ -2506,7 +2401,7 @@ function System.mountPartition(idx, perms) end
 ---
 ---
 ---
----@param dir any The path to the extracted app.
+---@param dir string The path to the extracted app.
 ---@return nil
 function System.installApp(dir) end
 
@@ -2515,7 +2410,7 @@ function System.installApp(dir) end
 ---
 ---
 ---
----@param titleid any The titleid of the app to uninstall.
+---@param titleid string The titleid of the app to uninstall.
 ---@return nil
 function System.uninstallApp(titleid) end
 
@@ -2524,7 +2419,7 @@ function System.uninstallApp(titleid) end
 ---
 ---
 ---
----@param titleid any The titleid of the app to check.
+---@param titleid string The titleid of the app to check.
 ---@return boolean
 function System.doesAppExist(titleid) end
 
@@ -2541,7 +2436,7 @@ function System.getBootParams() end
 ---
 ---
 ---
----@param path any The path to the plugin to load.
+---@param path string The path to the plugin to load.
 ---@return integer
 function System.loadUserPlugin(path) end
 
@@ -2550,7 +2445,7 @@ function System.loadUserPlugin(path) end
 ---
 ---
 ---
----@param path any The path to the plugin to load.
+---@param path string The path to the plugin to load.
 ---@return integer
 function System.loadKernelPlugin(path) end
 
@@ -2559,7 +2454,7 @@ function System.loadKernelPlugin(path) end
 ---
 ---
 ---
----@param plug_id any The module identifier for the plugin to unload.
+---@param plug_id integer The module identifier for the plugin to unload.
 ---@return nil
 function System.unloadUserPlugin(plug_id) end
 
@@ -2568,7 +2463,7 @@ function System.unloadUserPlugin(plug_id) end
 ---
 ---
 ---
----@param mnt any The mountpoint to unmount.
+---@param mnt string The mountpoint to unmount.
 ---@return nil
 function System.unmountMountpoint(mnt) end
 
@@ -2595,8 +2490,8 @@ function Video.term() end
 ---
 ---
 ---
----@param filename any Filepath of the file to reproduce.
----@param loop any If true, playback will loop <b>(optional)</b>.
+---@param filename string Filepath of the file to reproduce.
+---@param loop? boolean If true, playback will loop <b>(optional)</b>.
 ---@return nil
 function Video.open(filename, loop) end
 
@@ -2645,7 +2540,7 @@ function Video.isPlaying() end
 ---
 ---
 ---
----@param volume any Volume value to set.
+---@param volume integer Volume value to set.
 ---@return nil
 function Video.setVolume(volume) end
 
@@ -2670,7 +2565,7 @@ function Video.getTime() end
 ---
 ---
 ---
----@param time any The position in milliseconds where to jump in the video playback.
+---@param time number The position in milliseconds where to jump in the video playback.
 ---@return nil
 function Video.jumpToTime(time) end
 
@@ -2679,7 +2574,7 @@ function Video.jumpToTime(time) end
 ---
 ---
 ---
----@param mode any The mode to set.
+---@param mode PlayMode The mode to set.
 ---@return nil
 function Video.setPlayMode(mode) end
 
@@ -2688,7 +2583,7 @@ function Video.setPlayMode(mode) end
 ---
 ---
 ---
----@param fname any The file to use as subtitles source.
+---@param fname string The file to use as subtitles source.
 ---@return nil
 function Video.openSubs(fname) end
 
@@ -2723,7 +2618,7 @@ function Timer.new() end
 ---
 ---
 ---
----@param timer any The timer ID to get the time of.
+---@param timer integer The timer ID to get the time of.
 ---@return integer
 function Timer.getTime(timer) end
 
@@ -2732,8 +2627,8 @@ function Timer.getTime(timer) end
 ---
 ---
 ---
----@param timer any The timer ID to set the time of.
----@param msecs any The time to set in milliseconds.
+---@param timer integer The timer ID to set the time of.
+---@param msecs integer The time to set in milliseconds.
 ---@return nil
 function Timer.setTime(timer, msecs) end
 
@@ -2742,7 +2637,7 @@ function Timer.setTime(timer, msecs) end
 ---
 ---
 ---
----@param timer any The timer ID to destroy.
+---@param timer integer The timer ID to destroy.
 ---@return nil
 function Timer.destroy(timer) end
 
@@ -2751,7 +2646,7 @@ function Timer.destroy(timer) end
 ---
 ---
 ---
----@param timer any The timer ID to pause.
+---@param timer integer The timer ID to pause.
 ---@return nil
 function Timer.pause(timer) end
 
@@ -2760,7 +2655,7 @@ function Timer.pause(timer) end
 ---
 ---
 ---
----@param timer any The timer ID to resume.
+---@param timer integer The timer ID to resume.
 ---@return nil
 function Timer.resume(timer) end
 
@@ -2769,7 +2664,7 @@ function Timer.resume(timer) end
 ---
 ---
 ---
----@param timer any The timer ID to reset.
+---@param timer integer The timer ID to reset.
 ---@return nil
 function Timer.reset(timer) end
 
@@ -2778,7 +2673,7 @@ function Timer.reset(timer) end
 ---
 ---
 ---
----@param timer any The timer ID to check.
+---@param timer integer The timer ID to check.
 ---@return boolean
 function Timer.isPlaying(timer) end
 
@@ -2805,10 +2700,10 @@ function Graphics.termBlend() end
 ---
 ---
 ---
----@param x any X coordinate of the text position in pixels.
----@param y any Y coordinate of the text position in pixels.
----@param text any Text to print.
----@param color any A valid color (See ::Color).
+---@param x number X coordinate of the text position in pixels.
+---@param y number Y coordinate of the text position in pixels.
+---@param text string Text to print.
+---@param color integer A valid color (See ::Color).
 ---@return nil
 function Graphics.debugPrint(x, y, text, color) end
 
@@ -2817,10 +2712,10 @@ function Graphics.debugPrint(x, y, text, color) end
 ---
 ---
 ---
----@param x any X coordinate of the pixel position in pixels.
----@param y any Y coordinate of the pixel position in pixels.
----@param color any A valid color (See ::Color).
----@param image any Image to draw on <b>(optional)</b>.
+---@param x number X coordinate of the pixel position in pixels.
+---@param y number Y coordinate of the pixel position in pixels.
+---@param color integer A valid color (See ::Color).
+---@param image? integer Image to draw on <b>(optional)</b>.
 ---@return nil
 function Graphics.drawPixel(x, y, color, image) end
 
@@ -2829,9 +2724,9 @@ function Graphics.drawPixel(x, y, color, image) end
 ---
 ---
 ---
----@param x any X coordinate of the pixel.
----@param y any Y coordinate of the pixel.
----@param img any A valid image ID.
+---@param x integer X coordinate of the pixel.
+---@param y integer Y coordinate of the pixel.
+---@param img integer A valid image ID.
 ---@return integer
 function Graphics.getPixel(x, y, img) end
 
@@ -2840,11 +2735,11 @@ function Graphics.getPixel(x, y, img) end
 ---
 ---
 ---
----@param x1 any Starting X coordinate of the line in pixels.
----@param x2 any Ending X coordinate of the line in pixels.
----@param y1 any Starting Y coordinate of the line in pixels.
----@param y2 any Ending Y coordinate of the line in pixels.
----@param color any A valid color (See ::Color).
+---@param x1 number Starting X coordinate of the line in pixels.
+---@param x2 number Ending X coordinate of the line in pixels.
+---@param y1 number Starting Y coordinate of the line in pixels.
+---@param y2 number Ending Y coordinate of the line in pixels.
+---@param color integer A valid color (See ::Color).
 ---@return nil
 function Graphics.drawLine(x1, x2, y1, y2, color) end
 
@@ -2853,11 +2748,11 @@ function Graphics.drawLine(x1, x2, y1, y2, color) end
 ---
 ---
 ---
----@param x1 any Starting X coordinate of the rectangle in pixels.
----@param x2 any Ending X coordinate of the rectangle in pixels.
----@param y1 any Starting Y coordinate of the rectangle in pixels.
----@param y2 any Ending Y coordinate of the rectangle in pixels.
----@param color any A valid color (See ::Color).
+---@param x1 number Starting X coordinate of the rectangle in pixels.
+---@param x2 number Ending X coordinate of the rectangle in pixels.
+---@param y1 number Starting Y coordinate of the rectangle in pixels.
+---@param y2 number Ending Y coordinate of the rectangle in pixels.
+---@param color integer A valid color (See ::Color).
 ---@return nil
 function Graphics.fillRect(x1, x2, y1, y2, color) end
 
@@ -2866,11 +2761,11 @@ function Graphics.fillRect(x1, x2, y1, y2, color) end
 ---
 ---
 ---
----@param x1 any Starting X coordinate of the rectangle in pixels.
----@param x2 any Ending X coordinate of the rectangle in pixels.
----@param y1 any Starting Y coordinate of the rectangle in pixels.
----@param y2 any Ending Y coordinate of the rectangle in pixels.
----@param color any A valid color (See ::Color).
+---@param x1 number Starting X coordinate of the rectangle in pixels.
+---@param x2 number Ending X coordinate of the rectangle in pixels.
+---@param y1 number Starting Y coordinate of the rectangle in pixels.
+---@param y2 number Ending Y coordinate of the rectangle in pixels.
+---@param color integer A valid color (See ::Color).
 ---@return nil
 function Graphics.fillEmptyRect(x1, x2, y1, y2, color) end
 
@@ -2879,10 +2774,10 @@ function Graphics.fillEmptyRect(x1, x2, y1, y2, color) end
 ---
 ---
 ---
----@param x any X coordinate of the circle in pixels.
----@param y any Y coordinate of the circle in pixels.
----@param rad any Radius size of the circle.
----@param color any A valid color (See ::Color).
+---@param x number X coordinate of the circle in pixels.
+---@param y number Y coordinate of the circle in pixels.
+---@param rad number Radius size of the circle.
+---@param color integer A valid color (See ::Color).
 ---@return nil
 function Graphics.fillCircle(x, y, rad, color) end
 
@@ -2891,9 +2786,9 @@ function Graphics.fillCircle(x, y, rad, color) end
 ---
 ---
 ---
----@param width any Image width.
----@param height any Image height.
----@param color any A valid color (See ::Color) <b>(optional)</b>.
+---@param width integer Image width.
+---@param height integer Image height.
+---@param color? integer A valid color (See ::Color) <b>(optional)</b>.
 ---@return integer
 function Graphics.createImage(width, height, color) end
 
@@ -2902,7 +2797,7 @@ function Graphics.createImage(width, height, color) end
 ---
 ---
 ---
----@param filename any Name of the file to open.
+---@param filename string Name of the file to open.
 ---@return integer
 function Graphics.loadImage(filename) end
 
@@ -2911,9 +2806,9 @@ function Graphics.loadImage(filename) end
 ---
 ---
 ---
----@param img any A valid image ID.
----@param filename any The filename of the screenshot output.
----@param format any The format to use for the output file <b>(optional)</b>.
+---@param img integer A valid image ID.
+---@param filename string The filename of the screenshot output.
+---@param format? ImgFmt The format to use for the output file <b>(optional)</b>.
 ---@return nil
 function Graphics.saveImage(img, filename, format) end
 
@@ -2922,7 +2817,7 @@ function Graphics.saveImage(img, filename, format) end
 ---
 ---
 ---
----@param filename any Name of the file to open.
+---@param filename string Name of the file to open.
 ---@return nil
 function Graphics.loadImageAsync(filename) end
 
@@ -2931,7 +2826,7 @@ function Graphics.loadImageAsync(filename) end
 ---
 ---
 ---
----@param filename any Name of the file to open.
+---@param filename string Name of the file to open.
 ---@return integer
 function Graphics.loadAnimatedImage(filename) end
 
@@ -2940,7 +2835,7 @@ function Graphics.loadAnimatedImage(filename) end
 ---
 ---
 ---
----@param img any A valid image ID.
+---@param img integer A valid image ID.
 ---@return integer
 function Graphics.getImageFramesNum(img) end
 
@@ -2949,8 +2844,8 @@ function Graphics.getImageFramesNum(img) end
 ---
 ---
 ---
----@param img any A valid image ID.
----@param frame any The frame to set as active.
+---@param img integer A valid image ID.
+---@param frame integer The frame to set as active.
 ---@return nil
 function Graphics.setImageFrame(img, frame) end
 
@@ -2959,7 +2854,7 @@ function Graphics.setImageFrame(img, frame) end
 ---
 ---
 ---
----@param img any A valid image ID.
+---@param img integer A valid image ID.
 ---@return nil
 function Graphics.freeImage(img) end
 
@@ -2968,9 +2863,9 @@ function Graphics.freeImage(img) end
 ---
 ---
 ---
----@param img any A valid image ID.
----@param min_filter any Min filter to use.
----@param mag_filter any Mag filter to use.
+---@param img integer A valid image ID.
+---@param min_filter ImageFilter Min filter to use.
+---@param mag_filter ImageFilter Mag filter to use.
 ---@return nil
 function Graphics.setImageFilters(img, min_filter, mag_filter) end
 
@@ -2979,7 +2874,7 @@ function Graphics.setImageFilters(img, min_filter, mag_filter) end
 ---
 ---
 ---
----@param img any A valid image ID.
+---@param img integer A valid image ID.
 ---@return integer
 function Graphics.getImageWidth(img) end
 
@@ -2988,7 +2883,7 @@ function Graphics.getImageWidth(img) end
 ---
 ---
 ---
----@param img any A valid image ID.
+---@param img integer A valid image ID.
 ---@return integer
 function Graphics.getImageHeight(img) end
 
@@ -2997,10 +2892,10 @@ function Graphics.getImageHeight(img) end
 ---
 ---
 ---
----@param x any X coordinate of the image in pixels.
----@param y any Y coordinate of the image in pixels.
----@param img any A valid image ID.
----@param color any Image tint color (See ::Color) <b>(optional)</b>.
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Graphics.drawImage(x, y, img, color) end
 
@@ -3009,11 +2904,11 @@ function Graphics.drawImage(x, y, img, color) end
 ---
 ---
 ---
----@param x any X coordinate of the image in pixels.
----@param y any Y coordinate of the image in pixels.
----@param img any A valid image ID.
----@param rad any Rotation radius.
----@param color any Image tint color (See ::Color) <b>(optional)</b>.
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param rad number Rotation radius.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Graphics.drawRotateImage(x, y, img, rad, color) end
 
@@ -3022,12 +2917,12 @@ function Graphics.drawRotateImage(x, y, img, rad, color) end
 ---
 ---
 ---
----@param x any X coordinate of the image in pixels.
----@param y any Y coordinate of the image in pixels.
----@param img any A valid image ID.
----@param x_scale any Scale value for X parameter.
----@param y_scale any Scale value for Y parameter.
----@param color any Image tint color (See ::Color) <b>(optional)</b>.
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param x_scale number Scale value for X parameter.
+---@param y_scale number Scale value for Y parameter.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Graphics.drawScaleImage(x, y, img, x_scale, y_scale, color) end
 
@@ -3036,14 +2931,14 @@ function Graphics.drawScaleImage(x, y, img, x_scale, y_scale, color) end
 ---
 ---
 ---
----@param x any X coordinate of the image in pixels.
----@param y any Y coordinate of the image in pixels.
----@param img any A valid image ID.
----@param x_start any Image X coordinate for the partial drawing.
----@param y_start any Image Y coordinate for the partial drawing.
----@param width any Partial drawing width.
----@param height any Partial drawing height.
----@param color any Image tint color (See ::Color) <b>(optional)</b>.
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param x_start integer Image X coordinate for the partial drawing.
+---@param y_start integer Image Y coordinate for the partial drawing.
+---@param width number Partial drawing width.
+---@param height number Partial drawing height.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Graphics.drawPartialImage(x, y, img, x_start, y_start, width, height, color) end
 
@@ -3052,17 +2947,17 @@ function Graphics.drawPartialImage(x, y, img, x_start, y_start, width, height, c
 ---
 ---
 ---
----@param x any X coordinate of the image in pixels.
----@param y any Y coordinate of the image in pixels.
----@param img any A valid image ID.
----@param x_start any Image X coordinate for the partial drawing.
----@param y_start any Image Y coordinate for the partial drawing.
----@param width any Partial drawing width.
----@param height any Partial drawing height.
----@param rad any Rotation radius.
----@param x_scale any Scale value for X parameter.
----@param y_scale any Scale value for Y parameter.
----@param color any Image tint color (See ::Color) <b>(optional)</b>.
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param x_start integer Image X coordinate for the partial drawing.
+---@param y_start integer Image Y coordinate for the partial drawing.
+---@param width number Partial drawing width.
+---@param height number Partial drawing height.
+---@param rad number Rotation radius.
+---@param x_scale number Scale value for X parameter.
+---@param y_scale number Scale value for Y parameter.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
 ---@return nil
 function Graphics.drawImageExtended(x, y, img, x_start, y_start, width, height, rad, x_scale, y_scale, color) end
 
@@ -3071,10 +2966,10 @@ function Graphics.drawImageExtended(x, y, img, x_start, y_start, width, height, 
 ---
 ---
 ---
----@param x any X coordinate of the rescaler output.
----@param y any Y coordinate of the rescaler output.
----@param x_scale any Scale value for X parameter.
----@param y_scale any Scale value for Y parameter.
+---@param x integer X coordinate of the rescaler output.
+---@param y integer Y coordinate of the rescaler output.
+---@param x_scale number Scale value for X parameter.
+---@param y_scale number Scale value for Y parameter.
 ---@return nil
 function Graphics.initRescaler(x, y, x_scale, y_scale) end
 
@@ -3093,10 +2988,10 @@ Registry = {}
 ---
 ---
 ---
----@param category any The category from which to take the value.
----@param name any The key related to the value.
----@param type any The type of the value.
----@return auto
+---@param category string The category from which to take the value.
+---@param name string The key related to the value.
+---@param type RegType The type of the value.
+---@return any
 function Registry.getKey(category, name, type) end
 
 ---
@@ -3104,9 +2999,9 @@ function Registry.getKey(category, name, type) end
 ---
 ---
 ---
----@param id any The identifier of the key.
----@param type any The type of the value.
----@return auto
+---@param id integer The identifier of the key.
+---@param type RegType The type of the value.
+---@return any
 function Registry.getSysKey(id, type) end
 
 ---
@@ -3114,11 +3009,11 @@ function Registry.getSysKey(id, type) end
 ---
 ---
 ---
----@param category any The category from which to take the value.
----@param name any The key related to the value.
----@param type any The type of the value.
+---@param category string The category from which to take the value.
+---@param name string The key related to the value.
+---@param type RegType The type of the value.
 ---@param value any The value to set.
----@param size any The size of the value <b>(optional)</b>.
+---@param size? integer The size of the value <b>(optional)</b>.
 ---@return nil
 function Registry.setKey(category, name, type, value, size) end
 
@@ -3129,7 +3024,7 @@ Database = {}
 ---
 ---
 ---
----@param filename any Filename of the database to open.
+---@param filename string Filename of the database to open.
 ---@return integer
 function Database.open(filename) end
 
@@ -3138,7 +3033,7 @@ function Database.open(filename) end
 ---
 ---
 ---
----@param db any A valid database handle.
+---@param db integer A valid database handle.
 ---@return nil
 function Database.close(db) end
 
@@ -3147,8 +3042,8 @@ function Database.close(db) end
 ---
 ---
 ---
----@param db any A valid database handle.
----@param query any An SQL query to execute.
+---@param db integer A valid database handle.
+---@param query string An SQL query to execute.
 ---@return table
 function Database.execQuery(db, query) end
 

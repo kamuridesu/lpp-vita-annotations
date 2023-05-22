@@ -21,7 +21,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Name of the file to open"
+                        "desc": "Name of the file to open",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -34,11 +36,15 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "loop",
-                        "desc": "If true, playback will loop <b>(optional)</b>."
+                        "desc": "If true, playback will loop <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -51,7 +57,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -64,7 +72,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -77,7 +87,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -90,7 +102,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -103,11 +117,15 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "volume",
-                        "desc": "Volume value to set."
+                        "desc": "Volume value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -120,7 +138,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -133,7 +153,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -146,7 +168,9 @@
                 "params": [
                     {
                         "param": "music",
-                        "desc": "A valid sound ID."
+                        "desc": "A valid sound ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -159,7 +183,9 @@
                 "params": [
                     {
                         "param": "id",
-                        "desc": "A valid shutter sound ID."
+                        "desc": "A valid shutter sound ID.",
+                        "type": "ShutterId",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -174,19 +200,27 @@
                 "params": [
                     {
                         "param": "r",
-                        "desc": "R channel value."
+                        "desc": "R channel value.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "g",
-                        "desc": "G channel value."
+                        "desc": "G channel value.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "b",
-                        "desc": "B channel value."
+                        "desc": "B channel value.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "a",
-                        "desc": "A channel value <B>(optional)</B>."
+                        "desc": "A channel value <B>(optional)</B>.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -199,7 +233,9 @@
                 "params": [
                     {
                         "param": "clr",
-                        "desc": "A color created with ::Color.new."
+                        "desc": "A color created with ::Color.new.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -212,7 +248,9 @@
                 "params": [
                     {
                         "param": "clr",
-                        "desc": "A color created with ::Color.new."
+                        "desc": "A color created with ::Color.new.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -225,7 +263,9 @@
                 "params": [
                     {
                         "param": "clr",
-                        "desc": "A color created with ::Color.new."
+                        "desc": "A color created with ::Color.new.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -238,7 +278,9 @@
                 "params": [
                     {
                         "param": "clr",
-                        "desc": "A color created with ::Color.new."
+                        "desc": "A color created with ::Color.new.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -253,35 +295,51 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the vertex."
+                        "desc": "X coordinate of the vertex.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the vertex."
+                        "desc": "Y coordinate of the vertex.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "z",
-                        "desc": "Z coordinate of the vertex."
+                        "desc": "Z coordinate of the vertex.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "u",
-                        "desc": "U coordinate for texture mapping."
+                        "desc": "U coordinate for texture mapping.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "v",
-                        "desc": "v coordinate for texture mapping."
+                        "desc": "v coordinate for texture mapping.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "n1",
-                        "desc": "Normal X coordinate of the vertex."
+                        "desc": "Normal X coordinate of the vertex.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "n2",
-                        "desc": "Normal Y coordinate of the vertex."
+                        "desc": "Normal Y coordinate of the vertex.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "n3",
-                        "desc": "Normal Z coordinate of the vertex."
+                        "desc": "Normal Z coordinate of the vertex.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -294,7 +352,9 @@
                 "params": [
                     {
                         "param": "v",
-                        "desc": "Vertex ID created with Render.createVertex to destroy."
+                        "desc": "Vertex ID created with Render.createVertex to destroy.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -307,11 +367,15 @@
                 "params": [
                     {
                         "param": "v",
-                        "desc": "A table with the model vertices."
+                        "desc": "A table with the model vertices.",
+                        "type": "table",
+                        "optional": false
                     },
                     {
                         "param": "texture",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -324,11 +388,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Name of the file to load."
+                        "desc": "Name of the file to load.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "texture",
-                        "desc": "Texture ID to use."
+                        "desc": "Texture ID to use.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -341,7 +409,9 @@
                 "params": [
                     {
                         "param": "model",
-                        "desc": "A valid model ID."
+                        "desc": "A valid model ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -354,35 +424,51 @@
                 "params": [
                     {
                         "param": "model",
-                        "desc": "A valid model ID."
+                        "desc": "A valid model ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "x",
-                        "desc": "X coordinate of the model."
+                        "desc": "X coordinate of the model.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the model."
+                        "desc": "Y coordinate of the model.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "z",
-                        "desc": "Z coordinate of the model."
+                        "desc": "Z coordinate of the model.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "angleX",
-                        "desc": "X rotation value of the model."
+                        "desc": "X rotation value of the model.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "angleY",
-                        "desc": "Y rotation value of the model."
+                        "desc": "Y rotation value of the model.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "angleZ",
-                        "desc": "Z rotation value of the model."
+                        "desc": "Z rotation value of the model.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "unbind",
-                        "desc": "Draw the model unbinded from camera instance <b>(optional)</b>."
+                        "desc": "Draw the model unbinded from camera instance <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -395,11 +481,15 @@
                 "params": [
                     {
                         "param": "model",
-                        "desc": "A valid model ID."
+                        "desc": "A valid model ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "texture",
-                        "desc": "Texture ID to use."
+                        "desc": "Texture ID to use.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -412,27 +502,39 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the camera."
+                        "desc": "X coordinate of the camera.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the camera."
+                        "desc": "Y coordinate of the camera.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "z",
-                        "desc": "Z coordinate of the camera."
+                        "desc": "Z coordinate of the camera.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "rot_x",
-                        "desc": "X related rotation value of the camera."
+                        "desc": "X related rotation value of the camera.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "rot_y",
-                        "desc": "Y related rotation value of the camera."
+                        "desc": "Y related rotation value of the camera.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "rot_z",
-                        "desc": "Z related rotation value of the camera."
+                        "desc": "Z related rotation value of the camera.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -479,7 +581,9 @@
                 "params": [
                     {
                         "param": "theme",
-                        "desc": "The theme to set."
+                        "desc": "The theme to set.",
+                        "type": "GuiTheme",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -492,19 +596,27 @@
                 "params": [
                     {
                         "param": "use_touch",
-                        "desc": "Enable front touch usage for cursor movement."
+                        "desc": "Enable front touch usage for cursor movement.",
+                        "type": "boolean",
+                        "optional": false
                     },
                     {
                         "param": "use_rear",
-                        "desc": "Enable rearpad touch usage for cursor movement."
+                        "desc": "Enable rearpad touch usage for cursor movement.",
+                        "type": "boolean",
+                        "optional": false
                     },
                     {
                         "param": "use_buttons",
-                        "desc": "Enable buttons usage for cursor movement."
+                        "desc": "Enable buttons usage for cursor movement.",
+                        "type": "boolean",
+                        "optional": false
                     },
                     {
                         "param": "indirect_touch",
-                        "desc": "If enabled, cursor is moved by dragging it. If disabled, cursor jumps to the touched location."
+                        "desc": "If enabled, cursor is moved by dragging it. If disabled, cursor jumps to the touched location.",
+                        "type": "boolean",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -533,11 +645,15 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "enabled",
-                        "desc": "The menu status to set <b>(optional)</b>."
+                        "desc": "The menu status to set <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -558,15 +674,21 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "selected",
-                        "desc": "The item checked status <b>(optional)</b>."
+                        "desc": "The item checked status <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     },
                     {
                         "param": "enabled",
-                        "desc": "The item status to set <b>(optional)</b>."
+                        "desc": "The item status to set <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -579,11 +701,15 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color) <b>(optional)</b>."
+                        "desc": "A valid color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -592,24 +718,13 @@
                 "group": "Gui",
                 "description": "Draw a text."
             },
-            "getTextSize": {
-                "params": [
-                    {
-                        "param": "text",
-                        "desc": "The text to calculate the size about."
-                    }
-                ],
-                "returns": null,
-                "return_type": "number[]",
-                "example": "w, h = Gui.getTextSize(\"Hello World\")\nend\n",
-                "group": "Gui",
-                "description": "Calculate a text size."
-            },
             "drawDisabledText": {
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -622,7 +737,9 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -635,15 +752,21 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "width",
-                        "desc": "The width of the button <b>(optional)</b>."
+                        "desc": "The width of the button <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "height",
-                        "desc": "The height of the button <b>(optional)</b>."
+                        "desc": "The height of the button <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -656,7 +779,9 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -669,11 +794,15 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "status",
-                        "desc": "The initial checked status of the checkbox."
+                        "desc": "The initial checked status of the checkbox.",
+                        "type": "boolean",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -686,11 +815,15 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "status",
-                        "desc": "The initial checked status of the radiobutton."
+                        "desc": "The initial checked status of the radiobutton.",
+                        "type": "boolean",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -711,11 +844,15 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "flags",
-                        "desc": "The flags to use with the window."
+                        "desc": "The flags to use with the window.",
+                        "type": "WinFlags",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -736,15 +873,21 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the window position in pixels."
+                        "desc": "X coordinate of the window position in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the window position in pixels."
+                        "desc": "Y coordinate of the window position in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "mode",
-                        "desc": "A mode to use for the function."
+                        "desc": "A mode to use for the function.",
+                        "type": "ConfigMode",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -757,15 +900,21 @@
                 "params": [
                     {
                         "param": "w",
-                        "desc": "of the window in pixels."
+                        "desc": "of the window in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "h",
-                        "desc": "Height of the window in pixels."
+                        "desc": "Height of the window in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "mode",
-                        "desc": "A mode to use for the function."
+                        "desc": "A mode to use for the function.",
+                        "type": "ConfigMode",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -786,7 +935,9 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -795,93 +946,25 @@
                 "group": "Gui",
                 "description": "Draw a tooltip when cursor hover on the previous item."
             },
-            "drawSlider": {
-                "params": [
-                    {
-                        "param": "label",
-                        "desc": "The label to show."
-                    },
-                    {
-                        "param": "val_min",
-                        "desc": "The minimum value settable through the slider."
-                    },
-                    {
-                        "param": "val_max",
-                        "desc": "The maximum value settable through the slider."
-                    },
-                    {
-                        "param": "val1",
-                        "desc": "The first value to handle with the slider."
-                    },
-                    {
-                        "param": "val2",
-                        "desc": "The second value to handle with the slider <b>(optional)</b>."
-                    },
-                    {
-                        "param": "val3",
-                        "desc": "The third value to handle with the slider <b>(optional)</b>."
-                    },
-                    {
-                        "param": "val4",
-                        "desc": "The forth value to handle with the slider <b>(optional)</b>."
-                    }
-                ],
-                "returns": null,
-                "return_type": "number[]",
-                "example": "slider_val = Gui.drawSlider(\"A slider\", 0, 100, slider_val)\n",
-                "group": "Gui",
-                "description": "Draw a slider with variable amount of values."
-            },
-            "drawIntSlider": {
-                "params": [
-                    {
-                        "param": "label",
-                        "desc": "The label to show."
-                    },
-                    {
-                        "param": "val_min",
-                        "desc": "The minimum value settable through the slider."
-                    },
-                    {
-                        "param": "val_max",
-                        "desc": "The maximum value settable through the slider."
-                    },
-                    {
-                        "param": "val1",
-                        "desc": "The first value to handle with the slider."
-                    },
-                    {
-                        "param": "val2",
-                        "desc": "The second value to handle with the slider <b>(optional)</b>."
-                    },
-                    {
-                        "param": "val3",
-                        "desc": "The third value to handle with the slider <b>(optional)</b>."
-                    },
-                    {
-                        "param": "val4",
-                        "desc": "The forth value to handle with the slider <b>(optional)</b>."
-                    }
-                ],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "slider_val = Gui.drawIntSlider(\"A int slider\", 0, 100, slider_val)\n",
-                "group": "Gui",
-                "description": "Draw a slider with variable amount of integer values."
-            },
             "drawComboBox": {
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "index",
-                        "desc": "The currently selected element."
+                        "desc": "The currently selected element.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "elements",
-                        "desc": "The elements to use for the combobox."
+                        "desc": "The elements to use for the combobox.",
+                        "type": "table",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -894,15 +977,21 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "index",
-                        "desc": "The currently selected element."
+                        "desc": "The currently selected element.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "elements",
-                        "desc": "The elements to use for the combobox."
+                        "desc": "The elements to use for the combobox.",
+                        "type": "table",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -915,15 +1004,21 @@
                 "params": [
                     {
                         "param": "label",
-                        "desc": "The label to show."
+                        "desc": "The label to show.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "The currently picked color (See ::Color)"
+                        "desc": "The currently picked color (See ::Color)",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "alpha",
-                        "desc": "If true, alpha value will be pickable, not otherwise. <b>(optional)</b>."
+                        "desc": "If true, alpha value will be pickable, not otherwise. <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -936,15 +1031,21 @@
                 "params": [
                     {
                         "param": "fraction",
-                        "desc": "Progress value to show in 0.0 - 1.0 range."
+                        "desc": "Progress value to show in 0.0 - 1.0 range.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "w",
-                        "desc": "Width of the element in pixels <b>(optional)</b>."
+                        "desc": "Width of the element in pixels <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "h",
-                        "desc": "Height of the element in pixels <b>(optional)</b>."
+                        "desc": "Height of the element in pixels <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -957,35 +1058,51 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "width",
-                        "desc": "Width in pixels of the widget <b>(optional)</b>."
+                        "desc": "Width in pixels of the widget <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "height",
-                        "desc": "Height in pixels of the widget <b>(optional)</b>."
+                        "desc": "Height in pixels of the widget <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "img_x",
-                        "desc": "Source image X coordinate <b>(optional)</b>."
+                        "desc": "Source image X coordinate <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "img_y",
-                        "desc": "Source image Y coordinate <b>(optional)</b>."
+                        "desc": "Source image Y coordinate <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "img_w",
-                        "desc": "Source image width <b>(optional)</b>."
+                        "desc": "Source image width <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "img_h",
-                        "desc": "Source image height <b>(optional)</b>."
+                        "desc": "Source image height <b>(optional)</b>.",
+                        "type": "number",
+                        "optional": true
                     },
                     {
                         "param": "color",
-                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -998,11 +1115,15 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate in pixels."
+                        "desc": "X coordinate in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate in pixels."
+                        "desc": "Y coordinate in pixels.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1015,7 +1136,9 @@
                 "params": [
                     {
                         "param": "w",
-                        "desc": "Width of the element in pixels."
+                        "desc": "Width of the element in pixels.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1038,11 +1161,15 @@
                 "params": [
                     {
                         "param": "port",
-                        "desc": "Port to use."
+                        "desc": "Port to use.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "protocol",
-                        "desc": "Protocol to use <b>(optional)</b>."
+                        "desc": "Protocol to use <b>(optional)</b>.",
+                        "type": "NetProtocol",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -1055,15 +1182,21 @@
                 "params": [
                     {
                         "param": "host",
-                        "desc": "Host to connect to."
+                        "desc": "Host to connect to.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "port",
-                        "desc": "Port to use."
+                        "desc": "Port to use.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "protocol",
-                        "desc": "Protocol to use <b>(optional)</b>."
+                        "desc": "Protocol to use <b>(optional)</b>.",
+                        "type": "NetProtocol",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -1076,11 +1209,15 @@
                 "params": [
                     {
                         "param": "sock",
-                        "desc": "A valid socket id."
+                        "desc": "A valid socket id.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "data",
-                        "desc": "Data to send."
+                        "desc": "Data to send.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1093,11 +1230,15 @@
                 "params": [
                     {
                         "param": "sock",
-                        "desc": "A valid socket id."
+                        "desc": "A valid socket id.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "size",
-                        "desc": "Maximum size of the received data."
+                        "desc": "Maximum size of the received data.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1110,7 +1251,9 @@
                 "params": [
                     {
                         "param": "sock",
-                        "desc": "A valid server socket id."
+                        "desc": "A valid server socket id.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1123,7 +1266,9 @@
                 "params": [
                     {
                         "param": "sock",
-                        "desc": "A valid socket id."
+                        "desc": "A valid socket id.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1138,7 +1283,9 @@
                 "params": [
                     {
                         "param": "clr",
-                        "desc": "Color of the screen after the clear <B>(optional)</B>."
+                        "desc": "Color of the screen after the clear <B>(optional)</B>.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1159,11 +1306,15 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the pixel."
+                        "desc": "X coordinate of the pixel.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the pixel."
+                        "desc": "Y coordinate of the pixel.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1186,27 +1337,39 @@
                 "params": [
                     {
                         "param": "title",
-                        "desc": "The keyboard title."
+                        "desc": "The keyboard title.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "text",
-                        "desc": "The keyboard initial text."
+                        "desc": "The keyboard initial text.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "length",
-                        "desc": "The text maximum length <b>(optional)</b>."
+                        "desc": "The text maximum length <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     },
                     {
                         "param": "type",
-                        "desc": "The keyboard type <b>(optional)</b>."
+                        "desc": "The keyboard type <b>(optional)</b>.",
+                        "type": "KeyType",
+                        "optional": true
                     },
                     {
                         "param": "mode",
-                        "desc": "The keyboard mode <b>(optional)</b>."
+                        "desc": "The keyboard mode <b>(optional)</b>.",
+                        "type": "KeyMode",
+                        "optional": true
                     },
                     {
                         "param": "opt",
-                        "desc": "Optional keyboard features to use <b>(optional)</b>."
+                        "desc": "Optional keyboard features to use <b>(optional)</b>.",
+                        "type": "KeyOption",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -1245,7 +1408,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The name of the font file"
+                        "desc": "The name of the font file",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1258,7 +1423,9 @@
                 "params": [
                     {
                         "param": "font",
-                        "desc": "A valid font loaded with Font.load."
+                        "desc": "A valid font loaded with Font.load.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1271,11 +1438,15 @@
                 "params": [
                     {
                         "param": "font",
-                        "desc": "A valid font loaded with Font.load."
+                        "desc": "A valid font loaded with Font.load.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "size",
-                        "desc": "Size to set for Font.print calls in pixels."
+                        "desc": "Size to set for Font.print calls in pixels.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1288,11 +1459,15 @@
                 "params": [
                     {
                         "param": "font",
-                        "desc": "A valid font loaded with Font.load."
+                        "desc": "A valid font loaded with Font.load.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "text",
-                        "desc": "Text to calculate width of."
+                        "desc": "Text to calculate width of.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1305,11 +1480,15 @@
                 "params": [
                     {
                         "param": "font",
-                        "desc": "A valid font loaded with Font.load."
+                        "desc": "A valid font loaded with Font.load.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "text",
-                        "desc": "Text to calculate width of."
+                        "desc": "Text to calculate width of.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1322,23 +1501,33 @@
                 "params": [
                     {
                         "param": "font",
-                        "desc": "A valid font loaded with Font.load."
+                        "desc": "A valid font loaded with Font.load.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "x",
-                        "desc": "X starting coordinate for the print."
+                        "desc": "X starting coordinate for the print.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y starting coordinate for the print."
+                        "desc": "Y starting coordinate for the print.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "text",
-                        "desc": "Text to print."
+                        "desc": "Text to print.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "Color of the text (See ::Color)."
+                        "desc": "Color of the text (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1353,7 +1542,9 @@
                 "params": [
                     {
                         "param": "port",
-                        "desc": "Device port to use <b>(optional)</b>."
+                        "desc": "Device port to use <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -1362,57 +1553,19 @@
                 "group": "Controls",
                 "description": "Read pressed buttons."
             },
-            "readLeftAnalog": {
-                "params": [
-                    {
-                        "param": "port",
-                        "desc": "Device port to use <b>(optional)</b>."
-                    }
-                ],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "x, y = Controls.readLeftAnalog()\n",
-                "group": "Controls",
-                "description": "Read left analog state."
-            },
-            "readRightAnalog": {
-                "params": [
-                    {
-                        "param": "port",
-                        "desc": "Device port to use <b>(optional)</b>."
-                    }
-                ],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "x, y = Controls.readRightAnalog()\n",
-                "group": "Controls",
-                "description": "Read right analog state."
-            },
-            "readTouch": {
-                "params": [],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "x1, y1, x2, y2 = Controls.readTouch()\n",
-                "group": "Controls",
-                "description": "Read touchscreen state."
-            },
-            "readRetroTouch": {
-                "params": [],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "x1, y1, x2, y2 = Controls.readRetroTouch()\n",
-                "group": "Controls",
-                "description": "Read rearpad state."
-            },
             "check": {
                 "params": [
                     {
                         "param": "bitmask",
-                        "desc": "A controls bitmask returned by Controls.read."
+                        "desc": "A controls bitmask returned by Controls.read.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "value",
-                        "desc": "A control value to check."
+                        "desc": "A control value to check.",
+                        "type": "Ctrl",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1425,15 +1578,21 @@
                 "params": [
                     {
                         "param": "port",
-                        "desc": "Device port to use."
+                        "desc": "Device port to use.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "small",
-                        "desc": "Intensity for small sensor."
+                        "desc": "Intensity for small sensor.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "large",
-                        "desc": "Intensity for large sensor."
+                        "desc": "Intensity for large sensor.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1446,11 +1605,15 @@
                 "params": [
                     {
                         "param": "port",
-                        "desc": "Device port to use."
+                        "desc": "Device port to use.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "An RGBA color value (See ::Color)."
+                        "desc": "An RGBA color value (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1530,22 +1693,6 @@
                 "example": "Controls.disableAccel()\n",
                 "group": "Controls",
                 "description": "Disable accelerometer sensor."
-            },
-            "readGyro": {
-                "params": [],
-                "returns": null,
-                "return_type": "number[]",
-                "example": "x, y, z = Controls.readGyro()\n",
-                "group": "Controls",
-                "description": "Read gyroscope state."
-            },
-            "readAccel": {
-                "params": [],
-                "returns": null,
-                "return_type": "number[]",
-                "example": "x, y, z = Controls.readAccel()\n",
-                "group": "Controls",
-                "description": "Read accelerometer state."
             }
         },
         "Camera": {
@@ -1553,15 +1700,21 @@
                 "params": [
                     {
                         "param": "type",
-                        "desc": "Camera to init."
+                        "desc": "Camera to init.",
+                        "type": "CameraType",
+                        "optional": false
                     },
                     {
                         "param": "resolution",
-                        "desc": "Output resolution."
+                        "desc": "Output resolution.",
+                        "type": "CameraRes",
+                        "optional": false
                     },
                     {
                         "param": "framerate",
-                        "desc": "Output framerate."
+                        "desc": "Output framerate.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1590,7 +1743,9 @@
                 "params": [
                     {
                         "param": "value",
-                        "desc": "Value to set."
+                        "desc": "Value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1611,7 +1766,9 @@
                 "params": [
                     {
                         "param": "value",
-                        "desc": "Value to set."
+                        "desc": "Value to set.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1632,7 +1789,9 @@
                 "params": [
                     {
                         "param": "value",
-                        "desc": "Value to set."
+                        "desc": "Value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1653,7 +1812,9 @@
                 "params": [
                     {
                         "param": "value",
-                        "desc": "Value to set."
+                        "desc": "Value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1674,7 +1835,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "Mode to set."
+                        "desc": "Mode to set.",
+                        "type": "CameraReverse",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1695,7 +1858,9 @@
                 "params": [
                     {
                         "param": "effect",
-                        "desc": "Effect to set."
+                        "desc": "Effect to set.",
+                        "type": "CameraEffect",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1716,7 +1881,9 @@
                 "params": [
                     {
                         "param": "value",
-                        "desc": "Value to set."
+                        "desc": "Value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1737,7 +1904,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "Mode to set."
+                        "desc": "Mode to set.",
+                        "type": "CameraAntiFlick",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1758,7 +1927,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "Mode to set."
+                        "desc": "Mode to set.",
+                        "type": "CameraISO",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1779,7 +1950,9 @@
                 "params": [
                     {
                         "param": "value",
-                        "desc": "Value to set."
+                        "desc": "Value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1800,7 +1973,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "Mode to set."
+                        "desc": "Mode to set.",
+                        "type": "CameraWB",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1821,7 +1996,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "Mode to set."
+                        "desc": "Mode to set.",
+                        "type": "CameraBacklight",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1842,7 +2019,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "Mode to set."
+                        "desc": "Mode to set.",
+                        "type": "CameraNightmode",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1865,11 +2044,15 @@
                 "params": [
                     {
                         "param": "time",
-                        "desc": "The time to record in seconds."
+                        "desc": "The time to record in seconds.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "samplerate",
-                        "desc": "The samplerate of the output in Hz."
+                        "desc": "The samplerate of the output in Hz.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1882,7 +2065,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename of the resulting WAV file."
+                        "desc": "The filename of the resulting WAV file.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -1985,23 +2170,33 @@
                 "params": [
                     {
                         "param": "url",
-                        "desc": "The url from where to download the file."
+                        "desc": "The url from where to download the file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "file",
-                        "desc": "Filename where to save the downloaded file."
+                        "desc": "Filename where to save the downloaded file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "useragent",
-                        "desc": "Custom useragent to use <b>(optional)</b>."
+                        "desc": "Custom useragent to use <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     },
                     {
                         "param": "method",
-                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>.",
+                        "type": "HTTPMethod",
+                        "optional": true
                     },
                     {
                         "param": "postdata",
-                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2014,23 +2209,33 @@
                 "params": [
                     {
                         "param": "url",
-                        "desc": "The url from where to download the file."
+                        "desc": "The url from where to download the file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "file",
-                        "desc": "Filename where to save the downloaded file."
+                        "desc": "Filename where to save the downloaded file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "useragent",
-                        "desc": "Custom useragent to use <b>(optional)</b>."
+                        "desc": "Custom useragent to use <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     },
                     {
                         "param": "method",
-                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>.",
+                        "type": "HTTPMethod",
+                        "optional": true
                     },
                     {
                         "param": "postdata",
-                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2043,19 +2248,27 @@
                 "params": [
                     {
                         "param": "url",
-                        "desc": "The url where to send the HTTP request."
+                        "desc": "The url where to send the HTTP request.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "useragent",
-                        "desc": "Custom useragent to use <b>(optional)</b>."
+                        "desc": "Custom useragent to use <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     },
                     {
                         "param": "method",
-                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>.",
+                        "type": "HTTPMethod",
+                        "optional": true
                     },
                     {
                         "param": "postdata",
-                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2068,19 +2281,27 @@
                 "params": [
                     {
                         "param": "url",
-                        "desc": "The url where to send the HTTP request."
+                        "desc": "The url where to send the HTTP request.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "useragent",
-                        "desc": "Custom useragent to use <b>(optional)</b>."
+                        "desc": "Custom useragent to use <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     },
                     {
                         "param": "method",
-                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>."
+                        "desc": "Method to use to perform the HTTP request <b>(optional)</b>.",
+                        "type": "HTTPMethod",
+                        "optional": true
                     },
                     {
                         "param": "postdata",
-                        "desc": "POST data to send with the HTTP request <b>(optional)</b>."
+                        "desc": "POST data to send with the HTTP request <b>(optional)</b>.",
+                        "type": "string",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2095,11 +2316,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename to be opened."
+                        "desc": "Filename to be opened.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "flags",
-                        "desc": "An attribute flag."
+                        "desc": "An attribute flag.",
+                        "type": "IOFlags",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2112,15 +2337,21 @@
                 "params": [
                     {
                         "param": "handle",
-                        "desc": "A file handle opened with ::System.openFile."
+                        "desc": "A file handle opened with ::System.openFile.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "text",
-                        "desc": "The text to write on file."
+                        "desc": "The text to write on file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "len",
-                        "desc": "Length of the text."
+                        "desc": "Length of the text.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2133,11 +2364,15 @@
                 "params": [
                     {
                         "param": "handle",
-                        "desc": "A file handle opened with ::System.openFile."
+                        "desc": "A file handle opened with ::System.openFile.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "len",
-                        "desc": "Length of the string to read in bytes."
+                        "desc": "Length of the string to read in bytes.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2150,15 +2385,21 @@
                 "params": [
                     {
                         "param": "handle",
-                        "desc": "A file handle opened with ::System.openFile."
+                        "desc": "A file handle opened with ::System.openFile.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "pos",
-                        "desc": "Position to set."
+                        "desc": "Position to set.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "seek",
-                        "desc": "Start point for the position."
+                        "desc": "Start point for the position.",
+                        "type": "IOSeek",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2171,7 +2412,9 @@
                 "params": [
                     {
                         "param": "handle",
-                        "desc": "A file handle opened with ::System.openFile."
+                        "desc": "A file handle opened with ::System.openFile.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2184,7 +2427,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename to be checked."
+                        "desc": "Filename to be checked.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2197,7 +2442,9 @@
                 "params": [
                     {
                         "param": "handle",
-                        "desc": "A file handle opened with ::System.openFile."
+                        "desc": "A file handle opened with ::System.openFile.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2210,7 +2457,9 @@
                 "params": [
                     {
                         "param": "handle",
-                        "desc": "A file handle opened with ::System.openFile."
+                        "desc": "A file handle opened with ::System.openFile.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2223,7 +2472,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename to be checked."
+                        "desc": "Filename to be checked.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2236,7 +2487,9 @@
                 "params": [
                     {
                         "param": "dirname",
-                        "desc": "Folder name to be checked."
+                        "desc": "Folder name to be checked.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2249,11 +2502,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename to be renamed."
+                        "desc": "Filename to be renamed.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "filename2",
-                        "desc": "New filename."
+                        "desc": "New filename.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2266,11 +2523,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename to be copied."
+                        "desc": "Filename to be copied.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "filename2",
-                        "desc": "New filename."
+                        "desc": "New filename.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2283,7 +2544,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename to be removed."
+                        "desc": "Filename to be removed.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2296,7 +2559,9 @@
                 "params": [
                     {
                         "param": "dirname",
-                        "desc": "Path to be removed."
+                        "desc": "Path to be removed.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2309,7 +2574,9 @@
                 "params": [
                     {
                         "param": "dirname",
-                        "desc": "Path to be created."
+                        "desc": "Path to be created.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2322,7 +2589,9 @@
                 "params": [
                     {
                         "param": "dirname",
-                        "desc": "Path to be listed."
+                        "desc": "Path to be listed.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2367,7 +2636,9 @@
                 "params": [
                     {
                         "param": "msecs",
-                        "desc": "Time to wait in microseconds."
+                        "desc": "Time to wait in microseconds.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2452,7 +2723,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer feature to disable."
+                        "desc": "The timer feature to disable.",
+                        "type": "PowerTimer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2465,7 +2738,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer feature to enable."
+                        "desc": "The timer feature to enable.",
+                        "type": "PowerTimer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2478,7 +2753,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer feature to reset."
+                        "desc": "The timer feature to reset.",
+                        "type": "PowerTimer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2491,7 +2768,9 @@
                 "params": [
                     {
                         "param": "clock",
-                        "desc": "The clock to set in Mhz."
+                        "desc": "The clock to set in Mhz.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2504,7 +2783,9 @@
                 "params": [
                     {
                         "param": "clock",
-                        "desc": "The clock to set in Mhz."
+                        "desc": "The clock to set in Mhz.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2517,7 +2798,9 @@
                 "params": [
                     {
                         "param": "clock",
-                        "desc": "The clock to set in Mhz."
+                        "desc": "The clock to set in Mhz.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2562,7 +2845,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The file to start."
+                        "desc": "The file to start.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2575,7 +2860,9 @@
                 "params": [
                     {
                         "param": "titleid",
-                        "desc": "The title ID of the application to start."
+                        "desc": "The title ID of the application to start.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2588,7 +2875,9 @@
                 "params": [
                     {
                         "param": "dev",
-                        "desc": "The device name."
+                        "desc": "The device name.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2601,7 +2890,9 @@
                 "params": [
                     {
                         "param": "dev",
-                        "desc": "The device name."
+                        "desc": "The device name.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2609,22 +2900,6 @@
                 "example": "Graphics.debugPrint(5, 5, System.getFreeSpace(\"ux0:\") .. \"/\" .. System.getTotalSpace(\"ux0:\"), Color.new(255, 255, 255))\n",
                 "group": "System",
                 "description": "Get total space for a given device."
-            },
-            "getTime": {
-                "params": [],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "h,m,s = System.getTime()\n",
-                "group": "System",
-                "description": "Get console time."
-            },
-            "getDate": {
-                "params": [],
-                "returns": null,
-                "return_type": "int[]",
-                "example": "day_num, d, m, y = System.getDate()\nif day_num == 1 then\nday_name = \"Monday\"\nend\n",
-                "group": "System",
-                "description": "Get console date."
             },
             "getUsername": {
                 "params": [],
@@ -2678,7 +2953,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename to extract info from."
+                        "desc": "The filename to extract info from.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2691,11 +2968,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename to extract."
+                        "desc": "The filename to extract.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "dirname",
-                        "desc": "The path where to extract files."
+                        "desc": "The path where to extract files.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2708,11 +2989,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename to extract."
+                        "desc": "The filename to extract.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "dirname",
-                        "desc": "The path where to extract files."
+                        "desc": "The path where to extract files.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2725,15 +3010,21 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename of the ZIP archive."
+                        "desc": "The filename of the ZIP archive.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "file",
-                        "desc": "The file to extract."
+                        "desc": "The file to extract.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "destname",
-                        "desc": "The filename where to extract file."
+                        "desc": "The filename where to extract file.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2746,11 +3037,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename to extract."
+                        "desc": "The filename to extract.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "dirname",
-                        "desc": "The path where to extract files."
+                        "desc": "The path where to extract files.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2763,15 +3058,21 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename of the ZIP archive."
+                        "desc": "The filename of the ZIP archive.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "file",
-                        "desc": "The file to extract."
+                        "desc": "The file to extract.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "destname",
-                        "desc": "The filename where to extract file."
+                        "desc": "The filename where to extract file.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2784,15 +3085,21 @@
                 "params": [
                     {
                         "param": "path",
-                        "desc": "The filename or path to compress."
+                        "desc": "The filename or path to compress.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "filename",
-                        "desc": "The filename of the resulting zip file."
+                        "desc": "The filename of the resulting zip file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "ratio",
-                        "desc": "The compression ratio to use <b>(optional)</b>."
+                        "desc": "The compression ratio to use <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2805,19 +3112,27 @@
                 "params": [
                     {
                         "param": "path",
-                        "desc": "The filename or path to compress."
+                        "desc": "The filename or path to compress.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "filename",
-                        "desc": "The filename of the resulting zip file."
+                        "desc": "The filename of the resulting zip file.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "parent",
-                        "desc": "The parent folder inside the zip file where to place the path."
+                        "desc": "The parent folder inside the zip file where to place the path.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "ratio",
-                        "desc": "The compression ratio to use <b>(optional)</b>."
+                        "desc": "The compression ratio to use <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2846,15 +3161,21 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "The filename of the screenshot output."
+                        "desc": "The filename of the screenshot output.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "format",
-                        "desc": "The format to use for the output file <b>(optional)</b>."
+                        "desc": "The format to use for the output file <b>(optional)</b>.",
+                        "type": "ImgFmt",
+                        "optional": true
                     },
                     {
                         "param": "ratio",
-                        "desc": "Compression ratio for JPG compression <b>(optional)</b>."
+                        "desc": "Compression ratio for JPG compression <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2867,7 +3188,9 @@
                 "params": [
                     {
                         "param": "uri",
-                        "desc": "URI to exec."
+                        "desc": "URI to exec.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2912,15 +3235,21 @@
                 "params": [
                     {
                         "param": "text",
-                        "desc": "The text of the system message."
+                        "desc": "The text of the system message.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "progressbar",
-                        "desc": "Progressbar mode."
+                        "desc": "Progressbar mode.",
+                        "type": "boolean",
+                        "optional": false
                     },
                     {
                         "param": "buttons",
-                        "desc": "Buttons scheme to use <b>(optional)</b>."
+                        "desc": "Buttons scheme to use <b>(optional)</b>.",
+                        "type": "BtnMode",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -2941,7 +3270,9 @@
                 "params": [
                     {
                         "param": "progress",
-                        "desc": "Progress percentage."
+                        "desc": "Progress percentage.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2954,7 +3285,9 @@
                 "params": [
                     {
                         "param": "text",
-                        "desc": "Submessage text to set."
+                        "desc": "Submessage text to set.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2975,7 +3308,9 @@
                 "params": [
                     {
                         "param": "idx",
-                        "desc": "The index number of the partition."
+                        "desc": "The index number of the partition.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -2988,11 +3323,15 @@
                 "params": [
                     {
                         "param": "idx",
-                        "desc": "The index number of the partition."
+                        "desc": "The index number of the partition.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "perms",
-                        "desc": "Permissions to set for the mounted partition."
+                        "desc": "Permissions to set for the mounted partition.",
+                        "type": "MntPerm",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3005,7 +3344,9 @@
                 "params": [
                     {
                         "param": "dir",
-                        "desc": "The path to the extracted app."
+                        "desc": "The path to the extracted app.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3018,7 +3359,9 @@
                 "params": [
                     {
                         "param": "titleid",
-                        "desc": "The titleid of the app to uninstall."
+                        "desc": "The titleid of the app to uninstall.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3031,7 +3374,9 @@
                 "params": [
                     {
                         "param": "titleid",
-                        "desc": "The titleid of the app to check."
+                        "desc": "The titleid of the app to check.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3052,7 +3397,9 @@
                 "params": [
                     {
                         "param": "path",
-                        "desc": "The path to the plugin to load."
+                        "desc": "The path to the plugin to load.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3065,7 +3412,9 @@
                 "params": [
                     {
                         "param": "path",
-                        "desc": "The path to the plugin to load."
+                        "desc": "The path to the plugin to load.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3078,7 +3427,9 @@
                 "params": [
                     {
                         "param": "plug_id",
-                        "desc": "The module identifier for the plugin to unload."
+                        "desc": "The module identifier for the plugin to unload.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3091,7 +3442,9 @@
                 "params": [
                     {
                         "param": "mnt",
-                        "desc": "The mountpoint to unmount."
+                        "desc": "The mountpoint to unmount.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3122,11 +3475,15 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filepath of the file to reproduce."
+                        "desc": "Filepath of the file to reproduce.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "loop",
-                        "desc": "If true, playback will loop <b>(optional)</b>."
+                        "desc": "If true, playback will loop <b>(optional)</b>.",
+                        "type": "boolean",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3179,7 +3536,9 @@
                 "params": [
                     {
                         "param": "volume",
-                        "desc": "Volume value to set."
+                        "desc": "Volume value to set.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3208,7 +3567,9 @@
                 "params": [
                     {
                         "param": "time",
-                        "desc": "The position in milliseconds where to jump in the video playback."
+                        "desc": "The position in milliseconds where to jump in the video playback.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3221,7 +3582,9 @@
                 "params": [
                     {
                         "param": "mode",
-                        "desc": "The mode to set."
+                        "desc": "The mode to set.",
+                        "type": "PlayMode",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3234,7 +3597,9 @@
                 "params": [
                     {
                         "param": "fname",
-                        "desc": "The file to use as subtitles source."
+                        "desc": "The file to use as subtitles source.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3273,7 +3638,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to get the time of."
+                        "desc": "The timer ID to get the time of.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3286,11 +3653,15 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to set the time of."
+                        "desc": "The timer ID to set the time of.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "msecs",
-                        "desc": "The time to set in milliseconds."
+                        "desc": "The time to set in milliseconds.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3303,7 +3674,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to destroy."
+                        "desc": "The timer ID to destroy.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3316,7 +3689,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to pause."
+                        "desc": "The timer ID to pause.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3329,7 +3704,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to resume."
+                        "desc": "The timer ID to resume.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3342,7 +3719,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to reset."
+                        "desc": "The timer ID to reset.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3355,7 +3734,9 @@
                 "params": [
                     {
                         "param": "timer",
-                        "desc": "The timer ID to check."
+                        "desc": "The timer ID to check.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3386,19 +3767,27 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the text position in pixels."
+                        "desc": "X coordinate of the text position in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the text position in pixels."
+                        "desc": "Y coordinate of the text position in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "text",
-                        "desc": "Text to print."
+                        "desc": "Text to print.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color)."
+                        "desc": "A valid color (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3411,19 +3800,27 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the pixel position in pixels."
+                        "desc": "X coordinate of the pixel position in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the pixel position in pixels."
+                        "desc": "Y coordinate of the pixel position in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color)."
+                        "desc": "A valid color (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "image",
-                        "desc": "Image to draw on <b>(optional)</b>."
+                        "desc": "Image to draw on <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3436,15 +3833,21 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the pixel."
+                        "desc": "X coordinate of the pixel.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the pixel."
+                        "desc": "Y coordinate of the pixel.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3457,23 +3860,33 @@
                 "params": [
                     {
                         "param": "x1",
-                        "desc": "Starting X coordinate of the line in pixels."
+                        "desc": "Starting X coordinate of the line in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "x2",
-                        "desc": "Ending X coordinate of the line in pixels."
+                        "desc": "Ending X coordinate of the line in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y1",
-                        "desc": "Starting Y coordinate of the line in pixels."
+                        "desc": "Starting Y coordinate of the line in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y2",
-                        "desc": "Ending Y coordinate of the line in pixels."
+                        "desc": "Ending Y coordinate of the line in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color)."
+                        "desc": "A valid color (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3486,23 +3899,33 @@
                 "params": [
                     {
                         "param": "x1",
-                        "desc": "Starting X coordinate of the rectangle in pixels."
+                        "desc": "Starting X coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "x2",
-                        "desc": "Ending X coordinate of the rectangle in pixels."
+                        "desc": "Ending X coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y1",
-                        "desc": "Starting Y coordinate of the rectangle in pixels."
+                        "desc": "Starting Y coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y2",
-                        "desc": "Ending Y coordinate of the rectangle in pixels."
+                        "desc": "Ending Y coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color)."
+                        "desc": "A valid color (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3515,23 +3938,33 @@
                 "params": [
                     {
                         "param": "x1",
-                        "desc": "Starting X coordinate of the rectangle in pixels."
+                        "desc": "Starting X coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "x2",
-                        "desc": "Ending X coordinate of the rectangle in pixels."
+                        "desc": "Ending X coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y1",
-                        "desc": "Starting Y coordinate of the rectangle in pixels."
+                        "desc": "Starting Y coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y2",
-                        "desc": "Ending Y coordinate of the rectangle in pixels."
+                        "desc": "Ending Y coordinate of the rectangle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color)."
+                        "desc": "A valid color (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3544,19 +3977,27 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the circle in pixels."
+                        "desc": "X coordinate of the circle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the circle in pixels."
+                        "desc": "Y coordinate of the circle in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "rad",
-                        "desc": "Radius size of the circle."
+                        "desc": "Radius size of the circle.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color)."
+                        "desc": "A valid color (See ::Color).",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3569,15 +4010,21 @@
                 "params": [
                     {
                         "param": "width",
-                        "desc": "Image width."
+                        "desc": "Image width.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "height",
-                        "desc": "Image height."
+                        "desc": "Image height.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "A valid color (See ::Color) <b>(optional)</b>."
+                        "desc": "A valid color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3590,7 +4037,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Name of the file to open."
+                        "desc": "Name of the file to open.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3603,15 +4052,21 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "filename",
-                        "desc": "The filename of the screenshot output."
+                        "desc": "The filename of the screenshot output.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "format",
-                        "desc": "The format to use for the output file <b>(optional)</b>."
+                        "desc": "The format to use for the output file <b>(optional)</b>.",
+                        "type": "ImgFmt",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3624,7 +4079,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Name of the file to open."
+                        "desc": "Name of the file to open.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3637,7 +4094,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Name of the file to open."
+                        "desc": "Name of the file to open.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3650,7 +4109,9 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3663,11 +4124,15 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "frame",
-                        "desc": "The frame to set as active."
+                        "desc": "The frame to set as active.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3680,7 +4145,9 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3693,15 +4160,21 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "min_filter",
-                        "desc": "Min filter to use."
+                        "desc": "Min filter to use.",
+                        "type": "ImageFilter",
+                        "optional": false
                     },
                     {
                         "param": "mag_filter",
-                        "desc": "Mag filter to use."
+                        "desc": "Mag filter to use.",
+                        "type": "ImageFilter",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3714,7 +4187,9 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3727,7 +4202,9 @@
                 "params": [
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3740,19 +4217,27 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the image in pixels."
+                        "desc": "X coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the image in pixels."
+                        "desc": "Y coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3765,23 +4250,33 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the image in pixels."
+                        "desc": "X coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the image in pixels."
+                        "desc": "Y coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "rad",
-                        "desc": "Rotation radius."
+                        "desc": "Rotation radius.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3794,27 +4289,39 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the image in pixels."
+                        "desc": "X coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the image in pixels."
+                        "desc": "Y coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "x_scale",
-                        "desc": "Scale value for X parameter."
+                        "desc": "Scale value for X parameter.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y_scale",
-                        "desc": "Scale value for Y parameter."
+                        "desc": "Scale value for Y parameter.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3827,35 +4334,51 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the image in pixels."
+                        "desc": "X coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the image in pixels."
+                        "desc": "Y coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "x_start",
-                        "desc": "Image X coordinate for the partial drawing."
+                        "desc": "Image X coordinate for the partial drawing.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "y_start",
-                        "desc": "Image Y coordinate for the partial drawing."
+                        "desc": "Image Y coordinate for the partial drawing.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "width",
-                        "desc": "Partial drawing width."
+                        "desc": "Partial drawing width.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "height",
-                        "desc": "Partial drawing height."
+                        "desc": "Partial drawing height.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3868,47 +4391,69 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the image in pixels."
+                        "desc": "X coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the image in pixels."
+                        "desc": "Y coordinate of the image in pixels.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "img",
-                        "desc": "A valid image ID."
+                        "desc": "A valid image ID.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "x_start",
-                        "desc": "Image X coordinate for the partial drawing."
+                        "desc": "Image X coordinate for the partial drawing.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "y_start",
-                        "desc": "Image Y coordinate for the partial drawing."
+                        "desc": "Image Y coordinate for the partial drawing.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "width",
-                        "desc": "Partial drawing width."
+                        "desc": "Partial drawing width.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "height",
-                        "desc": "Partial drawing height."
+                        "desc": "Partial drawing height.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "rad",
-                        "desc": "Rotation radius."
+                        "desc": "Rotation radius.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "x_scale",
-                        "desc": "Scale value for X parameter."
+                        "desc": "Scale value for X parameter.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y_scale",
-                        "desc": "Scale value for Y parameter."
+                        "desc": "Scale value for Y parameter.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "color",
-                        "desc": "Image tint color (See ::Color) <b>(optional)</b>."
+                        "desc": "Image tint color (See ::Color) <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -3921,19 +4466,27 @@
                 "params": [
                     {
                         "param": "x",
-                        "desc": "X coordinate of the rescaler output."
+                        "desc": "X coordinate of the rescaler output.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "y",
-                        "desc": "Y coordinate of the rescaler output."
+                        "desc": "Y coordinate of the rescaler output.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "x_scale",
-                        "desc": "Scale value for X parameter."
+                        "desc": "Scale value for X parameter.",
+                        "type": "number",
+                        "optional": false
                     },
                     {
                         "param": "y_scale",
-                        "desc": "Scale value for Y parameter."
+                        "desc": "Scale value for Y parameter.",
+                        "type": "number",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3956,15 +4509,21 @@
                 "params": [
                     {
                         "param": "category",
-                        "desc": "The category from which to take the value."
+                        "desc": "The category from which to take the value.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "name",
-                        "desc": "The key related to the value."
+                        "desc": "The key related to the value.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "type",
-                        "desc": "The type of the value."
+                        "desc": "The type of the value.",
+                        "type": "RegType",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3977,11 +4536,15 @@
                 "params": [
                     {
                         "param": "id",
-                        "desc": "The identifier of the key."
+                        "desc": "The identifier of the key.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "type",
-                        "desc": "The type of the value."
+                        "desc": "The type of the value.",
+                        "type": "RegType",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -3994,23 +4557,33 @@
                 "params": [
                     {
                         "param": "category",
-                        "desc": "The category from which to take the value."
+                        "desc": "The category from which to take the value.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "name",
-                        "desc": "The key related to the value."
+                        "desc": "The key related to the value.",
+                        "type": "string",
+                        "optional": false
                     },
                     {
                         "param": "type",
-                        "desc": "The type of the value."
+                        "desc": "The type of the value.",
+                        "type": "RegType",
+                        "optional": false
                     },
                     {
                         "param": "value",
-                        "desc": "The value to set."
+                        "desc": "The value to set.",
+                        "type": "any",
+                        "optional": false
                     },
                     {
                         "param": "size",
-                        "desc": "The size of the value <b>(optional)</b>."
+                        "desc": "The size of the value <b>(optional)</b>.",
+                        "type": "integer",
+                        "optional": true
                     }
                 ],
                 "returns": null,
@@ -4025,7 +4598,9 @@
                 "params": [
                     {
                         "param": "filename",
-                        "desc": "Filename of the database to open."
+                        "desc": "Filename of the database to open.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -4038,7 +4613,9 @@
                 "params": [
                     {
                         "param": "db",
-                        "desc": "A valid database handle."
+                        "desc": "A valid database handle.",
+                        "type": "integer",
+                        "optional": false
                     }
                 ],
                 "returns": null,
@@ -4051,11 +4628,15 @@
                 "params": [
                     {
                         "param": "db",
-                        "desc": "A valid database handle."
+                        "desc": "A valid database handle.",
+                        "type": "integer",
+                        "optional": false
                     },
                     {
                         "param": "query",
-                        "desc": "An SQL query to execute."
+                        "desc": "An SQL query to execute.",
+                        "type": "string",
+                        "optional": false
                     }
                 ],
                 "returns": null,
