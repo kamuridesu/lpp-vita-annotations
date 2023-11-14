@@ -9,6 +9,20 @@ OUTPUT_DIR = "out"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
+def parse_type(type_name) -> str:
+    __types = {
+        "void": "nil",
+        None: "nil",
+        "int": "integer",
+        "bool": "boolean",
+        "[]": "table",
+        "auto": "any"
+    }
+    if (type_name in __types.keys()):
+        return __types[type_name]
+    return type_name
+
+
 def parse_file(file: pathlib.Path):
     _class = {}
     enums = {}
@@ -22,7 +36,7 @@ def parse_file(file: pathlib.Path):
     description = ""
     lookback_ref = []
     with open(file) as f:
-        for index, line in (line_enum := enumerate(f)):
+        for _, line in (line_enum := enumerate(f)):
             lookback_ref.append(line.strip())
             line = line.strip()
             if line.startswith("class"):
@@ -39,7 +53,7 @@ def parse_file(file: pathlib.Path):
             if __enum:
                 text = ""
                 while True:
-                    idx, text = next(line_enum)
+                    _, text = next(line_enum)
                     text = text.strip()
                     if text == "};":
                         break
@@ -55,7 +69,7 @@ def parse_file(file: pathlib.Path):
             if __class:
                 lookback_ref = []  # we don't need to store previous lines for classes
                 if line.startswith("/**"):
-                    idx, description = next(line_enum)
+                    _, description = next(line_enum)
                     description = "*".join(description.strip().split("*")[1:]).strip()
                     continue
                 if line.startswith("* \\ingroup"):
@@ -64,7 +78,7 @@ def parse_file(file: pathlib.Path):
                 if line.startswith("* @code"):
                     _text = ""
                     while True:
-                        idx, text = next(line_enum)
+                        _, text = next(line_enum)
                         text = text.strip()
                         if text.startswith("* @endcode"):
                             break
@@ -88,7 +102,7 @@ def parse_file(file: pathlib.Path):
                         }
                     )
                 if line.startswith("*/"):
-                    idx, raw_line = next(line_enum)
+                    _, raw_line = next(line_enum)
                     pattern = r"(\w+)\s+(\w+)\(([^)]*)\);"
                     matches = re.match(pattern, raw_line.strip())
 
@@ -102,16 +116,7 @@ def parse_file(file: pathlib.Path):
                         for arg in argument_list:
                             if arg != "void" and arg != [""] and arg:
                                 type_name, param_name = arg.split()
-                                if type_name is None or type_name == "void":
-                                    type_name = "nil"
-                                if type_name == "int":
-                                    type_name = "integer"
-                                if type_name == "bool":
-                                    type_name = "boolean"
-                                if "[]" in type_name:
-                                    type_name = "table"
-                                if type_name == "auto":
-                                    type_name = "any"
+                                type_name = parse_type(type_name)
                                 param = {
                                     "param": param_name,
                                     "desc": "",
@@ -178,16 +183,7 @@ def generate_lua_code(
                     params += f"{param['param']}, "
             params = params.strip(", ") + ")"
             return_type = metadata["return_type"]
-            if return_type is None or return_type == "void":
-                return_type = "nil"
-            if return_type == "int":
-                return_type = "integer"
-            if return_type == "bool":
-                return_type = "boolean"
-            if "[]" in return_type:
-                return_type = "table"
-            if return_type == "auto":
-                return_type = "any"
+            return_type = parse_type(return_type)
             lua_source += f"---@return {return_type}\n"
             lua_source += f"function {_class}.{function}{params} end\n\n"
     return lua_source
