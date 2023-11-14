@@ -16,7 +16,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "handle = System.openFile(\"ux0:/data/file.txt\", FREAD)\n",
                 "group": "System",
@@ -43,7 +42,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.writeFile(handle, \"Test\", 4)\n",
                 "group": "System",
@@ -64,7 +62,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "string",
                 "example": "text = System.readFile(handle, 4)\n",
                 "group": "System",
@@ -91,7 +88,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.seekFile(handle, 0, END)\n",
                 "group": "System",
@@ -106,7 +102,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "size = System.sizeFile(handle)\n",
                 "group": "System",
@@ -121,7 +116,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "table",
                 "example": "info = System.statFile(\"ux0:/data/file.txt\")\ncreation_year = info.creation_time.year\nlast_access_year = info.access_time.year\nlast_modification_year = info.mod_time.year\nis_directory = info.directory\nfilesize = info.size\n",
                 "group": "System",
@@ -136,7 +130,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "table",
                 "example": "info = System.statOpenedFile(handle)\ncreation_year = info.creation_time.year\nlast_access_year = info.access_time.year\nlast_modification_year = info.mod_time.year\nis_directory = info.directory\nfilesize = info.size\n",
                 "group": "System",
@@ -151,7 +144,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.closeFile(handle)\n",
                 "group": "System",
@@ -166,7 +158,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if System.doesFileExist(\"ux0:/data/file.txt\") then\nhandle = System.openFile(\"ux0:/data/file.txt\", FREAD)\nend\n",
                 "group": "System",
@@ -181,7 +172,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if System.doesDirExist(\"ux0:/data\") then\nlist = System.listDirectory(\"ux0:/data\")\nend\n",
                 "group": "System",
@@ -202,7 +192,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.rename(\"ux0:/data/old.txt\", \"ux0:/data/new.txt\")\n",
                 "group": "System",
@@ -223,7 +212,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.copyFile(\"ux0:/data/old.txt\", \"ux0:/data/new.txt\")\n",
                 "group": "System",
@@ -238,7 +226,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.deleteFile(\"ux0:/data/file.txt\")\n",
                 "group": "System",
@@ -253,7 +240,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.deleteDirectory(\"ux0:/data/dir\")\n",
                 "group": "System",
@@ -268,7 +254,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.createDirectory(\"ux0:/data/dir\")\n",
                 "group": "System",
@@ -283,7 +268,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "table",
                 "example": "files = System.listDirectory(\"ux0:/data/dir\")\nname = files[0].name\nsize = files[0].size\nis_directory = files[0].directory\n",
                 "group": "System",
@@ -291,7 +275,6 @@
             },
             "exit": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.exit()\n",
                 "group": "System",
@@ -299,7 +282,6 @@
             },
             "getFirmware": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "fw = System.getFirmware()\n",
                 "group": "System",
@@ -307,7 +289,6 @@
             },
             "getSpoofedFirmware": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "fw = System.getSpoofedFirmware()\n",
                 "group": "System",
@@ -315,7 +296,6 @@
             },
             "getFactoryFirmware": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "fw = System.getFactoryFirmware()\n",
                 "group": "System",
@@ -330,7 +310,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.wait(1000000)\n",
                 "group": "System",
@@ -338,7 +317,6 @@
             },
             "isBatteryCharging": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if System.isBatteryCharging() then\nGraphics.debugPrint(0, 0, \"Battery is charging\", Color.new(255, 255, 255))\nend\n",
                 "group": "System",
@@ -346,7 +324,6 @@
             },
             "getBatteryPercentage": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "life = System.getBatteryPercentage()\n",
                 "group": "System",
@@ -354,7 +331,6 @@
             },
             "getBatteryLife": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "life = System.getBatteryLife()\n",
                 "group": "System",
@@ -362,7 +338,6 @@
             },
             "getBatteryCapacity": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "cap = System.getBatteryCapacity()\n",
                 "group": "System",
@@ -370,7 +345,6 @@
             },
             "getBatteryFullCapacity": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "cap_max = System.getBatteryFullCapacity()\n",
                 "group": "System",
@@ -378,7 +352,6 @@
             },
             "getBatteryTemp": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "temp = System.getBatteryTemp()\n",
                 "group": "System",
@@ -386,7 +359,6 @@
             },
             "getBatteryVolt": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "voltage = System.getBatteryVolt()\n",
                 "group": "System",
@@ -394,7 +366,6 @@
             },
             "getBatteryHealth": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "soh = System.getBatteryHealth()\n",
                 "group": "System",
@@ -402,7 +373,6 @@
             },
             "getBatteryCycles": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "cycles = System.getBatteryCycles()\n",
                 "group": "System",
@@ -417,7 +387,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.disableTimer(SCREEN_DIMMING_TIMER)\n",
                 "group": "System",
@@ -432,7 +401,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.enableTimer(SCREEN_DIMMING_TIMER)\n",
                 "group": "System",
@@ -447,7 +415,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.resetTimer(SCREEN_DIMMING_TIMER)\n",
                 "group": "System",
@@ -462,7 +429,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.setCpuSpeed(444)\n",
                 "group": "System",
@@ -477,7 +443,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.setGpuSpeed(222)\n",
                 "group": "System",
@@ -492,7 +457,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.setGpuXbarSpeed(166)\n",
                 "group": "System",
@@ -500,7 +464,6 @@
             },
             "getCpuSpeed": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "clock = System.getCpuSpeed()\n",
                 "group": "System",
@@ -508,7 +471,6 @@
             },
             "getGpuSpeed": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "clock = System.getGpuSpeed()\n",
                 "group": "System",
@@ -516,7 +478,6 @@
             },
             "getBusSpeed": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "clock = System.getBusSpeed()\n",
                 "group": "System",
@@ -524,7 +485,6 @@
             },
             "getGpuXbarSpeed": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "clock = System.getGpuXbarSpeed()\n",
                 "group": "System",
@@ -539,7 +499,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.launchEboot(\"app0:/updater.bin\")\n",
                 "group": "System",
@@ -554,7 +513,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.launchApp(\"MLCL00001\")\n",
                 "group": "System",
@@ -569,7 +527,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.debugPrint(5, 5, System.getFreeSpace(\"ux0:\") .. \"/\" .. System.getTotalSpace(\"ux0:\"), Color.new(255, 255, 255))\n",
                 "group": "System",
@@ -584,7 +541,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.debugPrint(5, 5, System.getFreeSpace(\"ux0:\") .. \"/\" .. System.getTotalSpace(\"ux0:\"), Color.new(255, 255, 255))\n",
                 "group": "System",
@@ -592,7 +548,6 @@
             },
             "getUsername": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "username = System.getUsername()\n",
                 "group": "System",
@@ -600,7 +555,6 @@
             },
             "getLanguage": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "lang = System.getLanguage()\n",
                 "group": "System",
@@ -608,7 +562,6 @@
             },
             "getModel": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "model = System.getModel()\n",
                 "group": "System",
@@ -616,7 +569,6 @@
             },
             "getPsId": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "psid = System.getPsId()\n",
                 "group": "System",
@@ -624,7 +576,6 @@
             },
             "getTitle": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "title = System.getTitle()\n",
                 "group": "System",
@@ -632,7 +583,6 @@
             },
             "getTitleID": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "title_id = System.getTitleID()\n",
                 "group": "System",
@@ -647,7 +597,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "table",
                 "example": "info = System.extractSfo(\"app0:/sce_sys/param.sfo\")\napp_version = info.version\napp_title = info.title\napp_short_title = info.short_title\napp_category = info.category\napp_titleid = info.titleid\n",
                 "group": "System",
@@ -668,7 +617,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.extractPbp(\"app0:/files.zip\", \"ux0:/data/app_files\")\n",
                 "group": "System",
@@ -689,7 +637,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.extractZip(\"app0:/files.zip\", \"ux0:/data/app_files\")\n",
                 "group": "System",
@@ -716,7 +663,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.extractFromZip(\"app0:/files.zip\", \"image.jpg\", \"ux0:/data/app_files/my_image.jpg\")\n",
                 "group": "System",
@@ -737,7 +683,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.extractZipAsync(\"app0:/files.zip\", \"ux0:/data/app_files\")\n",
                 "group": "System",
@@ -764,7 +709,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.extractFromZipAsync(\"app0:/files.zip\", \"image.jpg\", \"ux0:/data/app_files/my_image.jpg\")\n",
                 "group": "System",
@@ -791,7 +735,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.compressZip(\"app0:/sce_sys\", \"ux0:/data/file.zip\", 9)\n",
                 "group": "System",
@@ -824,7 +767,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.addToZip(\"app0:/sce_sys/icon0.png\", \"ux0:/data/file.zip\", \"sce_sys\", 9)\n",
                 "group": "System",
@@ -832,7 +774,6 @@
             },
             "getAsyncState": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "while System.getAsyncState() == 0 do\nrunning = true\nend\nrunning = false\n",
                 "group": "System",
@@ -840,7 +781,6 @@
             },
             "getAsyncResult": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "if System.getAsyncState() == 1 then\nres = System.getAsyncResult()\nend\n",
                 "group": "System",
@@ -867,7 +807,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.takeScreenshot(\"ux0:/data/shot.jpg\", FORMAT_JPG, 255)\n",
                 "group": "System",
@@ -882,7 +821,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.executeUri(\"psgm:play?titleid=MLCL00001\")\n",
                 "group": "System",
@@ -890,7 +828,6 @@
             },
             "reboot": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "System.reboot()\n",
                 "group": "System",
@@ -898,7 +835,6 @@
             },
             "shutdown": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "System.shutdown()\n",
                 "group": "System",
@@ -906,7 +842,6 @@
             },
             "standby": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "System.standby()\n",
                 "group": "System",
@@ -914,7 +849,6 @@
             },
             "isSafeMode": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if System.isSafeMode() then\nmode = \"safe\"\nend\n",
                 "group": "System",
@@ -941,7 +875,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.setMessage(\"Do you want to start this app?\", false, BUTTON_YES_NO)\n",
                 "group": "System",
@@ -949,7 +882,6 @@
             },
             "getMessageState": {
                 "params": [],
-                "returns": null,
                 "return_type": "DlgState",
                 "example": "state = System.getMessageState()\n",
                 "group": "System",
@@ -964,7 +896,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.setMessageProgress(10)\n",
                 "group": "System",
@@ -979,7 +910,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.setMessageProgMsg(\"10%%\")\n",
                 "group": "System",
@@ -987,7 +917,6 @@
             },
             "closeMessage": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.closeMessage()\n",
                 "group": "System",
@@ -1002,7 +931,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.unmountPartition(0x300)\n",
                 "group": "System",
@@ -1023,7 +951,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.mountPartition(0x300, READ_WRITE)\n",
                 "group": "System",
@@ -1038,7 +965,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.installApp(\"ux0:/vitaQuake\")\n",
                 "group": "System",
@@ -1053,7 +979,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.uninstallApp(\"GTAVCECTY\")\n",
                 "group": "System",
@@ -1068,7 +993,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if System.doesAppExist(\"GTAVCECTY\") then\nSystem.uninstallApp(\"GTAVCECTY\")\nend\n",
                 "group": "System",
@@ -1076,7 +1000,6 @@
             },
             "getBootParams": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "args = System.getBootParams()\n",
                 "group": "System",
@@ -1091,7 +1014,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "plug_id = System.loadUserPlugin(\"ux0:data/plugin.suprx\")\n",
                 "group": "System",
@@ -1106,7 +1028,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "plug_id = System.loadKernelPlugin(\"ux0:data/plugin.skprx\")\n",
                 "group": "System",
@@ -1121,7 +1042,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.unloadKernelPlugin(plug_id)\n",
                 "group": "System",
@@ -1136,7 +1056,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "System.unmountMountpoint(\"app0:\")\n",
                 "group": "System",
@@ -1168,10 +1087,9 @@
                         "param": "a",
                         "desc": "A channel value <B>(optional)</B>.",
                         "type": "integer",
-                        "optional": false
+                        "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "my_color = Color.new(255, 200, 100, 255)\n",
                 "group": "Color",
@@ -1186,7 +1104,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "r = Color.getR(my_color)\n",
                 "group": "Color",
@@ -1201,7 +1118,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "g = Color.getG(my_color)\n",
                 "group": "Color",
@@ -1216,7 +1132,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "b = Color.getB(my_color)\n",
                 "group": "Color",
@@ -1231,7 +1146,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "a = Color.getA(my_color)\n",
                 "group": "Color",
@@ -1254,7 +1168,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "sock = Socket.createServerSocket(5000, TCP_SOCKET)\n",
                 "group": "Socket",
@@ -1281,7 +1194,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "sock = Socket.connect(\"192.168.1.8\", 5000)\n",
                 "group": "Socket",
@@ -1302,7 +1214,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "Socket.send(sock, \"Hello World!\")\n",
                 "group": "Socket",
@@ -1323,7 +1234,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "string",
                 "example": "data = Socket.receive(sock, 32767)\n",
                 "group": "Socket",
@@ -1338,7 +1248,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "client = Socket.accept(server)\n",
                 "group": "Socket",
@@ -1353,7 +1262,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Socket.close(sock)\n",
                 "group": "Socket",
@@ -1363,7 +1271,6 @@
         "Network": {
             "init": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.init()\n",
                 "group": "Network",
@@ -1371,7 +1278,6 @@
             },
             "term": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.term()\n",
                 "group": "Network",
@@ -1379,7 +1285,6 @@
             },
             "initFTP": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.initFTP()\n",
                 "group": "Network",
@@ -1387,7 +1292,6 @@
             },
             "termFTP": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.termFTP()\n",
                 "group": "Network",
@@ -1395,7 +1299,6 @@
             },
             "getIPAdddress": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "ip_addr = Network.getIPAddress()\n",
                 "group": "Network",
@@ -1403,7 +1306,6 @@
             },
             "getMacAdddress": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "mac_addr = Network.getMacAddress()\n",
                 "group": "Network",
@@ -1411,7 +1313,6 @@
             },
             "isWifiEnabled": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Network.isWifiEnabled() then\nNetwork.downloadFile(\"http://www.website.com/file.zip\", \"ux0:/data/file.zip\")\nend\n",
                 "group": "Network",
@@ -1419,7 +1320,6 @@
             },
             "getWifiLevel": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "wifi_lv = Network.getWifiLevel()\n",
                 "group": "Network",
@@ -1458,7 +1358,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.downloadFile(\"http://www.website.com/file.zip\", \"ux0:/data/file.zip\")\n",
                 "group": "Network",
@@ -1497,7 +1396,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.downloadFileAsync(\"http://www.website.com/file.zip\", \"ux0:/data/file.zip\")\n",
                 "group": "Network",
@@ -1530,7 +1428,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "string",
                 "example": "result = Network.requestString(\"http://www.website.com/file.txt\")\n",
                 "group": "Network",
@@ -1563,7 +1460,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Network.requestStringAsync(\"http://www.website.com/file.txt\")\n",
                 "group": "Network",
@@ -1580,7 +1476,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "fnt = Font.load(\"app0:/font.ttf\")\n",
                 "group": "Font",
@@ -1595,7 +1490,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Font.unload(fnt)\n",
                 "group": "Font",
@@ -1616,7 +1510,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Font.setPixelSizes(fnt, 20)\n",
                 "group": "Font",
@@ -1637,7 +1530,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "width = Font.getTextWidth(fnt, \"Hello World\")\n",
                 "group": "Font",
@@ -1658,7 +1550,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "width = Font.getTextHeight(fnt, \"Hello World\")\n",
                 "group": "Font",
@@ -1697,7 +1588,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Font.print(fnt, 5, 10, \"Hello World\", Color.new(255, 255, 255))\n",
                 "group": "Font",
@@ -1744,7 +1634,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Keyboard.start(\"Insert a text\", \"Text\", 512, TYPE_DEFAULT, MODE_TEXT, OPT_MULTILINE + OPT_NO_AUTOCAP)\n",
                 "group": "Keyboard",
@@ -1752,7 +1641,6 @@
             },
             "getState": {
                 "params": [],
-                "returns": null,
                 "return_type": "DlgState",
                 "example": "state = Keyboard.getState()\n",
                 "group": "Keyboard",
@@ -1760,7 +1648,6 @@
             },
             "getInput": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "if Keyboard.getState() == FINISHED then\nresult_text = Keyboard.getInput()\nend\n",
                 "group": "Keyboard",
@@ -1768,7 +1655,6 @@
             },
             "clear": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Keyboard.clear()\n",
                 "group": "Keyboard",
@@ -1797,7 +1683,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "auto",
                 "example": "flight_mode = Registry.getKey(\"/CONFIG/SYSTEM/\", \"flight_mode\", TYPE_NUMBER)\n",
                 "group": "Registry",
@@ -1818,7 +1703,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "auto",
                 "example": "val = Registry.getSysKey(0, TYPE_NUMBER)\n",
                 "group": "Registry",
@@ -1857,7 +1741,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "flight_mode = Registry.setKey(\"/CONFIG/SYSTEM/\", \"flight_mode\", TYPE_NUMBER, 1)\n",
                 "group": "Registry",
@@ -1867,7 +1750,6 @@
         "Sound": {
             "init": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.init()\n",
                 "group": "Sound",
@@ -1875,7 +1757,6 @@
             },
             "term": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.term()\n",
                 "group": "Sound",
@@ -1890,7 +1771,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "snd = Sound.open(\"ux0:/data/audio.opus\")\n",
                 "group": "Sound",
@@ -1911,7 +1791,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.play(snd, NO_LOOP)\n",
                 "group": "Sound",
@@ -1926,7 +1805,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.pause(snd)\n",
                 "group": "Sound",
@@ -1941,7 +1819,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.resume(snd)\n",
                 "group": "Sound",
@@ -1956,7 +1833,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.close(snd)\n",
                 "group": "Sound",
@@ -1971,7 +1847,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Sound.isPlaying(snd) then\nSound.pause(snd)\nend\n",
                 "group": "Sound",
@@ -1992,7 +1867,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.setVolume(snd, 100)\n",
                 "group": "Sound",
@@ -2007,7 +1881,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "vol = Sound.getVolume(snd)\n",
                 "group": "Sound",
@@ -2022,7 +1895,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "string",
                 "example": "title = Sound.getTitle(snd)\n",
                 "group": "Sound",
@@ -2037,7 +1909,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "string",
                 "example": "author = Sound.getAuthor(snd)\n",
                 "group": "Sound",
@@ -2052,7 +1923,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Sound.playShutter(IMAGE_CAPTURE)\n",
                 "group": "Sound",
@@ -2062,7 +1932,6 @@
         "Gui": {
             "init": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.init()\n",
                 "group": "Gui",
@@ -2070,7 +1939,6 @@
             },
             "term": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.term()\n",
                 "group": "Gui",
@@ -2078,7 +1946,6 @@
             },
             "initBlend": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.initBlend()\n",
                 "group": "Gui",
@@ -2086,7 +1953,6 @@
             },
             "termBlend": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.termBlend()\n",
                 "group": "Gui",
@@ -2101,7 +1967,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.setTheme(DARK_THEME)\n",
                 "group": "Gui",
@@ -2134,7 +1999,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.setInputMode(true, false, true, true)\n",
                 "group": "Gui",
@@ -2142,7 +2006,6 @@
             },
             "initMainMenubar": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Gui.initMainMenubar() then\nGui.termMainMenubar()\nend\n",
                 "group": "Gui",
@@ -2150,7 +2013,6 @@
             },
             "termMainMenubar": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "if Gui.initMainMenubar() then\nGui.termMainMenubar()\nend\n",
                 "group": "Gui",
@@ -2171,7 +2033,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Gui.initMenu(\"My Menu\") then\nGui.termMenu()\nend\n",
                 "group": "Gui",
@@ -2179,7 +2040,6 @@
             },
             "termMenu": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "if Gui.initMenu() then\nGui.termMenu()\nend\n",
                 "group": "Gui",
@@ -2206,7 +2066,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Gui.drawMenuItem(\"Feature\", is_enabled) then\nis_enabled = true\nend\n",
                 "group": "Gui",
@@ -2227,7 +2086,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.drawText(\"Hello World\", Color.new(255, 255, 0))\n",
                 "group": "Gui",
@@ -2242,7 +2100,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.drawDisabledText(\"Hello World\")\n",
                 "group": "Gui",
@@ -2257,7 +2114,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.drawWrappedText(\"Hello World\")\n",
                 "group": "Gui",
@@ -2284,7 +2140,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Gui.drawButton(\"Exit\") then\nSystem.exit()\nend\n",
                 "group": "Gui",
@@ -2299,7 +2154,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Gui.drawSmallButton(\"Exit\") then\nSystem.exit()\nend\n",
                 "group": "Gui",
@@ -2320,7 +2174,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "is_checked = Gui.drawCheckbox(\"Check\", is_checked)\n",
                 "group": "Gui",
@@ -2341,7 +2194,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "is_checked = Gui.drawRadiobutton(\"Check\", is_checked)\n",
                 "group": "Gui",
@@ -2349,7 +2201,6 @@
             },
             "resetLine": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.resetLine()\n",
                 "group": "Gui",
@@ -2370,7 +2221,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.initWindow(\"Window\", FLAG_NO_MOVE + FLAG_NO_RESIZE + FLAG_NO_TITLEBAR + FLAG_NO_COLLAPSE)\n",
                 "group": "Gui",
@@ -2378,7 +2228,6 @@
             },
             "termWindow": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.termWindow()\n",
                 "group": "Gui",
@@ -2405,7 +2254,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.setWindowPos(100, 100, SET_ALWAYS)\n",
                 "group": "Gui",
@@ -2432,7 +2280,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.setWindowSize(100, 100, SET_ALWAYS)\n",
                 "group": "Gui",
@@ -2440,7 +2287,6 @@
             },
             "drawSeparator": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.drawSeparator()\n",
                 "group": "Gui",
@@ -2455,7 +2301,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.drawText(\"Text\")\nGui.drawTooltip(\"This is a textbox\")\n",
                 "group": "Gui",
@@ -2482,7 +2327,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "elems = {\"Element 1\", \"Element 2\", \"Element 3\", \"Element 4\"}\ncombo_idx = Gui.drawComboBox(\"##combo\", combo_idx, elems)\nend\n",
                 "group": "Gui",
@@ -2509,7 +2353,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "elems = {\"Element 1\", \"Element 2\", \"Element 3\", \"Element 4\"}\nlist_idx = Gui.drawListBox(\"##list\", list_idx, elems)\nend\n",
                 "group": "Gui",
@@ -2536,7 +2379,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "color = Color.new(255, 127, 65)\ncolor = Gui.drawColorPicker(\"##color_picker\", color)\nend\n",
                 "group": "Gui",
@@ -2563,7 +2405,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.drawProgressbar(0.25, 200, 0)\nend\n",
                 "group": "Gui",
@@ -2620,7 +2461,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "icon = Graphics.loadImage(\"app0:/icon.png\")\nGui.drawImage(icon, 32, 32, 0, 0, 20, 20)\n",
                 "group": "Gui",
@@ -2641,7 +2481,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.setWidgetPos(300, 200)\nGui.drawText(\"Hello World\")\nend\n",
                 "group": "Gui",
@@ -2656,7 +2495,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.setWidgetWidth(400)\ncolor = Color.new(255, 255, 255)\ncolor = Gui.drawColorPicker(\"##color_picker\", color)\nend\n",
                 "group": "Gui",
@@ -2664,7 +2502,6 @@
             },
             "resetWidgetWidth": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Gui.resetWidgetWidth()\ncolor = Color.new(255, 255, 255)\ncolor = Gui.drawColorPicker(\"##color_picker\", color)\nend\n",
                 "group": "Gui",
@@ -2693,7 +2530,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.init(INNER_CAM, VGA_RES, 30)\n",
                 "group": "Camera",
@@ -2701,7 +2537,6 @@
             },
             "term": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.term()\n",
                 "group": "Camera",
@@ -2709,7 +2544,6 @@
             },
             "getOutput": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "img = Camera.getOutput()\n",
                 "group": "Camera",
@@ -2724,7 +2558,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setBrightness(200)\n",
                 "group": "Camera",
@@ -2732,7 +2565,6 @@
             },
             "getBrightness": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "brightness = Camera.getBrightness()\n",
                 "group": "Camera",
@@ -2747,7 +2579,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setSaturation(2.0)\n",
                 "group": "Camera",
@@ -2755,7 +2586,6 @@
             },
             "getSaturation": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "saturation = Camera.getSaturation()\n",
                 "group": "Camera",
@@ -2770,7 +2600,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setSharpness(100)\n",
                 "group": "Camera",
@@ -2778,7 +2607,6 @@
             },
             "getSharpness": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "sharpness = Camera.getSharpness()\n",
                 "group": "Camera",
@@ -2793,7 +2621,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setContrast(200)\n",
                 "group": "Camera",
@@ -2801,7 +2628,6 @@
             },
             "getContrast": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "contrast = Camera.getBrightness()\n",
                 "group": "Camera",
@@ -2816,7 +2642,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setReverse(REVERSE_FLIP)\n",
                 "group": "Camera",
@@ -2824,7 +2649,6 @@
             },
             "getReverse": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraReverse",
                 "example": "mode = Camera.getReverse()\n",
                 "group": "Camera",
@@ -2839,7 +2663,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setEffect(EFFECT_SEPIA)\n",
                 "group": "Camera",
@@ -2847,7 +2670,6 @@
             },
             "getEffect": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraEffect",
                 "example": "effect = Camera.getEffect()\n",
                 "group": "Camera",
@@ -2862,7 +2684,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setZoom(200)\n",
                 "group": "Camera",
@@ -2870,7 +2691,6 @@
             },
             "getZoom": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "zoom = Camera.getZoom()\n",
                 "group": "Camera",
@@ -2885,7 +2705,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setAntiFlicker(ANTIFLICKER_50HZ)\n",
                 "group": "Camera",
@@ -2893,7 +2712,6 @@
             },
             "getAntiFlicker": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraAntiFlick",
                 "example": "mode = Camera.getAntiflicker()\n",
                 "group": "Camera",
@@ -2908,7 +2726,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setISO(ISO_AUTO)\n",
                 "group": "Camera",
@@ -2916,7 +2733,6 @@
             },
             "getISO": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraISO",
                 "example": "mode = Camera.getISO()\n",
                 "group": "Camera",
@@ -2931,7 +2747,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setGain(5)\n",
                 "group": "Camera",
@@ -2939,7 +2754,6 @@
             },
             "getGain": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "gain = Camera.getGain()\n",
                 "group": "Camera",
@@ -2954,7 +2768,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setWhiteBalance(WB_SLSA)\n",
                 "group": "Camera",
@@ -2962,7 +2775,6 @@
             },
             "getWhiteBalance": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraWB",
                 "example": "mode = Camera.getWhiteBalance()\n",
                 "group": "Camera",
@@ -2977,7 +2789,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setBacklight(BACKLIGHT_ON)\n",
                 "group": "Camera",
@@ -2985,7 +2796,6 @@
             },
             "getBacklight": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraBacklight",
                 "example": "mode = Camera.getBacklight()\n",
                 "group": "Camera",
@@ -3000,7 +2810,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Camera.setNightmode(NIGHTMODE_LOW)\n",
                 "group": "Camera",
@@ -3008,7 +2817,6 @@
             },
             "getNightmode": {
                 "params": [],
-                "returns": null,
                 "return_type": "CameraNightmode",
                 "example": "mode = Camera.getNightmode()\n",
                 "group": "Camera",
@@ -3022,10 +2830,9 @@
                         "param": "clr",
                         "desc": "Color of the screen after the clear <B>(optional)</B>.",
                         "type": "integer",
-                        "optional": false
+                        "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Screen.clear()\n",
                 "group": "Screen",
@@ -3033,7 +2840,6 @@
             },
             "flip": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Screen.flip()\n",
                 "group": "Screen",
@@ -3054,7 +2860,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "pixel_color = Screen.getPixel(5, 25)\n",
                 "group": "Screen",
@@ -3062,7 +2867,6 @@
             },
             "waitVblankStart": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Screen.waitVblankStart()\n",
                 "group": "Screen",
@@ -3121,7 +2925,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "v = Render.createVertex(1.0, 1.0, 0.0, 0.0, 0.5, 1.0, 1.0, 1.0)\n",
                 "group": "Render",
@@ -3136,7 +2939,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Render.destroyVertex(v)\n",
                 "group": "Render",
@@ -3157,7 +2959,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "texture = Graphics.loadImage(\"app0:/texture.png\")\nmdl = Render.loadModel(vertices_table, texture)\n",
                 "group": "Render",
@@ -3178,7 +2979,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "texture = Graphics.loadImage(\"app0:/texture.png\")\nmdl = Render.loadObject(\"app0:/model.obj\", texture)\n",
                 "group": "Render",
@@ -3193,7 +2993,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Render.unloadModel(mdl)\n",
                 "group": "Render",
@@ -3250,7 +3049,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Render.drawModel(mdl, 1.0, 1.0, -5.0, 1.0, 1.0, 0.0)\n",
                 "group": "Render",
@@ -3271,7 +3069,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "texture = Graphics.loadImage(\"app0:/texture.png\")\nRender.useTexture(mdl, texture)\n",
                 "group": "Render",
@@ -3316,7 +3113,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Render.setCamera(0.0, 1.0, 1.0, 0.0, 0.0, 0.0)\n",
                 "group": "Render",
@@ -3339,7 +3135,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "Mic.start(5, 32000)\n",
                 "group": "Mic",
@@ -3354,7 +3149,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Mic.stop(\"ux0:/data/record.wav\")\n",
                 "group": "Mic",
@@ -3362,7 +3156,6 @@
             },
             "pause": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Mic.pause()\n",
                 "group": "Mic",
@@ -3370,7 +3163,6 @@
             },
             "resume": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Mic.resume()\n",
                 "group": "Mic",
@@ -3378,7 +3170,6 @@
             },
             "isRecording": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Mic.isRecording() then\nMic.pause()\nend\n",
                 "group": "Mic",
@@ -3388,7 +3179,6 @@
         "Video": {
             "init": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.init()\n",
                 "group": "Video",
@@ -3396,7 +3186,6 @@
             },
             "term": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.term()\n",
                 "group": "Video",
@@ -3417,7 +3206,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.open(\"app0:/video.mp4\", false)\n",
                 "group": "Video",
@@ -3425,7 +3213,6 @@
             },
             "close": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.close()\n",
                 "group": "Video",
@@ -3433,7 +3220,6 @@
             },
             "getOutput": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "frame = Video.getOutput()\nif frame ~= 0 then\nGraphics.drawImage(0, 0, frame)\nend\n",
                 "group": "Video",
@@ -3441,7 +3227,6 @@
             },
             "pause": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.pause()\n",
                 "group": "Video",
@@ -3449,7 +3234,6 @@
             },
             "resume": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.resume()\n",
                 "group": "Video",
@@ -3457,7 +3241,6 @@
             },
             "isPlaying": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Video.isPlaying() then\nVideo.pause()\nend\n",
                 "group": "Video",
@@ -3472,7 +3255,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.setVolume(100)\n",
                 "group": "Video",
@@ -3480,7 +3262,6 @@
             },
             "getVolume": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "vol = Volume.getVolume()\n",
                 "group": "Video",
@@ -3488,7 +3269,6 @@
             },
             "getTime": {
                 "params": [],
-                "returns": null,
                 "return_type": "number",
                 "example": "t = Volume.getTime()\n",
                 "group": "Video",
@@ -3503,7 +3283,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.jumpToTime(Video.getTime() + 5000)\n",
                 "group": "Video",
@@ -3518,7 +3297,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.setPlayMode(FAST_FORWARD_16X_MODE)\n",
                 "group": "Video",
@@ -3533,7 +3311,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.openSubs(\"ux0:data/subtitles.vtt\")\n",
                 "group": "Video",
@@ -3541,7 +3318,6 @@
             },
             "closeSubs": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Video.closeSubs()\n",
                 "group": "Video",
@@ -3549,7 +3325,6 @@
             },
             "getSubs": {
                 "params": [],
-                "returns": null,
                 "return_type": "string",
                 "example": "Graphics.debugPrint(20, 20, Video.getSubs(), Color.new(255, 255, 255))\n",
                 "group": "Video",
@@ -3559,7 +3334,6 @@
         "Timer": {
             "new": {
                 "params": [],
-                "returns": null,
                 "return_type": "int",
                 "example": "tmr = Timer.new()\n",
                 "group": "Timer",
@@ -3574,7 +3348,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "time = Timer.getTime(tmr)\n",
                 "group": "Timer",
@@ -3595,7 +3368,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Timer.setTime(tmr, 1000)\n",
                 "group": "Timer",
@@ -3610,7 +3382,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Timer.destroy(tmr)\n",
                 "group": "Timer",
@@ -3625,7 +3396,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Timer.pause(tmr)\n",
                 "group": "Timer",
@@ -3640,7 +3410,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Timer.resume(tmr)\n",
                 "group": "Timer",
@@ -3655,7 +3424,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Timer.reset(tmr)\n",
                 "group": "Timer",
@@ -3670,7 +3438,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Timer.isPlaying(tmr) then\nTimer.pause(tmr)\nend\n",
                 "group": "Timer",
@@ -3680,7 +3447,6 @@
         "Graphics": {
             "initBlend": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.initBlend()\n",
                 "group": "Graphics",
@@ -3688,7 +3454,6 @@
             },
             "termBlend": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.termBlend()\n",
                 "group": "Graphics",
@@ -3721,7 +3486,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.debugPrint(10, 10, \"Hello World\", Color.new(255, 255, 255))\n",
                 "group": "Graphics",
@@ -3754,7 +3518,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawPixel(5, 5, Color.new(15, 255, 200))\n",
                 "group": "Graphics",
@@ -3781,7 +3544,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "pixel_color = Graphics.getPixel(5, 25, img)\n",
                 "group": "Graphics",
@@ -3820,7 +3582,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawLine(10, 25, 100, 250, Color.new(25, 200, 120))\n",
                 "group": "Graphics",
@@ -3859,7 +3620,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.fillRect(10, 25, 100, 250, Color.new(25, 200, 120))\n",
                 "group": "Graphics",
@@ -3898,7 +3658,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.fillEmptyRect(10, 25, 100, 250, Color.new(25, 200, 120))\n",
                 "group": "Graphics",
@@ -3931,7 +3690,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.fillCircle(10, 25, 1.0, Color.new(25, 200, 120))\n",
                 "group": "Graphics",
@@ -3958,7 +3716,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "img = Graphics.createImage(Color.new(25, 200, 120))\n",
                 "group": "Graphics",
@@ -3973,7 +3730,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "img = Graphics.loadImage(\"app0:/image.jpg\")\n",
                 "group": "Graphics",
@@ -4000,7 +3756,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.saveImage(img, \"ux0:/data/image.png\", FORMAT_PNG)\n",
                 "group": "Graphics",
@@ -4015,7 +3770,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.loadImageAsync(\"app0:/image.jpg\")\nwhile System.getAsyncState() == 0 do\n\nend\nimg = System.getAsyncResult()\n",
                 "group": "Graphics",
@@ -4030,7 +3784,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "img = Graphics.loadAnimatedImage(\"app0:/image.gif\")\n",
                 "group": "Graphics",
@@ -4045,7 +3798,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "img = Graphics.loadAnimatedImage(\"app0:/image.gif\")\nframes = Graphics.getImageFramesNum(img)\n",
                 "group": "Graphics",
@@ -4066,7 +3818,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "img = Graphics.loadAnimatedImage(\"app0:/image.gif\")\nGraphics.setImageFrame(img, 8)\n",
                 "group": "Graphics",
@@ -4081,7 +3832,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.freeImage(img)\n",
                 "group": "Graphics",
@@ -4108,7 +3858,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.setImageFilters(img, FILTER_LINEAR, FILTER_LINEAR)\n",
                 "group": "Graphics",
@@ -4123,7 +3872,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "width = Graphics.getImageWidth(img)\n",
                 "group": "Graphics",
@@ -4138,7 +3886,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "height = Graphics.getImageHeight(img)\n",
                 "group": "Graphics",
@@ -4171,7 +3918,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawImage(50, 100, img)\n",
                 "group": "Graphics",
@@ -4210,7 +3956,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawRotateImage(50, 100, img, 1.0)\n",
                 "group": "Graphics",
@@ -4255,7 +4000,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawScaleImage(50, 100, img, 0.5, 0.5)\n",
                 "group": "Graphics",
@@ -4312,7 +4056,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawPartialImage(50, 100, img, 20, 20, 100, 100)\n",
                 "group": "Graphics",
@@ -4387,7 +4130,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.drawImageExtended(50, 100, img, 20, 20, 100, 100, 1.0, 0.5, 0.5)\n",
                 "group": "Graphics",
@@ -4420,7 +4162,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.initRescaler(0, 0, 2.0, 2.0)\n",
                 "group": "Graphics",
@@ -4428,7 +4169,6 @@
             },
             "termRescaler": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Graphics.termRescaler()\n",
                 "group": "Graphics",
@@ -4445,7 +4185,6 @@
                         "optional": true
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "pad = Controls.read()\n",
                 "group": "Controls",
@@ -4466,7 +4205,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "bool",
                 "example": "pad = Controls.read()\nif Controls.check(pad, SCE_CTRL_CROSS) then\npressed = true\nend\n",
                 "group": "Controls",
@@ -4493,7 +4231,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.rumble(0, 100, 100)\n",
                 "group": "Controls",
@@ -4514,7 +4251,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.setLightbar(0, Color.new(255, 255, 255))\n",
                 "group": "Controls",
@@ -4522,7 +4258,6 @@
             },
             "lockHomeButton": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.lockHomeButton()\n",
                 "group": "Controls",
@@ -4530,7 +4265,6 @@
             },
             "unlockHomeButton": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.lockHomeButton()\n",
                 "group": "Controls",
@@ -4538,7 +4272,6 @@
             },
             "getDeviceInfo": {
                 "params": [],
-                "returns": null,
                 "return_type": "table",
                 "example": "ctrl = Controls.getDeviceInfo()\nctrl_type = ctrl[1].type\n",
                 "group": "Controls",
@@ -4546,7 +4279,6 @@
             },
             "headsetStatus": {
                 "params": [],
-                "returns": null,
                 "return_type": "bool",
                 "example": "if Controls.headsetStatus() then\nheadset = true\nend\n",
                 "group": "Controls",
@@ -4554,7 +4286,6 @@
             },
             "getEnterButton": {
                 "params": [],
-                "returns": null,
                 "return_type": "Ctrl",
                 "example": "pad = Controls.read()\nSCE_CTRL_CONFIRM = Controls.getEnterButton()\nif Controls.check(pad, SCE_CTRL_CONFIRM) then\naccepted = yes\nend\n",
                 "group": "Controls",
@@ -4562,7 +4293,6 @@
             },
             "enableGyro": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.enableGyro()\n",
                 "group": "Controls",
@@ -4570,7 +4300,6 @@
             },
             "enableAccel": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.enableAccel()\n",
                 "group": "Controls",
@@ -4578,7 +4307,6 @@
             },
             "disableGyro": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.disableGyro()\n",
                 "group": "Controls",
@@ -4586,7 +4314,6 @@
             },
             "disableAccel": {
                 "params": [],
-                "returns": null,
                 "return_type": "void",
                 "example": "Controls.disableAccel()\n",
                 "group": "Controls",
@@ -4603,7 +4330,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "int",
                 "example": "db = Database.open(\"ur0:shell/db/app.db\")\n",
                 "group": "Database",
@@ -4618,7 +4344,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "void",
                 "example": "Database.close(db)\n",
                 "group": "Database",
@@ -4639,7 +4364,6 @@
                         "optional": false
                     }
                 ],
-                "returns": null,
                 "return_type": "table",
                 "example": "results = Database.execQuery(db, \"SELECT columnName FROM tableName\")\nGraphics.debugPrint(0, 0, results[1].columnName, Color.new(255, 255, 255))\n",
                 "group": "Database",

@@ -30,7 +30,6 @@ def parse_file(file: pathlib.Path):
     __class = None
     function = None
     params_w_desc = []
-    _return = None
     example = ""
     group = ""
     description = ""
@@ -90,7 +89,7 @@ def parse_file(file: pathlib.Path):
                     param = raw[2]
                     desc = " ".join(raw[4:])
                     optional = False
-                    if "<b>(optional)</b>" in desc:
+                    if "<b>(optional)</b>" in desc.lower():
                         optional = True
                         desc = desc.strip("<b>(optional)</b>").strip()
                     params_w_desc.append(
@@ -133,7 +132,6 @@ def parse_file(file: pathlib.Path):
                         continue
                     _class[__class][function] = {
                         "params": params,
-                        "returns": _return,
                         "return_type": return_type,
                         "example": example,
                         "group": group,
@@ -141,7 +139,6 @@ def parse_file(file: pathlib.Path):
                     }
                     function = None
                     params = []
-                    _return = None
                     example = ""
                     group = ""
                     description = ""

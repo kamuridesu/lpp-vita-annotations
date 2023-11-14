@@ -1166,7 +1166,7 @@ Color = {}
 ---@param r integer R channel value.
 ---@param g integer G channel value.
 ---@param b integer B channel value.
----@param a integer A channel value <B>(optional)</B>.
+---@param a? integer A channel value <B>(optional)</B>.
 ---@return integer
 function Color.new(r, g, b, a) end
 
@@ -2218,7 +2218,7 @@ Screen = {}
 ---
 ---
 ---
----@param clr integer Color of the screen after the clear <B>(optional)</B>.
+---@param clr? integer Color of the screen after the clear <B>(optional)</B>.
 ---@return nil
 function Screen.clear(clr) end
 
