@@ -1,6 +1,40 @@
 -- lpp-vita lua source code
 
 ---
+---Module that handles audio features.
+---
+ShutterId = {
+    --- Image capture shutter sound
+    IMAGE_CAPTURE = 0,
+    --- Video record start shutter sound
+    VIDEO_CAPTURE_START = 1,
+    --- Video record end shutter sound
+    VIDEO_CAPTURE_END = 2
+}
+
+---
+---Module that handles network and online features.
+---
+HTTPMethod = {
+    --- GET method
+    GET_METHOD = 0,
+    --- POST method
+    POST_METHOD = 1,
+    --- HEAD method
+    HEAD_METHOD = 2,
+    --- OPTIONS method
+    OPTIONS_METHOD = 3,
+    --- PUT method
+    PUT_METHOD = 4,
+    --- DELETE method
+    DELETE_METHOD = 5,
+    --- TRACE method
+    TRACE_METHOD = 6,
+    --- CONNECT method
+    CONNECT_METHOD = 7
+}
+
+---
 ---Module that handles system related utilities.
 ---
 IOFlags = {
@@ -89,74 +123,6 @@ MntPerm = {
 }
 
 ---
----Module that handles network sockets.
----
-NetProtocol = {
-    --- TCP protocol
-    TCP_SOCKET = 0,
-    --- UDP protocol
-    UDP_SOCKET = 1
-}
-
----
----Module that handles network and online features.
----
-HTTPMethod = {
-    --- GET method
-    GET_METHOD = 0,
-    --- POST method
-    POST_METHOD = 1,
-    --- HEAD method
-    HEAD_METHOD = 2,
-    --- OPTIONS method
-    OPTIONS_METHOD = 3,
-    --- PUT method
-    PUT_METHOD = 4,
-    --- DELETE method
-    DELETE_METHOD = 5,
-    --- TRACE method
-    TRACE_METHOD = 6,
-    --- CONNECT method
-    CONNECT_METHOD = 7
-}
-
----
----Module that handles system keyboard.
----
-KeyMode = {
-    --- Text mode
-    MODE_TEXT = 0,
-    --- Password mode
-    MODE_PASSWORD = 1
-}
-
----
----Keyboard types to use with Keyboard.start.
----
-KeyType = {
-    --- Default type
-    TYPE_DEFAULT = 0,
-    --- Latin encode type
-    TYPE_LATIN = 1,
-    --- Basic number type
-    TYPE_NUMBER = 2,
-    --- Extended number type
-    TYPE_NUMBER_EXT = 3
-}
-
----
----Optional keyboard features usable.
----
-KeyOption = {
-    --- Multiline keyboard
-    OPT_MULTILINE = 0,
-    --- Disabled auto-cap on first letter
-    OPT_NO_AUTOCAP = 1,
-    --- Disabled word assistant
-    OPT_NO_ASSISTANCE = 2
-}
-
----
 ---Module that handles system registry.
 ---
 RegType = {
@@ -169,15 +135,79 @@ RegType = {
 }
 
 ---
----Module that handles audio features.
+---Module that handles physical user input systems.
 ---
-ShutterId = {
-    --- Image capture shutter sound
-    IMAGE_CAPTURE = 0,
-    --- Video record start shutter sound
-    VIDEO_CAPTURE_START = 1,
-    --- Video record end shutter sound
-    VIDEO_CAPTURE_END = 2
+DevType = {
+    --- Unpaired device
+    UNPAIRED_DEV = 0,
+    --- PSVITA controller device
+    VITA_DEV = 1,
+    --- Virtual controller device
+    VIRTUAL_DEV = 2,
+    --- Dualshock 3 device
+    DS3_DEV = 3,
+    --- Dualshock 4 device
+    DS4_DEV = 4
+}
+
+---
+---Available controls value.
+---
+Ctrl = {
+    --- Digital Up button
+    SCE_CTRL_UP = 0,
+    --- Digital Down button
+    SCE_CTRL_DOWN = 1,
+    --- Digital Left button
+    SCE_CTRL_LEFT = 2,
+    --- Digital Right button
+    SCE_CTRL_RIGHT = 3,
+    --- Cross button
+    SCE_CTRL_CROSS = 4,
+    --- Circle button
+    SCE_CTRL_CIRCLE = 5,
+    --- Square button
+    SCE_CTRL_SQUARE = 6,
+    --- Triangle button
+    SCE_CTRL_TRIANGLE = 7,
+    --- L Trigger button
+    SCE_CTRL_LTRIGGER = 8,
+    --- R Trigger button
+    SCE_CTRL_RTRIGGER = 9,
+    --- Start button
+    SCE_CTRL_START = 10,
+    --- Select button
+    SCE_CTRL_SELECT = 11,
+    --- Power button
+    SCE_CTRL_POWER = 12,
+    --- Volume Up button
+    SCE_CTRL_VOLUP = 13,
+    --- Volume Down button
+    SCE_CTRL_VOLDOWN = 14,
+    --- PS button
+    SCE_CTRL_PSBUTTON = 15
+}
+
+---
+---Module that handles 2D rendering.
+---
+ImageFilter = {
+    --- Point filter
+    FILTER_POINT = 0,
+    --- Linear filter
+    FILTER_LINEAR = 1
+}
+
+---
+---Memory types usable for allocated images.
+---
+MemType = {
+    --- VRAM memory type
+    MEM_VRAM = 0,
+    --- Physically contiguous RAM memory type
+    MEM_PHYCONT_RAM = 1,
+    --- RAM memory type
+    MEM_RAM = 2
 }
 
 ---
@@ -220,6 +250,70 @@ ConfigMode = {
     SET_ONCE = 0,
     --- The function is executed at every frame.
     SET_ALWAYS = 1
+}
+
+---
+---Module that handles network sockets.
+---
+NetProtocol = {
+    --- TCP protocol
+    TCP_SOCKET = 0,
+    --- UDP protocol
+    UDP_SOCKET = 1
+}
+
+---
+---Module that handles video files playback.
+---
+PlayMode = {
+    --- Normal speed with audio
+    NORMAL_MODE = 0,
+    --- Fast Forward at 2x speed without audio
+    FAST_FORWARD_2X_MODE = 1,
+    --- Fast Forward at 4x speed without audio
+    FAST_FORWARD_4X_MODE = 2,
+    --- Fast Forward at 8x speed without audio
+    FAST_FORWARD_8X_MODE = 3,
+    --- Fast Forward at 16x speed without audio
+    FAST_FORWARD_16X_MODE = 4,
+    --- Fast Forward at 32x speed without audio
+    FAST_FORWARD_32X_MODE = 5
+}
+
+---
+---Module that handles system keyboard.
+---
+KeyMode = {
+    --- Text mode
+    MODE_TEXT = 0,
+    --- Password mode
+    MODE_PASSWORD = 1
+}
+
+---
+---Keyboard types to use with Keyboard.start.
+---
+KeyType = {
+    --- Default type
+    TYPE_DEFAULT = 0,
+    --- Latin encode type
+    TYPE_LATIN = 1,
+    --- Basic number type
+    TYPE_NUMBER = 2,
+    --- Extended number type
+    TYPE_NUMBER_EXT = 3
+}
+
+---
+---Optional keyboard features usable.
+---
+KeyOption = {
+    --- Multiline keyboard
+    OPT_MULTILINE = 0,
+    --- Disabled auto-cap on first letter
+    OPT_NO_AUTOCAP = 1,
+    --- Disabled word assistant
+    OPT_NO_ASSISTANCE = 2
 }
 
 ---
@@ -350,87 +444,353 @@ CameraEffect = {
     EFFECT_GREEN = 6
 }
 
----
----Module that handles video files playback.
----
-PlayMode = {
-    --- Normal speed with audio
-    NORMAL_MODE = 0,
-    --- Fast Forward at 2x speed without audio
-    FAST_FORWARD_2X_MODE = 1,
-    --- Fast Forward at 4x speed without audio
-    FAST_FORWARD_4X_MODE = 2,
-    --- Fast Forward at 8x speed without audio
-    FAST_FORWARD_8X_MODE = 3,
-    --- Fast Forward at 16x speed without audio
-    FAST_FORWARD_16X_MODE = 4,
-    --- Fast Forward at 32x speed without audio
-    FAST_FORWARD_32X_MODE = 5
-}
+Color = {}
 
 ---
----Module that handles 2D rendering.
+---Create a new color.
 ---
-ImageFilter = {
-    --- Point filter
-    FILTER_POINT = 0,
-    --- Linear filter
-    FILTER_LINEAR = 1
-}
+---
+---
+---@param r integer R channel value.
+---@param g integer G channel value.
+---@param b integer B channel value.
+---@param a? integer A channel value <B>(optional)</B>.
+---@return integer
+function Color.new(r, g, b, a) end
 
 ---
----Module that handles physical user input systems.
+---Return the R channel value of a color.
 ---
-DevType = {
-    --- Unpaired device
-    UNPAIRED_DEV = 0,
-    --- PSVITA controller device
-    VITA_DEV = 1,
-    --- Virtual controller device
-    VIRTUAL_DEV = 2,
-    --- Dualshock 3 device
-    DS3_DEV = 3,
-    --- Dualshock 4 device
-    DS4_DEV = 4
-}
+---
+---
+---@param clr integer A color created with ::Color.new.
+---@return integer
+function Color.getR(clr) end
 
 ---
----Available controls value.
+---Return the G channel value of a color.
 ---
-Ctrl = {
-    --- Digital Up button
-    SCE_CTRL_UP = 0,
-    --- Digital Down button
-    SCE_CTRL_DOWN = 1,
-    --- Digital Left button
-    SCE_CTRL_LEFT = 2,
-    --- Digital Right button
-    SCE_CTRL_RIGHT = 3,
-    --- Cross button
-    SCE_CTRL_CROSS = 4,
-    --- Circle button
-    SCE_CTRL_CIRCLE = 5,
-    --- Square button
-    SCE_CTRL_SQUARE = 6,
-    --- Triangle button
-    SCE_CTRL_TRIANGLE = 7,
-    --- L Trigger button
-    SCE_CTRL_LTRIGGER = 8,
-    --- R Trigger button
-    SCE_CTRL_RTRIGGER = 9,
-    --- Start button
-    SCE_CTRL_START = 10,
-    --- Select button
-    SCE_CTRL_SELECT = 11,
-    --- Power button
-    SCE_CTRL_POWER = 12,
-    --- Volume Up button
-    SCE_CTRL_VOLUP = 13,
-    --- Volume Down button
-    SCE_CTRL_VOLDOWN = 14,
-    --- PS button
-    SCE_CTRL_PSBUTTON = 15
-}
+---
+---
+---@param clr integer A color created with ::Color.new.
+---@return integer
+function Color.getG(clr) end
+
+---
+---Return the B channel value of a color.
+---
+---
+---
+---@param clr integer A color created with ::Color.new.
+---@return integer
+function Color.getB(clr) end
+
+---
+---Return the A channel value of a color.
+---
+---
+---
+---@param clr integer A color created with ::Color.new.
+---@return integer
+function Color.getA(clr) end
+
+Sound = {}
+
+---
+---Initialize audio subsystem.
+---
+---
+---
+---@return nil
+function Sound.init() end
+
+---
+---Terminate audio subsystem.
+---
+---
+---
+---@return nil
+function Sound.term() end
+
+---
+---Open an audio file.
+---
+---
+---
+---@param filename string Name of the file to open
+---@return integer
+function Sound.open(filename) end
+
+---
+---Play a sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@param loop? boolean If true, playback will loop <b>(optional)</b>.
+---@return nil
+function Sound.play(music, loop) end
+
+---
+---Pause a sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return nil
+function Sound.pause(music) end
+
+---
+---Resume a sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return nil
+function Sound.resume(music) end
+
+---
+---Close an opened sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return nil
+function Sound.close(music) end
+
+---
+---Check if a given sound is in playing state.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return boolean
+function Sound.isPlaying(music) end
+
+---
+---Set internal volume for a given sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@param volume integer Volume value to set.
+---@return nil
+function Sound.setVolume(music, volume) end
+
+---
+---Get internal volume for a given sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return integer
+function Sound.getVolume(music) end
+
+---
+---Get song title of a given sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return string
+function Sound.getTitle(music) end
+
+---
+---Get song author of a given sound.
+---
+---
+---
+---@param music integer A valid sound ID.
+---@return string
+function Sound.getAuthor(music) end
+
+---
+---Play a shutter sound.
+---
+---
+---
+---@param id ShutterId A valid shutter sound ID.
+---@return nil
+function Sound.playShutter(id) end
+
+Font = {}
+
+---
+---Load a .ttf/.pgf/.pvf/.woff/.pfa/.pfb/.fnt/.bdf font file.
+---
+---
+---
+---@param filename string The name of the font file
+---@return integer
+function Font.load(filename) end
+
+---
+---Unload a loaded font.
+---
+---
+---
+---@param font integer A valid font loaded with Font.load.
+---@return nil
+function Font.unload(font) end
+
+---
+---Set font size for drawing.
+---
+---
+---
+---@param font integer A valid font loaded with Font.load.
+---@param size integer Size to set for Font.print calls in pixels.
+---@return nil
+function Font.setPixelSizes(font, size) end
+
+---
+---Calculate width for a given text and a given font.
+---
+---
+---
+---@param font integer A valid font loaded with Font.load.
+---@param text string Text to calculate width of.
+---@return integer
+function Font.getTextWidth(font, text) end
+
+---
+---Calculate height for a given text and a given font.
+---
+---
+---
+---@param font integer A valid font loaded with Font.load.
+---@param text string Text to calculate width of.
+---@return integer
+function Font.getTextHeight(font, text) end
+
+---
+---Print a text on screen using a font.
+---
+---
+---
+---@param font integer A valid font loaded with Font.load.
+---@param x number X starting coordinate for the print.
+---@param y number Y starting coordinate for the print.
+---@param text string Text to print.
+---@param color integer Color of the text (See ::Color).
+---@return nil
+function Font.print(font, x, y, text, color) end
+
+Network = {}
+
+---
+---Initialize network system.
+---
+---
+---
+---@return nil
+function Network.init() end
+
+---
+---Terminate network system.
+---
+---
+---
+---@return nil
+function Network.term() end
+
+---
+---Initialize debug FTP.
+---
+---
+---
+---@return nil
+function Network.initFTP() end
+
+---
+---Terminate debug FTP.
+---
+---
+---
+---@return nil
+function Network.termFTP() end
+
+---
+---Get console IP address.
+---
+---
+---
+---@return string
+function Network.getIPAddress() end
+
+---
+---Get console Mac address.
+---
+---
+---
+---@return string
+function Network.getMacAddress() end
+
+---
+---Check if WiFi is available.
+---
+---
+---
+---@return boolean
+function Network.isWifiEnabled() end
+
+---
+---Get WiFi strength level.
+---
+---
+---
+---@return integer
+function Network.getWifiLevel() end
+
+---
+---Download a file via HTTP protocol (synchronous).
+---
+---
+---
+---@param url string The url from where to download the file.
+---@param file string Filename where to save the downloaded file.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
+---@return nil
+function Network.downloadFile(url, file, useragent, method, postdata) end
+
+---
+---Download a file via HTTP protocol (asynchronous).
+---
+---
+---
+---@param url string The url from where to download the file.
+---@param file string Filename where to save the downloaded file.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
+---@return nil
+function Network.downloadFileAsync(url, file, useragent, method, postdata) end
+
+---
+---Get an HTTP request result (synchronous).
+---
+---
+---
+---@param url string The url where to send the HTTP request.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
+---@return string
+function Network.requestString(url, useragent, method, postdata) end
+
+---
+---Get an HTTP request result (asynchronous).
+---
+---
+---
+---@param url string The url where to send the HTTP request.
+---@param useragent? string Custom useragent to use <b>(optional)</b>.
+---@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
+---@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
+---@return nil
+function Network.requestStringAsync(url, useragent, method, postdata) end
 
 System = {}
 
@@ -1156,335 +1516,14 @@ function System.unloadUserPlugin(plug_id) end
 ---@return nil
 function System.unmountMountpoint(mnt) end
 
-Color = {}
-
 ---
----Create a new color.
+---Print a message on system console.
 ---
 ---
 ---
----@param r integer R channel value.
----@param g integer G channel value.
----@param b integer B channel value.
----@param a? integer A channel value <B>(optional)</B>.
----@return integer
-function Color.new(r, g, b, a) end
-
----
----Return the R channel value of a color.
----
----
----
----@param clr integer A color created with ::Color.new.
----@return integer
-function Color.getR(clr) end
-
----
----Return the G channel value of a color.
----
----
----
----@param clr integer A color created with ::Color.new.
----@return integer
-function Color.getG(clr) end
-
----
----Return the B channel value of a color.
----
----
----
----@param clr integer A color created with ::Color.new.
----@return integer
-function Color.getB(clr) end
-
----
----Return the A channel value of a color.
----
----
----
----@param clr integer A color created with ::Color.new.
----@return integer
-function Color.getA(clr) end
-
-Socket = {}
-
----
----Create a server socket.
----
----
----
----@param port integer Port to use.
----@param protocol? NetProtocol Protocol to use <b>(optional)</b>.
----@return integer
-function Socket.createServerSocket(port, protocol) end
-
----
----Connect to a server.
----
----
----
----@param host string Host to connect to.
----@param port integer Port to use.
----@param protocol? NetProtocol Protocol to use <b>(optional)</b>.
----@return integer
-function Socket.connect(host, port, protocol) end
-
----
----Send data via socket.
----
----
----
----@param sock integer A valid socket id.
----@param data string Data to send.
----@return integer
-function Socket.send(sock, data) end
-
----
----Send data via socket.
----
----
----
----@param sock integer A valid socket id.
----@param size integer Maximum size of the received data.
----@return string
-function Socket.receive(sock, size) end
-
----
----Accept new connections for a server socket.
----
----
----
----@param sock integer A valid server socket id.
----@return integer
-function Socket.accept(sock) end
-
----
----Close a socket.
----
----
----
----@param sock integer A valid socket id.
+---@param text string The text to print.
 ---@return nil
-function Socket.close(sock) end
-
-Network = {}
-
----
----Initialize network system.
----
----
----
----@return nil
-function Network.init() end
-
----
----Terminate network system.
----
----
----
----@return nil
-function Network.term() end
-
----
----Initialize debug FTP.
----
----
----
----@return nil
-function Network.initFTP() end
-
----
----Terminate debug FTP.
----
----
----
----@return nil
-function Network.termFTP() end
-
----
----Get console IP address.
----
----
----
----@return string
-function Network.getIPAdddress() end
-
----
----Get console Mac address.
----
----
----
----@return string
-function Network.getMacAdddress() end
-
----
----Check if WiFi is available.
----
----
----
----@return boolean
-function Network.isWifiEnabled() end
-
----
----Get WiFi strength level.
----
----
----
----@return integer
-function Network.getWifiLevel() end
-
----
----Download a file via HTTP protocol (synchronous).
----
----
----
----@param url string The url from where to download the file.
----@param file string Filename where to save the downloaded file.
----@param useragent? string Custom useragent to use <b>(optional)</b>.
----@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
----@return nil
-function Network.downloadFile(url, file, useragent, method, postdata) end
-
----
----Download a file via HTTP protocol (asynchronous).
----
----
----
----@param url string The url from where to download the file.
----@param file string Filename where to save the downloaded file.
----@param useragent? string Custom useragent to use <b>(optional)</b>.
----@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
----@return nil
-function Network.downloadFileAsync(url, file, useragent, method, postdata) end
-
----
----Get an HTTP request result (synchronous).
----
----
----
----@param url string The url where to send the HTTP request.
----@param useragent? string Custom useragent to use <b>(optional)</b>.
----@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
----@return string
-function Network.requestString(url, useragent, method, postdata) end
-
----
----Get an HTTP request result (asynchronous).
----
----
----
----@param url string The url where to send the HTTP request.
----@param useragent? string Custom useragent to use <b>(optional)</b>.
----@param method? HTTPMethod Method to use to perform the HTTP request <b>(optional)</b>.
----@param postdata? string POST data to send with the HTTP request <b>(optional)</b>.
----@return nil
-function Network.requestStringAsync(url, useragent, method, postdata) end
-
-Font = {}
-
----
----Load a .ttf/.pgf/.pvf/.woff/.pfa/.pfb/.fnt/.bdf font file.
----
----
----
----@param filename string The name of the font file
----@return integer
-function Font.load(filename) end
-
----
----Unload a loaded font.
----
----
----
----@param font integer A valid font loaded with Font.load.
----@return nil
-function Font.unload(font) end
-
----
----Set font size for drawing.
----
----
----
----@param font integer A valid font loaded with Font.load.
----@param size integer Size to set for Font.print calls in pixels.
----@return nil
-function Font.setPixelSizes(font, size) end
-
----
----Calculate width for a given text and a given font.
----
----
----
----@param font integer A valid font loaded with Font.load.
----@param text string Text to calculate width of.
----@return integer
-function Font.getTextWidth(font, text) end
-
----
----Calculate height for a given text and a given font.
----
----
----
----@param font integer A valid font loaded with Font.load.
----@param text string Text to calculate width of.
----@return integer
-function Font.getTextHeight(font, text) end
-
----
----Print a text on screen using a font.
----
----
----
----@param font integer A valid font loaded with Font.load.
----@param x number X starting coordinate for the print.
----@param y number Y starting coordinate for the print.
----@param text string Text to print.
----@param color integer Color of the text (See ::Color).
----@return nil
-function Font.print(font, x, y, text, color) end
-
-Keyboard = {}
-
----
----Start a keyboard instance.
----
----
----
----@param title string The keyboard title.
----@param text string The keyboard initial text.
----@param length? integer The text maximum length <b>(optional)</b>.
----@param type? KeyType The keyboard type <b>(optional)</b>.
----@param mode? KeyMode The keyboard mode <b>(optional)</b>.
----@param opt? KeyOption Optional keyboard features to use <b>(optional)</b>.
----@return nil
-function Keyboard.start(title, text, length, type, mode, opt) end
-
----
----Get keyboard state.
----
----
----
----@return DlgState
-function Keyboard.getState() end
-
----
----Get keyboard user input.
----
----
----
----@return string
-function Keyboard.getInput() end
-
----
----Close current system keyboard instance.
----
----
----
----@return nil
-function Keyboard.clear() end
+function System.consolePrint(text) end
 
 Registry = {}
 
@@ -1522,124 +1561,549 @@ function Registry.getSysKey(id, type) end
 ---@return nil
 function Registry.setKey(category, name, type, value, size) end
 
-Sound = {}
+Mic = {}
 
 ---
----Initialize audio subsystem.
+---Start a microphone recording phase.
 ---
 ---
 ---
----@return nil
-function Sound.init() end
-
----
----Terminate audio subsystem.
----
----
----
----@return nil
-function Sound.term() end
-
----
----Open an audio file.
----
----
----
----@param filename string Name of the file to open
+---@param time integer The time to record in seconds.
+---@param samplerate integer The samplerate of the output in Hz.
 ---@return integer
-function Sound.open(filename) end
+function Mic.start(time, samplerate) end
 
 ---
----Play a sound.
+---Stop microphone recording and save result.
 ---
 ---
 ---
----@param music integer A valid sound ID.
----@param loop? boolean If true, playback will loop <b>(optional)</b>.
+---@param filename string The filename of the resulting WAV file.
 ---@return nil
-function Sound.play(music, loop) end
+function Mic.stop(filename) end
 
 ---
----Pause a sound.
+---Pause microphone recording.
 ---
 ---
 ---
----@param music integer A valid sound ID.
 ---@return nil
-function Sound.pause(music) end
+function Mic.pause() end
 
 ---
----Resume a sound.
+---Resume microphone recording.
 ---
 ---
 ---
----@param music integer A valid sound ID.
 ---@return nil
-function Sound.resume(music) end
+function Mic.resume() end
 
 ---
----Close an opened sound.
+---Check if the microphone is recording.
 ---
 ---
 ---
----@param music integer A valid sound ID.
----@return nil
-function Sound.close(music) end
-
----
----Check if a given sound is in playing state.
----
----
----
----@param music integer A valid sound ID.
 ---@return boolean
-function Sound.isPlaying(music) end
+function Mic.isRecording() end
+
+Database = {}
 
 ---
----Set internal volume for a given sound.
+---Open/Create an SQLite database.
 ---
 ---
 ---
----@param music integer A valid sound ID.
----@param volume integer Volume value to set.
----@return nil
-function Sound.setVolume(music, volume) end
-
----
----Get internal volume for a given sound.
----
----
----
----@param music integer A valid sound ID.
+---@param filename string Filename of the database to open.
 ---@return integer
-function Sound.getVolume(music) end
+function Database.open(filename) end
 
 ---
----Get song title of a given sound.
+---Close an opened database
 ---
 ---
 ---
----@param music integer A valid sound ID.
----@return string
-function Sound.getTitle(music) end
-
----
----Get song author of a given sound.
----
----
----
----@param music integer A valid sound ID.
----@return string
-function Sound.getAuthor(music) end
-
----
----Play a shutter sound.
----
----
----
----@param id ShutterId A valid shutter sound ID.
+---@param db integer A valid database handle.
 ---@return nil
-function Sound.playShutter(id) end
+function Database.close(db) end
+
+---
+---Execute a query.
+---
+---
+---
+---@param db integer A valid database handle.
+---@param query string An SQL query to execute.
+---@return table
+function Database.execQuery(db, query) end
+
+Screen = {}
+
+---
+---Clear the screen framebuffer.
+---
+---
+---
+---@param clr? integer Color of the screen after the clear <B>(optional)</B>.
+---@return nil
+function Screen.clear(clr) end
+
+---
+---Flip the screen.
+---
+---
+---
+---@return nil
+function Screen.flip() end
+
+---
+---Get a pixel color from the screen framebuffer.
+---
+---
+---
+---@param x integer X coordinate of the pixel.
+---@param y integer Y coordinate of the pixel.
+---@return integer
+function Screen.getPixel(x, y) end
+
+---
+---Wait screen vertical synchronization (VSync).
+---
+---
+---
+---@return nil
+function Screen.waitVblankStart() end
+
+Controls = {}
+
+---
+---Read pressed buttons.
+---
+---
+---
+---@param port? integer Device port to use <b>(optional)</b>.
+---@return integer
+function Controls.read(port) end
+
+---
+---Check if a button is pressed.
+---
+---
+---
+---@param bitmask integer A controls bitmask returned by Controls.read.
+---@param value Ctrl A control value to check.
+---@return boolean
+function Controls.check(bitmask, value) end
+
+---
+---Changes vibration intensity for Dualshock devices.
+---
+---
+---
+---@param port integer Device port to use.
+---@param small integer Intensity for small sensor.
+---@param large integer Intensity for large sensor.
+---@return nil
+function Controls.rumble(port, small, large) end
+
+---
+---Set lightbar color for Dualshock 4 devices.
+---
+---
+---
+---@param port integer Device port to use.
+---@param color integer An RGBA color value (See ::Color).
+---@return nil
+function Controls.setLightbar(port, color) end
+
+---
+---Locks default PS button functionality.
+---
+---
+---
+---@return nil
+function Controls.lockHomeButton() end
+
+---
+---Unlocks default PS button functionality.
+---
+---
+---
+---@return nil
+function Controls.unlockHomeButton() end
+
+---
+---Get info about controllers.
+---
+---
+---
+---@return table
+function Controls.getDeviceInfo() end
+
+---
+---Check if an headset is plugged in.
+---
+---
+---
+---@return boolean
+function Controls.headsetStatus() end
+
+---
+---Return set controller enter button.
+---
+---
+---
+---@return Ctrl
+function Controls.getEnterButton() end
+
+---
+---Enable gyroscope sensor.
+---
+---
+---
+---@return nil
+function Controls.enableGyro() end
+
+---
+---Enable accelerometer sensor.
+---
+---
+---
+---@return nil
+function Controls.enableAccel() end
+
+---
+---Disable gyroscope sensor.
+---
+---
+---
+---@return nil
+function Controls.disableGyro() end
+
+---
+---Disable accelerometer sensor.
+---
+---
+---
+---@return nil
+function Controls.disableAccel() end
+
+Graphics = {}
+
+---
+---Create an empty image.
+---
+---
+---
+---@param width integer Image width.
+---@param height integer Image height.
+---@param color? integer A valid color (See ::Color) <b>(optional)</b>.
+---@param type? MemType Memory type to use for the image <b>(optional)</b>.
+---@return integer
+function Graphics.createImage(width, height, color, type) end
+
+---
+---Print a text on screen using system font.
+---
+---
+---
+---@param x number X coordinate of the text position in pixels.
+---@param y number Y coordinate of the text position in pixels.
+---@param text string Text to print.
+---@param color integer A valid color (See ::Color).
+---@return nil
+function Graphics.debugPrint(x, y, text, color) end
+
+---
+---Draw an image.
+---
+---
+---
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
+---@return nil
+function Graphics.drawImage(x, y, img, color) end
+
+---
+---Draw an image with several effects.
+---
+---
+---
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param x_start integer Image X coordinate for the partial drawing.
+---@param y_start integer Image Y coordinate for the partial drawing.
+---@param width number Partial drawing width.
+---@param height number Partial drawing height.
+---@param rad number Rotation radius.
+---@param x_scale number Scale value for X parameter.
+---@param y_scale number Scale value for Y parameter.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
+---@return nil
+function Graphics.drawImageExtended(x, y, img, x_start, y_start, width, height, rad, x_scale, y_scale, color) end
+
+---
+---Draw a line.
+---
+---
+---
+---@param x1 number Starting X coordinate of the line in pixels.
+---@param x2 number Ending X coordinate of the line in pixels.
+---@param y1 number Starting Y coordinate of the line in pixels.
+---@param y2 number Ending Y coordinate of the line in pixels.
+---@param color integer A valid color (See ::Color).
+---@return nil
+function Graphics.drawLine(x1, x2, y1, y2, color) end
+
+---
+---Draw a part of an image.
+---
+---
+---
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param x_start integer Image X coordinate for the partial drawing.
+---@param y_start integer Image Y coordinate for the partial drawing.
+---@param width number Partial drawing width.
+---@param height number Partial drawing height.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
+---@return nil
+function Graphics.drawPartialImage(x, y, img, x_start, y_start, width, height, color) end
+
+---
+---Draw a pixel.
+---
+---
+---
+---@param x number X coordinate of the pixel position in pixels.
+---@param y number Y coordinate of the pixel position in pixels.
+---@param color integer A valid color (See ::Color).
+---@param image? integer Image to draw on <b>(optional)</b>.
+---@return nil
+function Graphics.drawPixel(x, y, color, image) end
+
+---
+---Draw a rotated image.
+---
+---
+---
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param rad number Rotation radius.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
+---@return nil
+function Graphics.drawRotateImage(x, y, img, rad, color) end
+
+---
+---Draw a scaled image.
+---
+---
+---
+---@param x number X coordinate of the image in pixels.
+---@param y number Y coordinate of the image in pixels.
+---@param img integer A valid image ID.
+---@param x_scale number Scale value for X parameter.
+---@param y_scale number Scale value for Y parameter.
+---@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
+---@return nil
+function Graphics.drawScaleImage(x, y, img, x_scale, y_scale, color) end
+
+---
+---Draw a circle.
+---
+---
+---
+---@param x number X coordinate of the circle in pixels.
+---@param y number Y coordinate of the circle in pixels.
+---@param rad number Radius size of the circle.
+---@param color integer A valid color (See ::Color).
+---@return nil
+function Graphics.fillCircle(x, y, rad, color) end
+
+---
+---Draw an empty rectangle.
+---
+---
+---
+---@param x1 number Starting X coordinate of the rectangle in pixels.
+---@param x2 number Ending X coordinate of the rectangle in pixels.
+---@param y1 number Starting Y coordinate of the rectangle in pixels.
+---@param y2 number Ending Y coordinate of the rectangle in pixels.
+---@param color integer A valid color (See ::Color).
+---@return nil
+function Graphics.fillEmptyRect(x1, x2, y1, y2, color) end
+
+---
+---Draw a rectangle.
+---
+---
+---
+---@param x1 number Starting X coordinate of the rectangle in pixels.
+---@param x2 number Ending X coordinate of the rectangle in pixels.
+---@param y1 number Starting Y coordinate of the rectangle in pixels.
+---@param y2 number Ending Y coordinate of the rectangle in pixels.
+---@param color integer A valid color (See ::Color).
+---@return nil
+function Graphics.fillRect(x1, x2, y1, y2, color) end
+
+---
+---Free a loaded image.
+---
+---
+---
+---@param img integer A valid image ID.
+---@return nil
+function Graphics.freeImage(img) end
+
+---
+---Gets the number of frames of a loaded animated image.
+---
+---
+---
+---@param img integer A valid image ID.
+---@return integer
+function Graphics.getImageFramesNum(img) end
+
+---
+---Get an image height.
+---
+---
+---
+---@param img integer A valid image ID.
+---@return integer
+function Graphics.getImageHeight(img) end
+
+---
+---Get an image width.
+---
+---
+---
+---@param img integer A valid image ID.
+---@return integer
+function Graphics.getImageWidth(img) end
+
+---
+---Get a pixel color from a loaded image.
+---
+---
+---
+---@param x integer X coordinate of the pixel.
+---@param y integer Y coordinate of the pixel.
+---@param img integer A valid image ID.
+---@return integer
+function Graphics.getPixel(x, y, img) end
+
+---
+---Initialize drawing phase.
+---
+---
+---
+---@return nil
+function Graphics.initBlend() end
+
+---
+---Initialize a rescaler.
+---
+---
+---
+---@param x integer X coordinate of the rescaler output.
+---@param y integer Y coordinate of the rescaler output.
+---@param x_scale number Scale value for X parameter.
+---@param y_scale number Scale value for Y parameter.
+---@return nil
+function Graphics.initRescaler(x, y, x_scale, y_scale) end
+
+---
+---Load a .gif animated image.
+---
+---
+---
+---@param filename string Name of the file to open.
+---@return integer
+function Graphics.loadAnimatedImage(filename) end
+
+---
+---Load a .png/.jpg/.bmp image.
+---
+---
+---
+---@param filename string Name of the file to open.
+---@param type? MemType Memory type to use for the image <b>(optional)</b>.
+---@return integer
+function Graphics.loadImage(filename, type) end
+
+---
+---Load a .png/.jpg/.bmp image (asynchronous).
+---
+---
+---
+---@param filename string Name of the file to open.
+---@return nil
+function Graphics.loadImageAsync(filename) end
+
+---
+---Copies pixels to a loaded image.
+---
+---
+---
+---@param image integer Image to copies pixels onto.
+---@param offset integer Offset in bytes to which to copies pixels.
+---@param size integer Size in bytes of the pixels to copy.
+---@param data string Pixels to copy.
+---@return nil
+function Graphics.overloadImage(image, offset, size, data) end
+
+---
+---Save a loaded image to a .png/.bmp image.
+---
+---
+---
+---@param img integer A valid image ID.
+---@param filename string The filename of the screenshot output.
+---@param format? ImgFmt The format to use for the output file <b>(optional)</b>.
+---@return nil
+function Graphics.saveImage(img, filename, format) end
+
+---
+---Set filters to use for a given image.
+---
+---
+---
+---@param img integer A valid image ID.
+---@param min_filter ImageFilter Min filter to use.
+---@param mag_filter ImageFilter Mag filter to use.
+---@return nil
+function Graphics.setImageFilters(img, min_filter, mag_filter) end
+
+---
+---Set current active frame for a loaded animated image.
+---
+---
+---
+---@param img integer A valid image ID.
+---@param frame integer The frame to set as active.
+---@return nil
+function Graphics.setImageFrame(img, frame) end
+
+---
+---Terminate drawing phase.
+---
+---
+---
+---@return nil
+function Graphics.termBlend() end
+
+---
+---Terminate a rescaler.
+---
+---
+---
+---@return nil
+function Graphics.termRescaler() end
 
 Gui = {}
 
@@ -1961,6 +2425,413 @@ function Gui.setWidgetWidth(w) end
 ---@return nil
 function Gui.resetWidgetWidth() end
 
+Socket = {}
+
+---
+---Create a server socket.
+---
+---
+---
+---@param port integer Port to use.
+---@param protocol? NetProtocol Protocol to use <b>(optional)</b>.
+---@return integer
+function Socket.createServerSocket(port, protocol) end
+
+---
+---Connect to a server.
+---
+---
+---
+---@param host string Host to connect to.
+---@param port integer Port to use.
+---@param protocol? NetProtocol Protocol to use <b>(optional)</b>.
+---@return integer
+function Socket.connect(host, port, protocol) end
+
+---
+---Send data via socket.
+---
+---
+---
+---@param sock integer A valid socket id.
+---@param data string Data to send.
+---@return integer
+function Socket.send(sock, data) end
+
+---
+---Send data via socket.
+---
+---
+---
+---@param sock integer A valid socket id.
+---@param size integer Maximum size of the received data.
+---@return string
+function Socket.receive(sock, size) end
+
+---
+---Accept new connections for a server socket.
+---
+---
+---
+---@param sock integer A valid server socket id.
+---@return integer
+function Socket.accept(sock) end
+
+---
+---Close a socket.
+---
+---
+---
+---@param sock integer A valid socket id.
+---@return nil
+function Socket.close(sock) end
+
+Timer = {}
+
+---
+---Create a new system timer.
+---
+---
+---
+---@return integer
+function Timer.new() end
+
+---
+---Get a system timer time.
+---
+---
+---
+---@param timer integer The timer ID to get the time of.
+---@return integer
+function Timer.getTime(timer) end
+
+---
+---Set a system timer time.
+---
+---
+---
+---@param timer integer The timer ID to set the time of.
+---@param msecs integer The time to set in milliseconds.
+---@return nil
+function Timer.setTime(timer, msecs) end
+
+---
+---Destroy a system timer.
+---
+---
+---
+---@param timer integer The timer ID to destroy.
+---@return nil
+function Timer.destroy(timer) end
+
+---
+---Pause a system timer.
+---
+---
+---
+---@param timer integer The timer ID to pause.
+---@return nil
+function Timer.pause(timer) end
+
+---
+---Resume a system timer.
+---
+---
+---
+---@param timer integer The timer ID to resume.
+---@return nil
+function Timer.resume(timer) end
+
+---
+---Reset a system timer time.
+---
+---
+---
+---@param timer integer The timer ID to reset.
+---@return nil
+function Timer.reset(timer) end
+
+---
+---Check if a system timer is in playing state.
+---
+---
+---
+---@param timer integer The timer ID to check.
+---@return boolean
+function Timer.isPlaying(timer) end
+
+Video = {}
+
+---
+---Init video sub-system.
+---
+---
+---
+---@return nil
+function Video.init() end
+
+---
+---Terminate video sub-system.
+---
+---
+---
+---@return nil
+function Video.term() end
+
+---
+---Open an MP4 video file.
+---
+---
+---
+---@param filename string Filepath of the file to reproduce.
+---@param loop? boolean If true, playback will loop <b>(optional)</b>.
+---@return nil
+function Video.open(filename, loop) end
+
+---
+---Close the current video playback.
+---
+---
+---
+---@return nil
+function Video.close() end
+
+---
+---Get the current video frame as image.
+---
+---
+---
+---@return integer
+function Video.getOutput() end
+
+---
+---Pause current video playback.
+---
+---
+---
+---@return nil
+function Video.pause() end
+
+---
+---Resume current video playback.
+---
+---
+---
+---@return nil
+function Video.resume() end
+
+---
+---Get current playback state.
+---
+---
+---
+---@return boolean
+function Video.isPlaying() end
+
+---
+---Set internal volume for current video playback.
+---
+---
+---
+---@param volume integer Volume value to set.
+---@return nil
+function Video.setVolume(volume) end
+
+---
+---Get internal volume for current video playback.
+---
+---
+---
+---@return integer
+function Video.getVolume() end
+
+---
+---Get current time for current video playback.
+---
+---
+---
+---@return number
+function Video.getTime() end
+
+---
+---Jump to a specific position for current video playback.
+---
+---
+---
+---@param time number The position in milliseconds where to jump in the video playback.
+---@return nil
+function Video.jumpToTime(time) end
+
+---
+---Set play mode for current video playback.
+---
+---
+---
+---@param mode PlayMode The mode to set.
+---@return nil
+function Video.setPlayMode(mode) end
+
+---
+---Open a subtitles file for current video playback.
+---
+---
+---
+---@param fname string The file to use as subtitles source.
+---@return nil
+function Video.openSubs(fname) end
+
+---
+---Close currently opened subtitles file.
+---
+---
+---
+---@return nil
+function Video.closeSubs() end
+
+---
+---Get current available subtitles for the video playback.
+---
+---
+---
+---@return string
+function Video.getSubs() end
+
+Render = {}
+
+---
+---Create a vertex.
+---
+---
+---
+---@param x number X coordinate of the vertex.
+---@param y number Y coordinate of the vertex.
+---@param z number Z coordinate of the vertex.
+---@param u number U coordinate for texture mapping.
+---@param v number v coordinate for texture mapping.
+---@param n1 number Normal X coordinate of the vertex.
+---@param n2 number Normal Y coordinate of the vertex.
+---@param n3 number Normal Z coordinate of the vertex.
+---@return integer
+function Render.createVertex(x, y, z, u, v, n1, n2, n3) end
+
+---
+---Destroy a vertex.
+---
+---
+---
+---@param v integer Vertex ID created with Render.createVertex to destroy.
+---@return nil
+function Render.destroyVertex(v) end
+
+---
+---Load a set of vertices as 3D model.
+---
+---
+---
+---@param v table A table with the model vertices.
+---@param texture integer A valid image ID.
+---@return integer
+function Render.loadModel(v, texture) end
+
+---
+---Load an .obj model.
+---
+---
+---
+---@param filename string Name of the file to load.
+---@param texture integer Texture ID to use.
+---@return integer
+function Render.loadObject(filename, texture) end
+
+---
+---Free a model.
+---
+---
+---
+---@param model integer A valid model ID.
+---@return nil
+function Render.unloadModel(model) end
+
+---
+---Print a model on screen.
+---
+---
+---
+---@param model integer A valid model ID.
+---@param x number X coordinate of the model.
+---@param y number Y coordinate of the model.
+---@param z number Z coordinate of the model.
+---@param angleX number X rotation value of the model.
+---@param angleY number Y rotation value of the model.
+---@param angleZ number Z rotation value of the model.
+---@param unbind? boolean Draw the model unbinded from camera instance <b>(optional)</b>.
+---@return nil
+function Render.drawModel(model, x, y, z, angleX, angleY, angleZ, unbind) end
+
+---
+---Set a given texture for a model.
+---
+---
+---
+---@param model integer A valid model ID.
+---@param texture integer Texture ID to use.
+---@return nil
+function Render.useTexture(model, texture) end
+
+---
+---Set view camera instance settings.
+---
+---
+---
+---@param x number X coordinate of the camera.
+---@param y number Y coordinate of the camera.
+---@param z number Z coordinate of the camera.
+---@param rot_x number X related rotation value of the camera.
+---@param rot_y number Y related rotation value of the camera.
+---@param rot_z number Z related rotation value of the camera.
+---@return nil
+function Render.setCamera(x, y, z, rot_x, rot_y, rot_z) end
+
+Keyboard = {}
+
+---
+---Start a keyboard instance.
+---
+---
+---
+---@param title string The keyboard title.
+---@param text string The keyboard initial text.
+---@param length? integer The text maximum length <b>(optional)</b>.
+---@param type? KeyType The keyboard type <b>(optional)</b>.
+---@param mode? KeyMode The keyboard mode <b>(optional)</b>.
+---@param opt? KeyOption Optional keyboard features to use <b>(optional)</b>.
+---@return nil
+function Keyboard.start(title, text, length, type, mode, opt) end
+
+---
+---Get keyboard state.
+---
+---
+---
+---@return DlgState
+function Keyboard.getState() end
+
+---
+---Get keyboard user input.
+---
+---
+---
+---@return string
+function Keyboard.getInput() end
+
+---
+---Close current system keyboard instance.
+---
+---
+---
+---@return nil
+function Keyboard.clear() end
+
 Camera = {}
 
 ---
@@ -2210,840 +3081,4 @@ function Camera.setNightmode(mode) end
 ---
 ---@return CameraNightmode
 function Camera.getNightmode() end
-
-Screen = {}
-
----
----Clear the screen framebuffer.
----
----
----
----@param clr? integer Color of the screen after the clear <B>(optional)</B>.
----@return nil
-function Screen.clear(clr) end
-
----
----Flip the screen.
----
----
----
----@return nil
-function Screen.flip() end
-
----
----Get a pixel color from the screen framebuffer.
----
----
----
----@param x integer X coordinate of the pixel.
----@param y integer Y coordinate of the pixel.
----@return integer
-function Screen.getPixel(x, y) end
-
----
----Wait screen vertical synchronization (VSync).
----
----
----
----@return nil
-function Screen.waitVblankStart() end
-
-Render = {}
-
----
----Create a vertex.
----
----
----
----@param x number X coordinate of the vertex.
----@param y number Y coordinate of the vertex.
----@param z number Z coordinate of the vertex.
----@param u number U coordinate for texture mapping.
----@param v number v coordinate for texture mapping.
----@param n1 number Normal X coordinate of the vertex.
----@param n2 number Normal Y coordinate of the vertex.
----@param n3 number Normal Z coordinate of the vertex.
----@return integer
-function Render.createVertex(x, y, z, u, v, n1, n2, n3) end
-
----
----Destroy a vertex.
----
----
----
----@param v integer Vertex ID created with Render.createVertex to destroy.
----@return nil
-function Render.destroyVertex(v) end
-
----
----Load a set of vertices as 3D model.
----
----
----
----@param v table A table with the model vertices.
----@param texture integer A valid image ID.
----@return integer
-function Render.loadModel(v, texture) end
-
----
----Load an .obj model.
----
----
----
----@param filename string Name of the file to load.
----@param texture integer Texture ID to use.
----@return integer
-function Render.loadObject(filename, texture) end
-
----
----Free a model.
----
----
----
----@param model integer A valid model ID.
----@return nil
-function Render.unloadModel(model) end
-
----
----Print a model on screen.
----
----
----
----@param model integer A valid model ID.
----@param x number X coordinate of the model.
----@param y number Y coordinate of the model.
----@param z number Z coordinate of the model.
----@param angleX number X rotation value of the model.
----@param angleY number Y rotation value of the model.
----@param angleZ number Z rotation value of the model.
----@param unbind? boolean Draw the model unbinded from camera instance <b>(optional)</b>.
----@return nil
-function Render.drawModel(model, x, y, z, angleX, angleY, angleZ, unbind) end
-
----
----Set a given texture for a model.
----
----
----
----@param model integer A valid model ID.
----@param texture integer Texture ID to use.
----@return nil
-function Render.useTexture(model, texture) end
-
----
----Set view camera instance settings.
----
----
----
----@param x number X coordinate of the camera.
----@param y number Y coordinate of the camera.
----@param z number Z coordinate of the camera.
----@param rot_x number X related rotation value of the camera.
----@param rot_y number Y related rotation value of the camera.
----@param rot_z number Z related rotation value of the camera.
----@return nil
-function Render.setCamera(x, y, z, rot_x, rot_y, rot_z) end
-
-Mic = {}
-
----
----Start a microphone recording phase.
----
----
----
----@param time integer The time to record in seconds.
----@param samplerate integer The samplerate of the output in Hz.
----@return integer
-function Mic.start(time, samplerate) end
-
----
----Stop microphone recording and save result.
----
----
----
----@param filename string The filename of the resulting WAV file.
----@return nil
-function Mic.stop(filename) end
-
----
----Pause microphone recording.
----
----
----
----@return nil
-function Mic.pause() end
-
----
----Resume microphone recording.
----
----
----
----@return nil
-function Mic.resume() end
-
----
----Check if the microphone is recording.
----
----
----
----@return boolean
-function Mic.isRecording() end
-
-Video = {}
-
----
----Init video sub-system.
----
----
----
----@return nil
-function Video.init() end
-
----
----Terminate video sub-system.
----
----
----
----@return nil
-function Video.term() end
-
----
----Open an MP4 video file.
----
----
----
----@param filename string Filepath of the file to reproduce.
----@param loop? boolean If true, playback will loop <b>(optional)</b>.
----@return nil
-function Video.open(filename, loop) end
-
----
----Close the current video playback.
----
----
----
----@return nil
-function Video.close() end
-
----
----Get the current video frame as image.
----
----
----
----@return integer
-function Video.getOutput() end
-
----
----Pause current video playback.
----
----
----
----@return nil
-function Video.pause() end
-
----
----Resume current video playback.
----
----
----
----@return nil
-function Video.resume() end
-
----
----Get current playback state.
----
----
----
----@return boolean
-function Video.isPlaying() end
-
----
----Set internal volume for current video playback.
----
----
----
----@param volume integer Volume value to set.
----@return nil
-function Video.setVolume(volume) end
-
----
----Get internal volume for current video playback.
----
----
----
----@return integer
-function Video.getVolume() end
-
----
----Get current time for current video playback.
----
----
----
----@return number
-function Video.getTime() end
-
----
----Jump to a specific position for current video playback.
----
----
----
----@param time number The position in milliseconds where to jump in the video playback.
----@return nil
-function Video.jumpToTime(time) end
-
----
----Set play mode for current video playback.
----
----
----
----@param mode PlayMode The mode to set.
----@return nil
-function Video.setPlayMode(mode) end
-
----
----Open a subtitles file for current video playback.
----
----
----
----@param fname string The file to use as subtitles source.
----@return nil
-function Video.openSubs(fname) end
-
----
----Close currently opened subtitles file.
----
----
----
----@return nil
-function Video.closeSubs() end
-
----
----Get current available subtitles for the video playback.
----
----
----
----@return string
-function Video.getSubs() end
-
-Timer = {}
-
----
----Create a new system timer.
----
----
----
----@return integer
-function Timer.new() end
-
----
----Get a system timer time.
----
----
----
----@param timer integer The timer ID to get the time of.
----@return integer
-function Timer.getTime(timer) end
-
----
----Set a system timer time.
----
----
----
----@param timer integer The timer ID to set the time of.
----@param msecs integer The time to set in milliseconds.
----@return nil
-function Timer.setTime(timer, msecs) end
-
----
----Destroy a system timer.
----
----
----
----@param timer integer The timer ID to destroy.
----@return nil
-function Timer.destroy(timer) end
-
----
----Pause a system timer.
----
----
----
----@param timer integer The timer ID to pause.
----@return nil
-function Timer.pause(timer) end
-
----
----Resume a system timer.
----
----
----
----@param timer integer The timer ID to resume.
----@return nil
-function Timer.resume(timer) end
-
----
----Reset a system timer time.
----
----
----
----@param timer integer The timer ID to reset.
----@return nil
-function Timer.reset(timer) end
-
----
----Check if a system timer is in playing state.
----
----
----
----@param timer integer The timer ID to check.
----@return boolean
-function Timer.isPlaying(timer) end
-
-Graphics = {}
-
----
----Initialize drawing phase.
----
----
----
----@return nil
-function Graphics.initBlend() end
-
----
----Terminate drawing phase.
----
----
----
----@return nil
-function Graphics.termBlend() end
-
----
----Print a text on screen using system font.
----
----
----
----@param x number X coordinate of the text position in pixels.
----@param y number Y coordinate of the text position in pixels.
----@param text string Text to print.
----@param color integer A valid color (See ::Color).
----@return nil
-function Graphics.debugPrint(x, y, text, color) end
-
----
----Draw a pixel.
----
----
----
----@param x number X coordinate of the pixel position in pixels.
----@param y number Y coordinate of the pixel position in pixels.
----@param color integer A valid color (See ::Color).
----@param image? integer Image to draw on <b>(optional)</b>.
----@return nil
-function Graphics.drawPixel(x, y, color, image) end
-
----
----Get a pixel color from a loaded image.
----
----
----
----@param x integer X coordinate of the pixel.
----@param y integer Y coordinate of the pixel.
----@param img integer A valid image ID.
----@return integer
-function Graphics.getPixel(x, y, img) end
-
----
----Draw a line.
----
----
----
----@param x1 number Starting X coordinate of the line in pixels.
----@param x2 number Ending X coordinate of the line in pixels.
----@param y1 number Starting Y coordinate of the line in pixels.
----@param y2 number Ending Y coordinate of the line in pixels.
----@param color integer A valid color (See ::Color).
----@return nil
-function Graphics.drawLine(x1, x2, y1, y2, color) end
-
----
----Draw a rectangle.
----
----
----
----@param x1 number Starting X coordinate of the rectangle in pixels.
----@param x2 number Ending X coordinate of the rectangle in pixels.
----@param y1 number Starting Y coordinate of the rectangle in pixels.
----@param y2 number Ending Y coordinate of the rectangle in pixels.
----@param color integer A valid color (See ::Color).
----@return nil
-function Graphics.fillRect(x1, x2, y1, y2, color) end
-
----
----Draw an empty rectangle.
----
----
----
----@param x1 number Starting X coordinate of the rectangle in pixels.
----@param x2 number Ending X coordinate of the rectangle in pixels.
----@param y1 number Starting Y coordinate of the rectangle in pixels.
----@param y2 number Ending Y coordinate of the rectangle in pixels.
----@param color integer A valid color (See ::Color).
----@return nil
-function Graphics.fillEmptyRect(x1, x2, y1, y2, color) end
-
----
----Draw a circle.
----
----
----
----@param x number X coordinate of the circle in pixels.
----@param y number Y coordinate of the circle in pixels.
----@param rad number Radius size of the circle.
----@param color integer A valid color (See ::Color).
----@return nil
-function Graphics.fillCircle(x, y, rad, color) end
-
----
----Create an empty image.
----
----
----
----@param width integer Image width.
----@param height integer Image height.
----@param color? integer A valid color (See ::Color) <b>(optional)</b>.
----@return integer
-function Graphics.createImage(width, height, color) end
-
----
----Load a .png/.jpg/.bmp image.
----
----
----
----@param filename string Name of the file to open.
----@return integer
-function Graphics.loadImage(filename) end
-
----
----Save a loaded image to a .png/.bmp image.
----
----
----
----@param img integer A valid image ID.
----@param filename string The filename of the screenshot output.
----@param format? ImgFmt The format to use for the output file <b>(optional)</b>.
----@return nil
-function Graphics.saveImage(img, filename, format) end
-
----
----Load a .png/.jpg/.bmp image (asynchronous).
----
----
----
----@param filename string Name of the file to open.
----@return nil
-function Graphics.loadImageAsync(filename) end
-
----
----Load a .gif animated image.
----
----
----
----@param filename string Name of the file to open.
----@return integer
-function Graphics.loadAnimatedImage(filename) end
-
----
----Gets the number of frames of a loaded animated image.
----
----
----
----@param img integer A valid image ID.
----@return integer
-function Graphics.getImageFramesNum(img) end
-
----
----Set current active frame for a loaded animated image.
----
----
----
----@param img integer A valid image ID.
----@param frame integer The frame to set as active.
----@return nil
-function Graphics.setImageFrame(img, frame) end
-
----
----Free a loaded image.
----
----
----
----@param img integer A valid image ID.
----@return nil
-function Graphics.freeImage(img) end
-
----
----Set filters to use for a given image.
----
----
----
----@param img integer A valid image ID.
----@param min_filter ImageFilter Min filter to use.
----@param mag_filter ImageFilter Mag filter to use.
----@return nil
-function Graphics.setImageFilters(img, min_filter, mag_filter) end
-
----
----Get an image width.
----
----
----
----@param img integer A valid image ID.
----@return integer
-function Graphics.getImageWidth(img) end
-
----
----Get an image height.
----
----
----
----@param img integer A valid image ID.
----@return integer
-function Graphics.getImageHeight(img) end
-
----
----Draw an image.
----
----
----
----@param x number X coordinate of the image in pixels.
----@param y number Y coordinate of the image in pixels.
----@param img integer A valid image ID.
----@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
----@return nil
-function Graphics.drawImage(x, y, img, color) end
-
----
----Draw a rotated image.
----
----
----
----@param x number X coordinate of the image in pixels.
----@param y number Y coordinate of the image in pixels.
----@param img integer A valid image ID.
----@param rad number Rotation radius.
----@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
----@return nil
-function Graphics.drawRotateImage(x, y, img, rad, color) end
-
----
----Draw a scaled image.
----
----
----
----@param x number X coordinate of the image in pixels.
----@param y number Y coordinate of the image in pixels.
----@param img integer A valid image ID.
----@param x_scale number Scale value for X parameter.
----@param y_scale number Scale value for Y parameter.
----@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
----@return nil
-function Graphics.drawScaleImage(x, y, img, x_scale, y_scale, color) end
-
----
----Draw a part of an image.
----
----
----
----@param x number X coordinate of the image in pixels.
----@param y number Y coordinate of the image in pixels.
----@param img integer A valid image ID.
----@param x_start integer Image X coordinate for the partial drawing.
----@param y_start integer Image Y coordinate for the partial drawing.
----@param width number Partial drawing width.
----@param height number Partial drawing height.
----@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
----@return nil
-function Graphics.drawPartialImage(x, y, img, x_start, y_start, width, height, color) end
-
----
----Draw an image with several effects.
----
----
----
----@param x number X coordinate of the image in pixels.
----@param y number Y coordinate of the image in pixels.
----@param img integer A valid image ID.
----@param x_start integer Image X coordinate for the partial drawing.
----@param y_start integer Image Y coordinate for the partial drawing.
----@param width number Partial drawing width.
----@param height number Partial drawing height.
----@param rad number Rotation radius.
----@param x_scale number Scale value for X parameter.
----@param y_scale number Scale value for Y parameter.
----@param color? integer Image tint color (See ::Color) <b>(optional)</b>.
----@return nil
-function Graphics.drawImageExtended(x, y, img, x_start, y_start, width, height, rad, x_scale, y_scale, color) end
-
----
----Initialize a rescaler.
----
----
----
----@param x integer X coordinate of the rescaler output.
----@param y integer Y coordinate of the rescaler output.
----@param x_scale number Scale value for X parameter.
----@param y_scale number Scale value for Y parameter.
----@return nil
-function Graphics.initRescaler(x, y, x_scale, y_scale) end
-
----
----Terminate a rescaler.
----
----
----
----@return nil
-function Graphics.termRescaler() end
-
-Controls = {}
-
----
----Read pressed buttons.
----
----
----
----@param port? integer Device port to use <b>(optional)</b>.
----@return integer
-function Controls.read(port) end
-
----
----Check if a button is pressed.
----
----
----
----@param bitmask integer A controls bitmask returned by Controls.read.
----@param value Ctrl A control value to check.
----@return boolean
-function Controls.check(bitmask, value) end
-
----
----Changes vibration intensity for Dualshock devices.
----
----
----
----@param port integer Device port to use.
----@param small integer Intensity for small sensor.
----@param large integer Intensity for large sensor.
----@return nil
-function Controls.rumble(port, small, large) end
-
----
----Set lightbar color for Dualshock 4 devices.
----
----
----
----@param port integer Device port to use.
----@param color integer An RGBA color value (See ::Color).
----@return nil
-function Controls.setLightbar(port, color) end
-
----
----Locks default PS button functionality.
----
----
----
----@return nil
-function Controls.lockHomeButton() end
-
----
----Unlocks default PS button functionality.
----
----
----
----@return nil
-function Controls.unlockHomeButton() end
-
----
----Get info about controllers.
----
----
----
----@return table
-function Controls.getDeviceInfo() end
-
----
----Check if an headset is plugged in.
----
----
----
----@return boolean
-function Controls.headsetStatus() end
-
----
----Return set controller enter button.
----
----
----
----@return Ctrl
-function Controls.getEnterButton() end
-
----
----Enable gyroscope sensor.
----
----
----
----@return nil
-function Controls.enableGyro() end
-
----
----Enable accelerometer sensor.
----
----
----
----@return nil
-function Controls.enableAccel() end
-
----
----Disable gyroscope sensor.
----
----
----
----@return nil
-function Controls.disableGyro() end
-
----
----Disable accelerometer sensor.
----
----
----
----@return nil
-function Controls.disableAccel() end
-
-Database = {}
-
----
----Open/Create an SQLite database.
----
----
----
----@param filename string Filename of the database to open.
----@return integer
-function Database.open(filename) end
-
----
----Close an opened database
----
----
----
----@param db integer A valid database handle.
----@return nil
-function Database.close(db) end
-
----
----Execute a query.
----
----
----
----@param db integer A valid database handle.
----@param query string An SQL query to execute.
----@return table
-function Database.execQuery(db, query) end
 
